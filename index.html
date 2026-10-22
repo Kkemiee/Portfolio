@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>A’isyah Kamilah Md Hassan | Portfolio</title>
+<meta name="description" content="Portfolio of A’isyah Kamilah Md Hassan, Mathematical Modelling and Analytics graduate">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700&family=Source+Sans+3:wght@400;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#F3F6F8; --surface:#FFFFFF; --ink:#14213D; --muted:#5A6478;
+  --accent:#1F7A8C; --gold:#D99A00; --line:#D9E1E7;
+  color-scheme:light;
+}
+@media (prefers-color-scheme:dark){
+  :root{
+    --bg:#0F1A2E; --surface:#16243D; --ink:#E8EEF4; --muted:#A3B0C2;
+    --accent:#4FB3C4; --gold:#F2B833; --line:#26375A;
+    color-scheme:dark;
+  }
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;scroll-padding-top:72px}
+body{background:var(--bg);color:var(--ink);font-family:"Source Sans 3",system-ui,sans-serif;font-size:18px;line-height:1.6;
+  padding-bottom:env(safe-area-inset-bottom,0px)}
+h1,h2,h3{font-family:"Bricolage Grotesque",system-ui,sans-serif;line-height:1.15}
+a{color:var(--accent)}
+a:focus-visible,button:focus-visible{outline:3px solid var(--gold);outline-offset:3px}
+img{max-width:100%;display:block}
+
+nav{position:sticky;top:0;z-index:10;background:var(--bg);border-bottom:1px solid var(--line);
+  padding-top:env(safe-area-inset-top,0px)}
+nav .in{max-width:1080px;margin:auto;padding:14px 24px;display:flex;gap:20px;align-items:center;overflow-x:auto}
+nav .name{font-family:"Bricolage Grotesque";font-weight:700;margin-right:auto;white-space:nowrap}
+nav a{color:var(--muted);text-decoration:none;white-space:nowrap;font-size:16px}
+nav a:hover{color:var(--ink)}
+
+main{max-width:1080px;margin:auto;padding:0 24px}
+section{padding:72px 0;border-bottom:1px solid var(--line)}
+section:last-child{border-bottom:none}
+h2{font-size:clamp(28px,4vw,40px);margin-bottom:28px}
+
+/* Hero */
+.hero{display:grid;grid-template-columns:1.1fr 1fr;gap:48px;align-items:center;padding:80px 0 72px}
+.hero h1{font-size:clamp(40px,7vw,76px);letter-spacing:-0.02em}
+.hero p{color:var(--muted);max-width:52ch;margin-top:18px;font-size:20px}
+.btns{display:flex;gap:12px;flex-wrap:wrap;margin-top:28px}
+.btn{display:inline-block;padding:11px 20px;border-radius:8px;text-decoration:none;font-weight:600;border:2px solid var(--ink);color:var(--ink)}
+.btn.primary{background:var(--ink);color:var(--bg)}
+.plot{background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:20px}
+.plot svg{width:100%;height:auto}
+.plot .cap{font-size:15px;color:var(--muted);margin-top:8px}
+#curve{stroke-dasharray:1200;stroke-dashoffset:1200;animation:draw 2.4s ease-out .3s forwards}
+@keyframes draw{to{stroke-dashoffset:0}}
+@media (prefers-reduced-motion:reduce){#curve{animation:none;stroke-dashoffset:0}}
+
+/* Entries */
+.entry{display:grid;grid-template-columns:150px 1fr;gap:24px;padding:26px 0;border-top:1px solid var(--line)}
+.entry:first-of-type{border-top:none;padding-top:0}
+.when{color:var(--muted);font-size:16px}
+.entry h3{font-size:22px}
+.org{color:var(--muted);margin-top:2px}
+.entry ul{margin:10px 0 0 20px}
+.entry li{margin-top:4px;max-width:70ch}
+.tags{display:flex;flex-wrap:wrap;gap:6px;margin-top:12px}
+.tags span{font-size:14px;padding:2px 10px;border-radius:20px;background:var(--surface);border:1px solid var(--line);color:var(--muted)}
+.gallery{display:grid;grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:8px;margin-top:14px}
+.gallery img{aspect-ratio:4/3;object-fit:cover;border-radius:8px;border:1px solid var(--line)}
+.link{display:inline-block;margin-top:10px;font-weight:600}
+
+.about{max-width:68ch;font-size:20px}
+.skills{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:28px}
+.skills h3{font-size:18px;margin-bottom:6px}
+.skills p{color:var(--muted)}
+.contact p{font-size:20px;margin-bottom:8px}
+footer{text-align:center;color:var(--muted);font-size:15px;padding:32px 0 48px}
+
+@media (max-width:760px){
+  .hero{grid-template-columns:1fr;padding-top:48px}
+  .entry{grid-template-columns:1fr;gap:6px}
+  section{padding:56px 0}
+}
+</style>
+</head>
+<body>
+
+<nav><div class="in">
+  <span class="name">A’isyah Kamilah Md Hassan</span>
+  <a href="#about">About</a>
+  <a href="#experience">Experience</a>
+  <a href="#projects">Projects</a>
+  <a href="#research">Research</a>
+  <a href="#activities">Activities</a>
+  <a href="#skills">Skills</a>
+  <a href="#contact">Contact</a>
+</div></nav>
+
+<main>
+  <div class="hero">
+    <div>
+      <h1>A’isyah Kamilah Md Hassan</h1>
+      <p>Mathematical Modelling and Analytics graduate. I build models that find the best answer and automations that save people time.</p>
+      <div class="btns">
+        <a class="btn primary" href="#projects">See my projects</a>
+        <a class="btn" href="resume.pdf" download>Download resume</a>
+      </div>
+    </div>
+    <div class="plot" aria-label="Convergence curve from my final year project">
+      <svg viewBox="0 0 400 240" role="img">
+        <line x1="40" y1="20" x2="40" y2="200" stroke="var(--line)" stroke-width="2"/>
+        <line x1="40" y1="200" x2="385" y2="200" stroke="var(--line)" stroke-width="2"/>
+        <path id="curve" d="M45 30 C 70 120, 95 160, 140 178 S 260 192, 380 194" fill="none" stroke="var(--accent)" stroke-width="4" stroke-linecap="round"/>
+        <circle cx="380" cy="194" r="6" fill="var(--gold)"/>
+        <text x="44" y="226" font-size="13" fill="var(--muted)">iterations</text>
+        <text x="14" y="120" font-size="13" fill="var(--muted)" transform="rotate(-90 14 120)">objective value</text>
+      </svg>
+      <p class="cap">Objective value dropping as the optimizer converges, the idea behind my final year project.</p>
+    </div>
+  </div>
+
+  <section id="about">
+    <h2>About</h2>
+    <p class="about">I graduated with a BSc (Hons.) in Mathematical Modelling and Analytics from UiTM Kuala Terengganu. I am now an intern in Customer Experience at FedEx in Petaling Jaya, where I build workflow automations and dashboards with Microsoft 365 tools. I enjoy turning slow manual work into simple systems people actually use.</p>
+  </section>
+
+  <section id="experience"><h2>Experience</h2><div id="experience-list"></div></section>
+  <section id="projects"><h2>Projects</h2><div id="projects-list"></div></section>
+  <section id="research"><h2>Research</h2><div id="research-list"></div></section>
+  <section id="activities"><h2>Leadership and activities</h2><div id="activities-list"></div></section>
+
+  <section id="skills">
+    <h2>Skills</h2>
+    <div class="skills">
+      <div><h3>Programming</h3><p>MATLAB, Python, R, SQL, Java, C++</p></div>
+      <div><h3>Analytics and data</h3><p>Power BI, WEKA, SPSS, SigmaPlot, Maple, Hadoop</p></div>
+      <div><h3>Microsoft 365</h3><p>Power Automate, Power Apps, SharePoint</p></div>
+      <div><h3>Languages</h3><p>Malay, English, Arabic</p></div>
+    </div>
+  </section>
+
+  <section id="contact" class="contact">
+    <h2>Contact</h2>
+    <p>Email <a href="mailto:mdhassankamilah@gmail.com">mdhassankamilah@gmail.com</a></p>
+    <p>LinkedIn <a href="https://www.linkedin.com/in/aisyahkamilahmdhassan" target="_blank" rel="noopener">linkedin.com/in/aisyahkamilahmdhassan</a></p>
+  </section>
+</main>
+
+<footer>© 2026 A’isyah Kamilah Md Hassan</footer>
+
+<script>
+/* ============================================================
+   EDIT YOUR CONTENT HERE
+   To add a new item, copy one { ... } block and change the text.
+   To add photos, put the image files in the same folder as this
+   page and list their file names in images, e.g. ["leave1.jpg"].
+   ============================================================ */
+
+const experience = [
+  {
+    when: "Sep 2026 to present",
+    title: "Intern, Customer Experience",
+    org: "FedEx, Petaling Jaya",
+    points: [
+      "Built Leave Planner, a leave request system on SharePoint and Power Apps with automatic quota checks and a Power BI dashboard. Built in under three weeks and now used daily by the team.",
+      "Automated the AMD pre-alert process with Power Automate and a SharePoint form. Staff now pick a receiver and a file, and the email goes out with the correct recipients automatically.",
+      "Wrote job aids and handover guides so the systems keep running after my internship."
+    ],
+    tags: ["Power Automate", "Power Apps", "SharePoint", "Power BI"],
+    images: []
+  }
+];
+
+const projects = [
+  {
+    when: "2025 to 2026",
+    title: "Three-term conjugate gradient methods for radiotherapy planning",
+    org: "Final year project",
+    points: [
+      "Compared five three-term conjugate gradient variants on 15 benchmark functions in MATLAB.",
+      "Applied them to a real prostate IMRT fluence map optimization problem using the CORT dataset.",
+      "TTLAMR gave the lowest objective value (5.5709), and TTLAMR and TTSMAR solved every test problem."
+    ],
+    tags: ["MATLAB", "Optimization", "Numerical methods"],
+    link: "",
+    images: []
+  },
+  {
+    when: "2026",
+    title: "Dynamic pricing model for agricultural machinery rental",
+    org: "MIMMC 2026, Malaysia Industrial Mathematical Modelling Challenge",
+    points: [
+      "Built a pricing model that adjusts rental rates by demand, with a full report and presentation."
+    ],
+    tags: ["Mathematical modelling", "Pricing"],
+    link: "",
+    images: []
+  },
+  {
+    when: "2025",
+    title: "Big data architecture for paddy yield prediction",
+    org: "Data Technology group project",
+    points: [
+      "Designed a big data pipeline for smart agriculture to predict paddy yield."
+    ],
+    tags: ["Hadoop", "Big data", "Machine learning"],
+    link: "",
+    images: []
+  },
+  {
+    when: "2025",
+    title: "Curve fitting on Malaysian annual death statistics",
+    org: "Mathematical modelling coursework",
+    points: [
+      "Fitted and compared four nonlinear regression models on full and half datasets."
+    ],
+    tags: ["SigmaPlot", "Regression"],
+    link: "",
+    images: []
+  },
+  {
+    when: "2025",
+    title: "Shortest route with Dijkstra's algorithm",
+    org: "Mathematical modelling coursework",
+    points: [
+      "Modelled a campus to waterfront route network and found the shortest path in Maple."
+    ],
+    tags: ["Maple", "Graph theory"],
+    link: "",
+    images: []
+  }
+];
+
+const research = [
+  {
+    when: "2026",
+    title: "Your journal article title here",
+    org: "International Journal of Research and Innovation in Social Science (IJRISS)",
+    points: [
+      "Co-authored with Dr. Norhaslinda Zull Pakkal, Dr. Nurul Hajar Mohd Yussoff and Nur Syarafina Mohamed."
+    ],
+    tags: ["Optimization", "Publication"],
+    link: "",
+    images: []
+  }
+];
+
+const activities = [
+  {
+    when: "Year here",
+    title: "President, Arabic Language Club",
+    org: "UiTM Kuala Terengganu",
+    points: ["Led a club of more than 150 members and its yearly programmes."],
+    tags: ["Leadership"],
+    images: []
+  },
+  {
+    when: "Year here",
+    title: "Member, KOR SUKSIS",
+    org: "UiTM",
+    points: ["Add what you did, any rank, or training you completed."],
+    tags: ["Discipline", "Teamwork"],
+    images: []
+  },
+  {
+    when: "Year here",
+    title: "Program director, protocol and emcee",
+    org: "University events",
+    points: ["Directed programmes and served as emcee and protocol committee for university events."],
+    tags: ["Event management"],
+    images: []
+  },
+  {
+    when: "Year here",
+    title: "Volunteer programmes",
+    org: "Add the programme name",
+    points: ["Describe what you did and who it helped."],
+    tags: ["Volunteering"],
+    images: []
+  }
+];
+
+/* ============ No need to edit below this line ============ */
+function esc(s){return String(s).replace(/[&<>"]/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]))}
+function render(id, items){
+  document.getElementById(id).innerHTML = items.map(it => `
+    <article class="entry">
+      <div class="when">${esc(it.when)}</div>
+      <div>
+        <h3>${esc(it.title)}</h3>
+        <div class="org">${esc(it.org)}</div>
+        <ul>${it.points.map(p=>`<li>${esc(p)}</li>`).join("")}</ul>
+        ${it.tags && it.tags.length ? `<div class="tags">${it.tags.map(t=>`<span>${esc(t)}</span>`).join("")}</div>` : ""}
+        ${it.link ? `<a class="link" href="${esc(it.link)}" target="_blank" rel="noopener">View project</a>` : ""}
+        ${it.images && it.images.length ? `<div class="gallery">${it.images.map(src=>`<img src="${esc(src)}" alt="${esc(it.title)}" loading="lazy">`).join("")}</div>` : ""}
+      </div>
+    </article>`).join("");
+}
+render("experience-list", experience);
+render("projects-list", projects);
+render("research-list", research);
+render("activities-list", activities);
+</script>
+</body>
+</html>
