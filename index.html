@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>A’isyah Kamilah Md Hassan | Portfolio</title>
-<meta name="description" content="Portfolio of A’isyah Kamilah Md Hassan, Mathematical Modelling and Analytics graduate">
+<meta name="description" content="Portfolio of A’isyah Kamilah Md Hassan, aspiring data analyst and Mathematical Modelling and Analytics student">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700&family=Source+Sans+3:wght@400;600&display=swap" rel="stylesheet">
@@ -93,6 +93,7 @@ footer{text-align:center;color:var(--muted);font-size:15px;padding:32px 0 48px}
   <a href="#projects">Projects</a>
   <a href="#research">Research</a>
   <a href="#activities">Activities</a>
+  <a href="#achievements">Achievements</a>
   <a href="#skills">Skills</a>
   <a href="#contact">Contact</a>
 </div></nav>
@@ -101,7 +102,7 @@ footer{text-align:center;color:var(--muted);font-size:15px;padding:32px 0 48px}
   <div class="hero">
     <div>
       <h1>A’isyah Kamilah Md Hassan</h1>
-      <p>Mathematical Modelling and Analytics graduate. I build models that find the best answer and automations that save people time.</p>
+      <p>Final-year Mathematical Modelling and Analytics student and aspiring data analyst. I build models that find the best answer and automations that save people time.</p>
       <div class="btns">
         <a class="btn primary" href="#projects">See my projects</a>
         <a class="btn" href="resume.pdf" download>Download resume</a>
@@ -122,21 +123,23 @@ footer{text-align:center;color:var(--muted);font-size:15px;padding:32px 0 48px}
 
   <section id="about">
     <h2>About</h2>
-    <p class="about">I graduated with a BSc (Hons.) in Mathematical Modelling and Analytics from UiTM Kuala Terengganu. I am now an intern in Customer Experience at FedEx in Petaling Jaya, where I build workflow automations and dashboards with Microsoft 365 tools. I enjoy turning slow manual work into simple systems people actually use.</p>
+    <p class="about">I am a final-year BSc (Hons.) Mathematical Modelling and Analytics student at UiTM Kuala Terengganu with a CGPA of 3.50. I am currently a Data Analyst intern in Customer Experience at FedEx in Petaling Jaya, where I build workflow automations and dashboards with Microsoft 365 tools. Outside class, I lead student clubs, emcee university events and volunteer in community programmes. I enjoy turning slow manual work into simple systems people actually use.</p>
   </section>
 
   <section id="experience"><h2>Experience</h2><div id="experience-list"></div></section>
   <section id="projects"><h2>Projects</h2><div id="projects-list"></div></section>
   <section id="research"><h2>Research</h2><div id="research-list"></div></section>
   <section id="activities"><h2>Leadership and activities</h2><div id="activities-list"></div></section>
+  <section id="achievements"><h2>Achievements and certifications</h2><div id="achievements-list"></div></section>
 
   <section id="skills">
     <h2>Skills</h2>
     <div class="skills">
-      <div><h3>Programming</h3><p>MATLAB, Python, R, SQL, Java, C++</p></div>
-      <div><h3>Analytics and data</h3><p>Power BI, WEKA, SPSS, SigmaPlot, Maple, Hadoop</p></div>
+      <div><h3>Programming</h3><p>Python, SQL, R, MATLAB, Java, C++, C, PHP, HTML</p></div>
+      <div><h3>Analytics methods</h3><p>Data cleaning, statistical analysis, classification, clustering, regression, predictive modelling, optimization</p></div>
+      <div><h3>Tools</h3><p>Power BI, Excel, SPSS, WEKA, Microsoft Access, SigmaPlot, Maple, QM for Windows</p></div>
       <div><h3>Microsoft 365</h3><p>Power Automate, Power Apps, SharePoint</p></div>
-      <div><h3>Languages</h3><p>Malay, English, Arabic</p></div>
+      <div><h3>Languages</h3><p>Malay (native), English (proficient), Arabic (basic)</p></div>
     </div>
   </section>
 
@@ -159,8 +162,8 @@ footer{text-align:center;color:var(--muted);font-size:15px;padding:32px 0 48px}
 
 const experience = [
   {
-    when: "Sep 2026 to present",
-    title: "Intern, Customer Experience",
+    when: "Sep 2026 to Jan 2027",
+    title: "Data Analyst Intern, Customer Experience",
     org: "FedEx, Petaling Jaya",
     points: [
       "Built Leave Planner, a leave request system on SharePoint and Power Apps with automatic quota checks and a Power BI dashboard. Built in under three weeks and now used daily by the team.",
@@ -168,6 +171,27 @@ const experience = [
       "Wrote job aids and handover guides so the systems keep running after my internship."
     ],
     tags: ["Power Automate", "Power Apps", "SharePoint", "Power BI"],
+    images: []
+  },
+  {
+    when: "2025 to present",
+    title: "Part-time Mathematics Tutor (SPM)",
+    org: "Weekends",
+    points: [
+      "Teach SPM Additional Mathematics by breaking problems into clear steps.",
+      "Adapt explanations to each student's pace, which built my skill in explaining technical ideas simply."
+    ],
+    tags: ["Teaching", "Communication"],
+    images: []
+  },
+  {
+    when: "May to Aug 2022",
+    title: "Service Crew",
+    org: "Food and beverage, two restaurants",
+    points: [
+      "Worked day and evening shifts in a fast-paced service environment while studying full-time."
+    ],
+    tags: ["Time management", "Customer service"],
     images: []
   }
 ];
@@ -178,9 +202,9 @@ const projects = [
     title: "Three-term conjugate gradient methods for radiotherapy planning",
     org: "Final year project",
     points: [
-      "Compared five three-term conjugate gradient variants on 15 benchmark functions in MATLAB.",
-      "Applied them to a real prostate IMRT fluence map optimization problem using the CORT dataset.",
-      "TTLAMR gave the lowest objective value (5.5709), and TTLAMR and TTSMAR solved every test problem."
+      "Built a MATLAB optimization model to improve radiotherapy treatment planning using the CORT prostate dataset.",
+      "Compared three-term conjugate gradient variants on benchmark functions by iteration count and CPU time.",
+      "TTLAMR gave the lowest objective value (5.5709) on the radiotherapy problem."
     ],
     tags: ["MATLAB", "Optimization", "Numerical methods"],
     link: "",
@@ -189,11 +213,35 @@ const projects = [
   {
     when: "2026",
     title: "Dynamic pricing model for agricultural machinery rental",
-    org: "MIMMC 2026, Malaysia Industrial Mathematical Modelling Challenge",
+    org: "MIMMC 2026, team project",
     points: [
-      "Built a pricing model that adjusts rental rates by demand, with a full report and presentation."
+      "Built a mathematical model that adjusts rental prices by demand to support data-driven pricing decisions.",
+      "Presented the model with a full written report and slides."
     ],
     tags: ["Mathematical modelling", "Pricing"],
+    link: "",
+    images: []
+  },
+  {
+    when: "2025",
+    title: "Classification and clustering of survey data",
+    org: "Data mining project",
+    points: [
+      "Built a full data mining pipeline on a 7,000-record survey dataset, covering cleaning, missing values, outliers, normalization and feature selection.",
+      "Compared J48, Random Forest and Naive Bayes classifiers and applied K-means clustering, reporting accuracy, MAE and confusion matrices."
+    ],
+    tags: ["WEKA", "Classification", "Clustering"],
+    link: "",
+    images: []
+  },
+  {
+    when: "2025",
+    title: "RR Café ordering system database",
+    org: "Database design project",
+    points: [
+      "Designed a relational database normalized to 3NF and wrote SQL queries for orders, menu and sales reports."
+    ],
+    tags: ["SQL", "Microsoft Access", "Database design"],
     link: "",
     images: []
   },
@@ -218,17 +266,6 @@ const projects = [
     tags: ["SigmaPlot", "Regression"],
     link: "",
     images: []
-  },
-  {
-    when: "2025",
-    title: "Shortest route with Dijkstra's algorithm",
-    org: "Mathematical modelling coursework",
-    points: [
-      "Modelled a campus to waterfront route network and found the shortest path in Maple."
-    ],
-    tags: ["Maple", "Graph theory"],
-    link: "",
-    images: []
   }
 ];
 
@@ -248,35 +285,153 @@ const research = [
 
 const activities = [
   {
-    when: "Year here",
-    title: "President, Arabic Language Club",
+    when: "Oct 2024 to Dec 2025",
+    title: "President, Arabic Club",
     org: "UiTM Kuala Terengganu",
-    points: ["Led a club of more than 150 members and its yearly programmes."],
-    tags: ["Leadership"],
+    points: [
+      "Led more than 150 members and a 16-member executive committee, organizing eight academic, cultural and outreach programmes.",
+      "Handled programme planning, sponsorship, budgeting support and communication with schools, lecturers and outside organizations.",
+      "Ran the club's SUPRO sales booth and raised more than RM500 in profit in two days (Dec 2024).",
+      "Managed the club booth and served as protocol and activities committee at Club Fest (Oct 2025)."
+    ],
+    tags: ["Leadership", "Event management"],
     images: []
   },
   {
-    when: "Year here",
-    title: "Member, KOR SUKSIS",
-    org: "UiTM",
-    points: ["Add what you did, any rank, or training you completed."],
-    tags: ["Discipline", "Teamwork"],
+    when: "2025",
+    title: "Program Director, Program Kecemerlangan",
+    org: "Bangkit Dengan Kepimpinan, Berdiri Dengan Keyakinan",
+    points: [
+      "Led a 14-member committee to deliver a leadership and motivation programme for more than 60 secondary school students.",
+      "Handled planning, school liaison and contingency plans. The team was recognised by the programme advisor as one of the best organizing teams."
+    ],
+    tags: ["Leadership", "Programme management"],
     images: []
   },
   {
-    when: "Year here",
-    title: "Program director, protocol and emcee",
-    org: "University events",
-    points: ["Directed programmes and served as emcee and protocol committee for university events."],
-    tags: ["Event management"],
+    when: "Nov 2024 to Apr 2025",
+    title: "Programme Head",
+    org: "Arabic Club programmes",
+    points: [
+      "Bengkel Kembara Seni Khat, a calligraphy workshop for students (Nov 2024).",
+      "Musyahadat Night 6.0, a cultural night event (Apr 2025)."
+    ],
+    tags: ["Leadership", "Culture"],
     images: []
   },
   {
-    when: "Year here",
-    title: "Volunteer programmes",
-    org: "Add the programme name",
-    points: ["Describe what you did and who it helped."],
-    tags: ["Volunteering"],
+    when: "2023 to 2025",
+    title: "Minggu Destini Siswa (student orientation week)",
+    org: "UiTM Kuala Terengganu",
+    points: [
+      "Head of Protocol Bureau for MDS 2025/2026, coordinating programme flow for more than 350 new students with an 11-member team.",
+      "Committee in the Character, Discipline and Safety Bureau for MDS 2024/2025.",
+      "Committee member for MDS 2023/2024."
+    ],
+    tags: ["Protocol", "Teamwork"],
+    images: []
+  },
+  {
+    when: "2023 to present",
+    title: "KOR SUKSIS (Police Volunteer Reserve Student Corps)",
+    org: "UiTM Cawangan Terengganu",
+    points: [
+      "Joined through the Squad 8 orientation programme (Nov 2023) and served in the Spiritual Bureau.",
+      "Completed courses in self-defence (Jun 2024), ethics and integrity (Mar 2024), basic police field training (Sep 2024) and first aid and rescue (Oct 2025).",
+      "Performed in SUKSIS showcases at MecFest x HTK (Nov 2023) and in Nov 2024, and took part in SUKMO (Dec 2023)."
+    ],
+    tags: ["Discipline", "Teamwork", "First aid"],
+    images: []
+  },
+  {
+    when: "2025",
+    title: "Master of ceremonies",
+    org: "University and SUKSIS events",
+    points: [
+      "Emcee for Lepak Raya Ganu Style (Apr 2025), the Flag Handover Ceremony with the Deputy Rector's address (May 2025), Alpha Camp (Oct 2025), Tangram (Nov 2025) and the Election Campaign Ceremony (Nov 2025).",
+      "Regularly selected as emcee for official SUKSIS programmes and ceremonies."
+    ],
+    tags: ["Public speaking"],
+    images: []
+  },
+  {
+    when: "2025",
+    title: "Facilitator",
+    org: "Youth and student programmes",
+    points: [
+      "Facilitator for Malaysia Techlympics, East Zone (Aug 2025).",
+      "Facilitator for Alpha Camp (Oct 2025) and the PMDS Leadership Camp (Sep 2025)."
+    ],
+    tags: ["Facilitation", "STEM outreach"],
+    images: []
+  },
+  {
+    when: "2023 to 2024",
+    title: "Community and volunteer work",
+    org: "Community programmes",
+    points: [
+      "Date palm planting programme (May 2023).",
+      "Program Cakna Mahasiswa Bersama Komuniti, a student and community outreach programme (Jun 2024).",
+      "Program Sukarelawan Rakan Muda, a youth volunteer programme (Nov 2024)."
+    ],
+    tags: ["Volunteering", "Community"],
+    images: []
+  },
+  {
+    when: "2023 to 2025",
+    title: "Student government and other involvement",
+    org: "UiTM Kuala Terengganu",
+    points: [
+      "Delegate at the Student Parliament Session No. 1/2025 (May 2025).",
+      "Helped run the student representative council election campaign (Nov 2024).",
+      "Completed an organization management course (Jan 2025).",
+      "Referee for the UiTM staff badminton championship (Oct 2023).",
+      "Took part in East Coast Energy (Jun 2025) and Commax (Aug 2025)."
+    ],
+    tags: ["Student leadership"],
+    images: []
+  }
+];
+
+const achievements = [
+  {
+    when: "Oct 2025",
+    title: "Champion, Mini Karnival BSN SSP 2025",
+    org: "Bank Simpanan Nasional",
+    points: ["Won first place in the Mini Karnival BSN SSP 2025 competition."],
+    tags: ["Award"],
+    images: []
+  },
+  {
+    when: "2026",
+    title: "Participant, Malaysia Industrial Mathematical Modelling Challenge (MIMMC)",
+    org: "MIMMC 2026",
+    points: ["Built a dynamic pricing model as part of a team."],
+    tags: ["Competition"],
+    images: []
+  },
+  {
+    when: "Jan 2026",
+    title: "Power BI Data Visualization Workshop",
+    org: "Microsoft Power BI",
+    points: ["Hands-on training in building interactive dashboards and reports."],
+    tags: ["Certification"],
+    images: []
+  },
+  {
+    when: "2025",
+    title: "Presenter, PRIDE Innovation Showcase",
+    org: "UiTM, project TREMONO",
+    points: ["Presented the TREMONO innovation project to judges and visitors."],
+    tags: ["Innovation"],
+    images: []
+  },
+  {
+    when: "Feb 2023",
+    title: "Silver Medal, PIITRAM 2023 Innovation Competition",
+    org: "Project PASOO",
+    points: ["Won a silver medal for the PASOO innovation project."],
+    tags: ["Award", "Innovation"],
     images: []
   }
 ];
@@ -301,6 +456,7 @@ render("experience-list", experience);
 render("projects-list", projects);
 render("research-list", research);
 render("activities-list", activities);
+render("achievements-list", achievements);
 </script>
 </body>
 </html>
