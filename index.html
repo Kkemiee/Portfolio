@@ -79,7 +79,7 @@ main{counter-reset:sec}
 /* About */
 .about-grid{display:grid;grid-template-columns:1.2fr 1fr;gap:40px;align-items:center}
 .about{font-size:20px}
-.stats{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin-top:40px}
+.stats{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:40px}
 .stat{background:var(--surface);border-radius:16px;padding:20px;box-shadow:var(--shadow);border-top:4px solid var(--purple)}
 .stat:nth-child(even){border-top-color:var(--orange)}
 .stat b{display:block;font-family:"Bricolage Grotesque",system-ui,sans-serif;font-size:34px;line-height:1;color:var(--purple)}
@@ -136,7 +136,9 @@ footer{text-align:center;color:#CFC6DD;font-size:15px;padding:28px 0 36px;backgr
 
 @media (max-width:760px){
   .about-grid{grid-template-columns:1fr}
-  .stats{grid-template-columns:repeat(2,1fr)}
+  .stats{grid-template-columns:repeat(3,1fr);gap:10px}
+  .stat{padding:16px 12px}
+  .stat b{font-size:28px}
   .band{padding:56px 0}
   .card{padding:22px 20px 20px 24px}
 }
@@ -189,7 +191,6 @@ footer{text-align:center;color:#CFC6DD;font-size:15px;padding:28px 0 36px;backgr
     </div>
     <div class="stats">
       <div class="stat"><b>3.57</b><span>CGPA</span></div>
-      <div class="stat"><b>2</b><span>Research papers</span></div>
       <div class="stat"><b>150+</b><span>Club members led</span></div>
       <div class="stat"><b>30+</b><span>Programmes and events</span></div>
     </div>
@@ -274,7 +275,7 @@ const experience = [
 const projects = [
   {
     when: "2025 to 2026",
-    title: "Three-term conjugate gradient methods for radiotherapy planning",
+    title: "The Implementation of Three-Term Conjugate Gradient in Intensity-Modulated Radiation Therapy",
     org: "Final year project",
     points: [
       "Built a MATLAB optimization model to improve radiotherapy treatment planning using the CORT prostate dataset.",
@@ -347,8 +348,8 @@ const projects = [
 const research = [
   {
     when: "2027 (upcoming)",
-    title: "Hybrid conjugate gradient method using exact line search with its application to vehicle-bridge moving force identification",
-    org: "Graduate Digital Invention, Innovation & Design (GDIID) 2025, UiTM Cawangan Terengganu",
+    title: "Hybrid Conjugate Gradient Method using Exact Line search with its application to Vehicle-Bridge Moving Force Identification",
+    org: "Graduate Digital Invention, Innovation & Design (GDIID) 2027, UiTM Cawangan Terengganu",
     points: [
       "Built and tested four hybrid conjugate gradient methods (RMILLS, RMILHS, RMILDY and RMILLAMR) in MATLAB on 15 benchmark functions with up to 10,000 variables.",
       "RMILLAMR performed best, solving 98.81% of test problems with the fewest iterations and least CPU time.",
@@ -361,7 +362,7 @@ const research = [
   },
   {
     when: "Oct 2026",
-    title: "Performance of three-term conjugate gradient methods under exact line search for fluence map optimization in intensity-modulated radiation therapy",
+    title: "Performance of Three-Term Conjugate Gradient Methods under Exact Line search for Fluence Map Optimization in Intensity-Modulated Radiation Therapy",
     org: "International Journal of Research and Innovation in Social Science (IJRISS), Vol. 10, Issue 9, first author",
     points: [
       "Compared five three-term conjugate gradient methods in MATLAB on 308 test problems with up to 10,000 variables. TTLAMR and TTSMAR solved 100% of them.",
