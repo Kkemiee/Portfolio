@@ -10,101 +10,145 @@
 <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700&family=Source+Sans+3:wght@400;600&display=swap" rel="stylesheet">
 <style>
 :root{
-  --bg:#F4F4F6; --surface:#FFFFFF; --ink:#1C1B1F; --muted:#5F5B66;
-  --accent:#7A3E78; --gold:#A76BA5; --line:#E1DEE4;
+  --bg:#F3F1F7; --band:#FFFFFF; --surface:#FFFFFF; --ink:#221B2E; --muted:#615A6E;
+  --purple:#6E3FC4; --purple-soft:#EEE7FB; --deep:#2A1B3D; --orange:#F2851F; --orange-soft:#FFF0E2;
+  --gray:#8C8697; --line:#E4E0EC; --shadow:0 10px 30px rgba(52,30,90,.10);
+  --accent:var(--purple); --gold:var(--orange);
   color-scheme:light;
 }
 @media (prefers-color-scheme:dark){
   :root{
-    --bg:#17141A; --surface:#221D26; --ink:#EEE9F0; --muted:#ABA3B0;
-    --accent:#C792C5; --gold:#D9A6D6; --line:#3A3240;
+    --bg:#15111C; --band:#1B1624; --surface:#231C2F; --ink:#EEE8F5; --muted:#ADA5BA;
+    --purple:#B48CF5; --purple-soft:#2E2442; --deep:#0F0B15; --orange:#FFA552; --orange-soft:#3A2818;
+    --gray:#8F889C; --line:#342B44; --shadow:0 10px 30px rgba(0,0,0,.35);
     color-scheme:dark;
   }
 }
 *{box-sizing:border-box;margin:0;padding:0}
-html{scroll-behavior:smooth;scroll-padding-top:72px}
+html{scroll-behavior:smooth;scroll-padding-top:70px}
 body{background:var(--bg);color:var(--ink);font-family:"Source Sans 3",system-ui,sans-serif;font-size:18px;line-height:1.6;
   padding-bottom:env(safe-area-inset-bottom,0px)}
 h1,h2,h3{font-family:"Bricolage Grotesque",system-ui,sans-serif;line-height:1.15}
-a{color:var(--accent)}
-a:focus-visible,button:focus-visible{outline:3px solid var(--gold);outline-offset:3px}
+a{color:var(--purple)}
+a:focus-visible,button:focus-visible{outline:3px solid var(--orange);outline-offset:3px}
 img{max-width:100%;display:block}
 
 /* Header */
 .top{position:relative;color:#fff;text-align:center;text-shadow:0 2px 10px rgba(0,0,0,.55);
-  background:linear-gradient(rgba(28,20,34,.55),rgba(52,26,60,.72)),url("header-bg.jpg") center/cover no-repeat,linear-gradient(160deg,#1C1B1F 30%,#4A2849);
+  background:linear-gradient(rgba(28,20,34,.50),rgba(52,26,60,.70)),url("header-bg.jpg") center/cover no-repeat,linear-gradient(160deg,#1C1B1F 30%,#4A2849);
   padding:calc(56px + env(safe-area-inset-top,0px)) 24px 0}
-.avatar{width:180px;height:180px;margin:0 auto;border-radius:50%;border:5px solid #C99BC7;overflow:hidden;
-  background:#7A3E78;display:grid;place-items:center}
-.avatar>*{grid-area:1/1}
+.avatar{width:184px;height:184px;margin:0 auto;border-radius:50%;padding:5px;
+  background:conic-gradient(from 200deg,var(--orange),#B48CF5,#6E3FC4,var(--orange));box-shadow:0 0 40px rgba(242,133,31,.35)}
+.avatar .in{width:100%;height:100%;border-radius:50%;overflow:hidden;background:#6E3FC4;display:grid;place-items:center}
+.avatar .in>*{grid-area:1/1}
 .avatar img{width:100%;height:100%;object-fit:cover;position:relative;z-index:1}
 .avatar span{font-family:"Bricolage Grotesque",system-ui,sans-serif;font-size:56px;font-weight:700;color:#fff}
 .top h1{font-size:clamp(26px,4.4vw,46px);letter-spacing:.04em;text-transform:uppercase;margin-top:26px}
-.top .sub{font-size:clamp(17px,2vw,21px);margin-top:12px;opacity:.92}
-.top .links{margin-top:12px;font-size:clamp(16px,1.8vw,19px);display:flex;flex-wrap:wrap;justify-content:center;row-gap:6px}
-@media (max-width:600px){.top .links{flex-direction:column;align-items:center}.top .links .sep{display:none}}
-.top .links a{color:#E8C9E6;font-weight:600;text-decoration:none}
+.top .sub{font-size:clamp(17px,2vw,21px);margin-top:12px;opacity:.95}
+.top .links{margin-top:14px;font-size:clamp(16px,1.8vw,19px);display:flex;flex-wrap:wrap;justify-content:center;row-gap:6px}
+.top .links a{color:#FFB067;font-weight:600;text-decoration:none}
 .top .links a:hover{text-decoration:underline}
-.top .links .sep{opacity:.6;margin:0 8px}
-.top .rule{max-width:1180px;height:4px;background:#9C5E9A;margin:28px auto 0}
-.top .pad{height:48px}
+.top .links .sep{opacity:.6;margin:0 10px}
+@media (max-width:600px){.top .links{flex-direction:column;align-items:center}.top .links .sep{display:none}}
+.top .rule{max-width:1180px;height:4px;border-radius:4px;background:linear-gradient(90deg,#6E3FC4,#B48CF5,var(--orange));margin:28px auto 0}
+.top .pad{height:44px}
 
 nav{position:sticky;top:0;z-index:10;background:var(--surface);border-bottom:1px solid var(--line);
-  box-shadow:0 2px 8px rgba(0,0,0,.06);padding-top:env(safe-area-inset-top,0px)}
-nav .in{max-width:1180px;margin:auto;padding:18px 24px;display:flex;gap:36px;justify-content:center;overflow-x:auto}
-nav a{color:var(--ink);text-decoration:none;white-space:nowrap;font-size:15px;font-weight:600;letter-spacing:.08em;text-transform:uppercase}
-nav a:hover{color:var(--accent)}
+  box-shadow:0 4px 16px rgba(52,30,90,.08);padding-top:env(safe-area-inset-top,0px)}
+nav .in{max-width:1180px;margin:auto;padding:0 24px;display:flex;gap:34px;justify-content:center;overflow-x:auto}
+nav a{position:relative;color:var(--ink);text-decoration:none;white-space:nowrap;font-size:15px;font-weight:600;
+  letter-spacing:.08em;text-transform:uppercase;padding:18px 0}
+nav a::after{content:"";position:absolute;left:0;right:0;bottom:10px;height:3px;border-radius:3px;background:var(--orange);
+  transform:scaleX(0);transition:transform .2s}
+nav a:hover{color:var(--purple)}
+nav a:hover::after{transform:scaleX(1)}
 @media (max-width:1000px){nav .in{justify-content:flex-start;gap:24px}}
 
-main{max-width:1080px;margin:auto;padding:0 24px}
-section{padding:72px 0;border-bottom:1px solid var(--line)}
-section:last-child{border-bottom:none}
-h2{font-size:clamp(28px,4vw,40px);margin-bottom:28px}
+/* Bands */
+main{counter-reset:sec}
+.band{padding:80px 0;background:var(--bg)}
+.band:nth-of-type(even){background:var(--band)}
+.wrap{max-width:1120px;margin:auto;padding:0 24px}
+.head{display:flex;align-items:baseline;gap:14px;margin-bottom:36px;counter-increment:sec}
+.head::before{content:"0" counter(sec);font-family:"Bricolage Grotesque",system-ui,sans-serif;font-weight:700;
+  font-size:18px;color:var(--orange)}
+.head h2{font-size:clamp(30px,4vw,42px);color:var(--ink);position:relative;padding-bottom:10px}
+.head h2::after{content:"";position:absolute;left:0;bottom:0;width:64px;height:5px;border-radius:5px;
+  background:linear-gradient(90deg,var(--purple),var(--orange))}
 
 /* About */
 .about-grid{display:grid;grid-template-columns:1.2fr 1fr;gap:40px;align-items:center}
-.plot{background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:20px}
+.about{font-size:20px}
+.stats{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin-top:40px}
+.stat{background:var(--surface);border-radius:16px;padding:20px;box-shadow:var(--shadow);border-top:4px solid var(--purple)}
+.stat:nth-child(even){border-top-color:var(--orange)}
+.stat b{display:block;font-family:"Bricolage Grotesque",system-ui,sans-serif;font-size:34px;line-height:1;color:var(--purple)}
+.stat:nth-child(even) b{color:var(--orange)}
+.stat span{font-size:15px;color:var(--muted)}
+.plot{background:var(--surface);border-radius:18px;padding:22px;box-shadow:var(--shadow)}
 .plot svg{width:100%;height:auto}
 .plot .cap{font-size:15px;color:var(--muted);margin-top:8px}
 #curve{stroke-dasharray:1200;stroke-dashoffset:1200;animation:draw 2.4s ease-out .3s forwards}
 @keyframes draw{to{stroke-dashoffset:0}}
 @media (prefers-reduced-motion:reduce){#curve{animation:none;stroke-dashoffset:0}}
 
-/* Entries */
-.entry{display:grid;grid-template-columns:150px 1fr;gap:24px;padding:26px 0;border-top:1px solid var(--line)}
-.entry:first-of-type{border-top:none;padding-top:0}
-.when{color:var(--muted);font-size:16px}
-.entry h3{font-size:22px}
-.org{color:var(--muted);margin-top:2px}
-.entry ul{margin:10px 0 0 20px}
-.entry li{margin-top:4px;max-width:70ch}
-.tags{display:flex;flex-wrap:wrap;gap:6px;margin-top:12px}
-.tags span{font-size:14px;padding:2px 10px;border-radius:20px;background:var(--surface);border:1px solid var(--line);color:var(--muted)}
-.gallery{display:grid;grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:8px;margin-top:14px}
-.gallery img{aspect-ratio:4/3;object-fit:cover;border-radius:8px;border:1px solid var(--line)}
-.link{display:inline-block;margin-top:10px;font-weight:600}
+/* Cards */
+.cards{display:grid;gap:22px}
+.cards.two{grid-template-columns:repeat(auto-fill,minmax(min(100%,480px),1fr))}
+.card{position:relative;background:var(--surface);border-radius:18px;padding:26px 26px 24px 30px;box-shadow:var(--shadow);
+  overflow:hidden;transition:transform .2s,box-shadow .2s}
+.card::before{content:"";position:absolute;left:0;top:0;bottom:0;width:6px;background:linear-gradient(180deg,var(--purple),var(--orange))}
+.card:hover{transform:translateY(-4px);box-shadow:0 16px 40px rgba(110,63,196,.18)}
+.when{display:inline-block;font-size:14px;font-weight:600;color:var(--orange);background:var(--orange-soft);
+  padding:3px 12px;border-radius:20px;margin-bottom:12px}
+.card h3{font-size:21px;color:var(--ink)}
+.org{color:var(--purple);font-weight:600;margin-top:4px;font-size:16px}
+.card ul{margin:12px 0 0 20px}
+.card li{margin-top:5px}
+.card li::marker{color:var(--orange)}
+.tags{display:flex;flex-wrap:wrap;gap:6px;margin-top:14px}
+.tags span{font-size:13px;font-weight:600;padding:3px 11px;border-radius:20px;background:var(--purple-soft);color:var(--purple)}
+.link{display:inline-block;margin-top:16px;font-weight:700;font-size:15px;text-decoration:none;color:#fff;
+  background:linear-gradient(90deg,var(--orange),#F5A04A);padding:8px 18px;border-radius:24px;text-shadow:none}
+.link:hover{filter:brightness(1.07)}
+.gallery{display:grid;grid-template-columns:repeat(auto-fill,minmax(130px,1fr));gap:8px;margin-top:16px}
+.gallery img{aspect-ratio:4/3;object-fit:cover;border-radius:10px}
 
-.about{max-width:68ch;font-size:20px}
-.skills{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:28px}
-.skills h3{font-size:18px;margin-bottom:6px}
-.skills p{color:var(--muted)}
-.contact p{font-size:20px;margin-bottom:8px}
-footer{text-align:center;color:var(--muted);font-size:15px;padding:32px 0 48px}
+/* Skills */
+.skills{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,320px),1fr));gap:20px}
+.skill{background:var(--surface);border-radius:18px;padding:22px;box-shadow:var(--shadow)}
+.skill h3{font-size:18px;margin-bottom:12px;display:flex;align-items:center;gap:10px}
+.skill h3::before{content:"";width:12px;height:12px;border-radius:4px;background:var(--purple)}
+.skill:nth-child(even) h3::before{background:var(--orange)}
+.chips{display:flex;flex-wrap:wrap;gap:8px}
+.chips span{font-size:14px;padding:4px 12px;border-radius:20px;border:1.5px solid var(--line);color:var(--ink);background:var(--bg)}
+
+/* Contact */
+.contact-card{border-radius:24px;padding:48px 32px;text-align:center;color:#fff;
+  background:radial-gradient(circle at 85% 20%,rgba(242,133,31,.55),transparent 45%),linear-gradient(135deg,#3A2161,#6E3FC4)}
+.contact-card h2{font-size:clamp(28px,4vw,40px)}
+.contact-card p{opacity:.9;margin-top:10px;font-size:19px}
+.cbtns{display:flex;flex-wrap:wrap;gap:14px;justify-content:center;margin-top:26px}
+.cbtn{padding:12px 24px;border-radius:28px;font-weight:700;text-decoration:none;color:#2A1B3D;background:#fff}
+.cbtn.orange{background:var(--orange);color:#fff}
+
+footer{text-align:center;color:#CFC6DD;font-size:15px;padding:28px 0 36px;background:#1E1529}
 
 @media (max-width:760px){
   .about-grid{grid-template-columns:1fr}
-  .entry{grid-template-columns:1fr;gap:6px}
-  section{padding:56px 0}
+  .stats{grid-template-columns:repeat(2,1fr)}
+  .band{padding:56px 0}
+  .card{padding:22px 20px 20px 24px}
 }
 </style>
 </head>
 <body>
 
 <header class="top">
-  <div class="avatar">
+  <div class="avatar"><div class="in">
     <img src="profile.jpg" alt="A’isyah Kamilah Md Hassan" onerror="this.remove()">
     <span aria-hidden="true">AK</span>
-  </div>
+  </div></div>
   <h1>A’isyah Kamilah Md Hassan</h1>
   <p class="sub">Aspiring Data Analyst | Mathematical Modelling and Analytics, UiTM Kuala Terengganu</p>
   <p class="links">
@@ -126,46 +170,59 @@ footer{text-align:center;color:var(--muted);font-size:15px;padding:32px 0 48px}
 </div></nav>
 
 <main>
-  <section id="about">
-    <h2>About</h2>
+  <section id="about" class="band"><div class="wrap">
+    <div class="head"><h2>About</h2></div>
     <div class="about-grid">
       <p class="about">I am a final-year BSc (Hons.) Mathematical Modelling and Analytics student at UiTM Kuala Terengganu with a CGPA of 3.57. I am currently a Data Analyst intern in Customer Experience at FedEx in Petaling Jaya, where I build workflow automations and dashboards with Microsoft 365 tools. Outside class, I lead student clubs, emcee university events and volunteer in community programmes. I enjoy turning slow manual work into simple systems people actually use.</p>
-    <div class="plot" aria-label="Convergence curve from my final year project">
-      <svg viewBox="0 0 400 240" role="img">
-        <line x1="40" y1="20" x2="40" y2="200" stroke="var(--line)" stroke-width="2"/>
-        <line x1="40" y1="200" x2="385" y2="200" stroke="var(--line)" stroke-width="2"/>
-        <path id="curve" d="M45 30 C 70 120, 95 160, 140 178 S 260 192, 380 194" fill="none" stroke="var(--accent)" stroke-width="4" stroke-linecap="round"/>
-        <circle cx="380" cy="194" r="6" fill="var(--gold)"/>
-        <text x="44" y="226" font-size="13" fill="var(--muted)">iterations</text>
-        <text x="14" y="120" font-size="13" fill="var(--muted)" transform="rotate(-90 14 120)">objective value</text>
-      </svg>
-      <p class="cap">Objective value dropping as the optimizer converges, the idea behind my final year project.</p>
+      <div class="plot" aria-label="Convergence curve from my final year project">
+        <svg viewBox="0 0 400 240" role="img">
+          <defs><linearGradient id="g" x1="0" x2="1"><stop offset="0" stop-color="#6E3FC4"/><stop offset="1" stop-color="#F2851F"/></linearGradient></defs>
+          <line x1="40" y1="20" x2="40" y2="200" stroke="var(--line)" stroke-width="2"/>
+          <line x1="40" y1="200" x2="385" y2="200" stroke="var(--line)" stroke-width="2"/>
+          <path id="curve" d="M45 30 C 70 120, 95 160, 140 178 S 260 192, 380 194" fill="none" stroke="url(#g)" stroke-width="5" stroke-linecap="round"/>
+          <circle cx="380" cy="194" r="7" fill="#F2851F"/>
+          <text x="44" y="226" font-size="13" fill="var(--muted)">iterations</text>
+          <text x="14" y="120" font-size="13" fill="var(--muted)" transform="rotate(-90 14 120)">objective value</text>
+        </svg>
+        <p class="cap">Objective value dropping as the optimizer converges, the idea behind my final year project.</p>
+      </div>
     </div>
+    <div class="stats">
+      <div class="stat"><b>3.57</b><span>CGPA</span></div>
+      <div class="stat"><b>2</b><span>Research papers</span></div>
+      <div class="stat"><b>150+</b><span>Club members led</span></div>
+      <div class="stat"><b>30+</b><span>Programmes and events</span></div>
     </div>
-  </section>
+  </div></section>
 
-  <section id="experience"><h2>Experience</h2><div id="experience-list"></div></section>
-  <section id="projects"><h2>Projects</h2><div id="projects-list"></div></section>
-  <section id="research"><h2>Research</h2><div id="research-list"></div></section>
-  <section id="activities"><h2>Leadership and activities</h2><div id="activities-list"></div></section>
-  <section id="achievements"><h2>Achievements and certifications</h2><div id="achievements-list"></div></section>
+  <section id="experience" class="band"><div class="wrap"><div class="head"><h2>Experience</h2></div><div id="experience-list" class="cards"></div></div></section>
+  <section id="projects" class="band"><div class="wrap"><div class="head"><h2>Projects</h2></div><div id="projects-list" class="cards two"></div></div></section>
+  <section id="research" class="band"><div class="wrap"><div class="head"><h2>Research</h2></div><div id="research-list" class="cards"></div></div></section>
+  <section id="activities" class="band"><div class="wrap"><div class="head"><h2>Leadership and activities</h2></div><div id="activities-list" class="cards two"></div></div></section>
+  <section id="achievements" class="band"><div class="wrap"><div class="head"><h2>Achievements</h2></div><div id="achievements-list" class="cards two"></div></div></section>
 
-  <section id="skills">
-    <h2>Skills</h2>
+  <section id="skills" class="band"><div class="wrap">
+    <div class="head"><h2>Skills</h2></div>
     <div class="skills">
-      <div><h3>Programming</h3><p>Python, SQL, R, MATLAB, Java, C++, C, PHP, HTML</p></div>
-      <div><h3>Analytics methods</h3><p>Data cleaning, statistical analysis, classification, clustering, regression, predictive modelling, optimization</p></div>
-      <div><h3>Tools</h3><p>Power BI, Excel, SPSS, WEKA, Microsoft Access, SigmaPlot, Maple, QM for Windows</p></div>
-      <div><h3>Microsoft 365</h3><p>Power Automate, Power Apps, SharePoint</p></div>
-      <div><h3>Languages</h3><p>Malay (native), English (proficient), Arabic (basic)</p></div>
+      <div class="skill"><h3>Programming</h3><div class="chips"><span>Python</span><span>SQL</span><span>R</span><span>MATLAB</span><span>Java</span><span>C++</span><span>C</span><span>PHP</span><span>HTML</span></div></div>
+      <div class="skill"><h3>Analytics methods</h3><div class="chips"><span>Data cleaning</span><span>Statistical analysis</span><span>Classification</span><span>Clustering</span><span>Regression</span><span>Predictive modelling</span><span>Optimization</span></div></div>
+      <div class="skill"><h3>Tools</h3><div class="chips"><span>Power BI</span><span>Excel</span><span>SPSS</span><span>WEKA</span><span>Microsoft Access</span><span>SigmaPlot</span><span>Maple</span><span>QM for Windows</span></div></div>
+      <div class="skill"><h3>Microsoft 365</h3><div class="chips"><span>Power Automate</span><span>Power Apps</span><span>SharePoint</span></div></div>
+      <div class="skill"><h3>Languages</h3><div class="chips"><span>Malay (native)</span><span>English (proficient)</span><span>Arabic (basic)</span></div></div>
     </div>
-  </section>
+  </div></section>
 
-  <section id="contact" class="contact">
-    <h2>Contact</h2>
-    <p>Email <a href="mailto:mdhassankamilah@gmail.com">mdhassankamilah@gmail.com</a></p>
-    <p>LinkedIn <a href="https://www.linkedin.com/in/aisyahkamilahmdhassan" target="_blank" rel="noopener">linkedin.com/in/aisyahkamilahmdhassan</a></p>
-  </section>
+  <section id="contact" class="band"><div class="wrap">
+    <div class="contact-card">
+      <h2>Let’s work together</h2>
+      <p>Open to data analyst roles and graduate opportunities from February 2027.</p>
+      <div class="cbtns">
+        <a class="cbtn orange" href="mailto:mdhassankamilah@gmail.com">Email me</a>
+        <a class="cbtn" href="https://www.linkedin.com/in/aisyahkamilahmdhassan" target="_blank" rel="noopener">LinkedIn</a>
+        <a class="cbtn" href="resume.pdf" download>Download resume</a>
+      </div>
+    </div>
+  </div></section>
 </main>
 
 <footer>© 2026 A’isyah Kamilah Md Hassan</footer>
@@ -291,7 +348,7 @@ const research = [
   {
     when: "2027 (upcoming)",
     title: "Hybrid conjugate gradient method using exact line search with its application to vehicle-bridge moving force identification",
-    org: "Graduate Digital Invention, Innovation & Design (GDIID) 2027, UiTM Cawangan Terengganu",
+    org: "Graduate Digital Invention, Innovation & Design (GDIID) 2025, UiTM Cawangan Terengganu",
     points: [
       "Built and tested four hybrid conjugate gradient methods (RMILLS, RMILHS, RMILDY and RMILLAMR) in MATLAB on 15 benchmark functions with up to 10,000 variables.",
       "RMILLAMR performed best, solving 98.81% of test problems with the fewest iterations and least CPU time.",
@@ -474,16 +531,14 @@ const achievements = [
 function esc(s){return String(s).replace(/[&<>"]/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]))}
 function render(id, items){
   document.getElementById(id).innerHTML = items.map(it => `
-    <article class="entry">
-      <div class="when">${esc(it.when)}</div>
-      <div>
-        <h3>${esc(it.title)}</h3>
-        <div class="org">${esc(it.org)}</div>
-        <ul>${it.points.map(p=>`<li>${esc(p)}</li>`).join("")}</ul>
-        ${it.tags && it.tags.length ? `<div class="tags">${it.tags.map(t=>`<span>${esc(t)}</span>`).join("")}</div>` : ""}
-        ${it.link ? `<a class="link" href="${esc(it.link)}" target="_blank" rel="noopener">View project</a>` : ""}
-        ${it.images && it.images.length ? `<div class="gallery">${it.images.map(src=>`<img src="${esc(src)}" alt="${esc(it.title)}" loading="lazy">`).join("")}</div>` : ""}
-      </div>
+    <article class="card">
+      <span class="when">${esc(it.when)}</span>
+      <h3>${esc(it.title)}</h3>
+      <div class="org">${esc(it.org)}</div>
+      <ul>${it.points.map(p=>`<li>${esc(p)}</li>`).join("")}</ul>
+      ${it.tags && it.tags.length ? `<div class="tags">${it.tags.map(t=>`<span>${esc(t)}</span>`).join("")}</div>` : ""}
+      ${it.link ? `<a class="link" href="${esc(it.link)}" target="_blank" rel="noopener">View project →</a>` : ""}
+      ${it.images && it.images.length ? `<div class="gallery">${it.images.map(src=>`<img src="${esc(src)}" alt="${esc(it.title)}" loading="lazy">`).join("")}</div>` : ""}
     </article>`).join("");
 }
 render("experience-list", experience);
