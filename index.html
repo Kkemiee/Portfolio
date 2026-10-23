@@ -10,14 +10,14 @@
 <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700&family=Source+Sans+3:wght@400;600&display=swap" rel="stylesheet">
 <style>
 :root{
-  --bg:#F3F6F8; --surface:#FFFFFF; --ink:#14213D; --muted:#5A6478;
-  --accent:#1F7A8C; --gold:#D99A00; --line:#D9E1E7;
+  --bg:#F4F4F6; --surface:#FFFFFF; --ink:#1C1B1F; --muted:#5F5B66;
+  --accent:#7A3E78; --gold:#A76BA5; --line:#E1DEE4;
   color-scheme:light;
 }
 @media (prefers-color-scheme:dark){
   :root{
-    --bg:#0F1A2E; --surface:#16243D; --ink:#E8EEF4; --muted:#A3B0C2;
-    --accent:#4FB3C4; --gold:#F2B833; --line:#26375A;
+    --bg:#17141A; --surface:#221D26; --ink:#EEE9F0; --muted:#ABA3B0;
+    --accent:#C792C5; --gold:#D9A6D6; --line:#3A3240;
     color-scheme:dark;
   }
 }
@@ -30,25 +30,39 @@ a{color:var(--accent)}
 a:focus-visible,button:focus-visible{outline:3px solid var(--gold);outline-offset:3px}
 img{max-width:100%;display:block}
 
-nav{position:sticky;top:0;z-index:10;background:var(--bg);border-bottom:1px solid var(--line);
-  padding-top:env(safe-area-inset-top,0px)}
-nav .in{max-width:1080px;margin:auto;padding:14px 24px;display:flex;gap:20px;align-items:center;overflow-x:auto}
-nav .name{font-family:"Bricolage Grotesque";font-weight:700;margin-right:auto;white-space:nowrap}
-nav a{color:var(--muted);text-decoration:none;white-space:nowrap;font-size:16px}
-nav a:hover{color:var(--ink)}
+/* Header */
+.top{position:relative;color:#fff;text-align:center;text-shadow:0 2px 10px rgba(0,0,0,.55);
+  background:linear-gradient(rgba(28,20,34,.55),rgba(52,26,60,.72)),url("header-bg.jpg") center/cover no-repeat,linear-gradient(160deg,#1C1B1F 30%,#4A2849);
+  padding:calc(56px + env(safe-area-inset-top,0px)) 24px 0}
+.avatar{width:180px;height:180px;margin:0 auto;border-radius:50%;border:5px solid #C99BC7;overflow:hidden;
+  background:#7A3E78;display:grid;place-items:center}
+.avatar>*{grid-area:1/1}
+.avatar img{width:100%;height:100%;object-fit:cover;position:relative;z-index:1}
+.avatar span{font-family:"Bricolage Grotesque",system-ui,sans-serif;font-size:56px;font-weight:700;color:#fff}
+.top h1{font-size:clamp(26px,4.4vw,46px);letter-spacing:.04em;text-transform:uppercase;margin-top:26px}
+.top .sub{font-size:clamp(17px,2vw,21px);margin-top:12px;opacity:.92}
+.top .links{margin-top:12px;font-size:clamp(16px,1.8vw,19px);display:flex;flex-wrap:wrap;justify-content:center;row-gap:6px}
+@media (max-width:600px){.top .links{flex-direction:column;align-items:center}.top .links .sep{display:none}}
+.top .links a{color:#E8C9E6;font-weight:600;text-decoration:none}
+.top .links a:hover{text-decoration:underline}
+.top .links .sep{opacity:.6;margin:0 8px}
+.top .rule{max-width:1180px;height:4px;background:#9C5E9A;margin:28px auto 0}
+.top .pad{height:48px}
+
+nav{position:sticky;top:0;z-index:10;background:var(--surface);border-bottom:1px solid var(--line);
+  box-shadow:0 2px 8px rgba(0,0,0,.06);padding-top:env(safe-area-inset-top,0px)}
+nav .in{max-width:1180px;margin:auto;padding:18px 24px;display:flex;gap:36px;justify-content:center;overflow-x:auto}
+nav a{color:var(--ink);text-decoration:none;white-space:nowrap;font-size:15px;font-weight:600;letter-spacing:.08em;text-transform:uppercase}
+nav a:hover{color:var(--accent)}
+@media (max-width:1000px){nav .in{justify-content:flex-start;gap:24px}}
 
 main{max-width:1080px;margin:auto;padding:0 24px}
 section{padding:72px 0;border-bottom:1px solid var(--line)}
 section:last-child{border-bottom:none}
 h2{font-size:clamp(28px,4vw,40px);margin-bottom:28px}
 
-/* Hero */
-.hero{display:grid;grid-template-columns:1.1fr 1fr;gap:48px;align-items:center;padding:80px 0 72px}
-.hero h1{font-size:clamp(40px,7vw,76px);letter-spacing:-0.02em}
-.hero p{color:var(--muted);max-width:52ch;margin-top:18px;font-size:20px}
-.btns{display:flex;gap:12px;flex-wrap:wrap;margin-top:28px}
-.btn{display:inline-block;padding:11px 20px;border-radius:8px;text-decoration:none;font-weight:600;border:2px solid var(--ink);color:var(--ink)}
-.btn.primary{background:var(--ink);color:var(--bg)}
+/* About */
+.about-grid{display:grid;grid-template-columns:1.2fr 1fr;gap:40px;align-items:center}
 .plot{background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:20px}
 .plot svg{width:100%;height:auto}
 .plot .cap{font-size:15px;color:var(--muted);margin-top:8px}
@@ -78,7 +92,7 @@ h2{font-size:clamp(28px,4vw,40px);margin-bottom:28px}
 footer{text-align:center;color:var(--muted);font-size:15px;padding:32px 0 48px}
 
 @media (max-width:760px){
-  .hero{grid-template-columns:1fr;padding-top:48px}
+  .about-grid{grid-template-columns:1fr}
   .entry{grid-template-columns:1fr;gap:6px}
   section{padding:56px 0}
 }
@@ -86,28 +100,36 @@ footer{text-align:center;color:var(--muted);font-size:15px;padding:32px 0 48px}
 </head>
 <body>
 
+<header class="top">
+  <div class="avatar">
+    <img src="profile.jpg" alt="A’isyah Kamilah Md Hassan" onerror="this.remove()">
+    <span aria-hidden="true">AK</span>
+  </div>
+  <h1>A’isyah Kamilah Md Hassan</h1>
+  <p class="sub">Aspiring Data Analyst | Mathematical Modelling and Analytics, UiTM Kuala Terengganu</p>
+  <p class="links">
+    <a href="mailto:mdhassankamilah@gmail.com">mdhassankamilah@gmail.com</a><span class="sep">|</span><a href="https://www.linkedin.com/in/aisyahkamilahmdhassan" target="_blank" rel="noopener">LinkedIn Profile</a><span class="sep">|</span><a href="resume.pdf" download>Download PDF Resume</a>
+  </p>
+  <div class="rule"></div>
+  <div class="pad"></div>
+</header>
+
 <nav><div class="in">
-  <span class="name">A’isyah Kamilah Md Hassan</span>
   <a href="#about">About</a>
   <a href="#experience">Experience</a>
   <a href="#projects">Projects</a>
   <a href="#research">Research</a>
-  <a href="#activities">Activities</a>
+  <a href="#activities">Leadership</a>
   <a href="#achievements">Achievements</a>
   <a href="#skills">Skills</a>
   <a href="#contact">Contact</a>
 </div></nav>
 
 <main>
-  <div class="hero">
-    <div>
-      <h1>A’isyah Kamilah Md Hassan</h1>
-      <p>Final-year Mathematical Modelling and Analytics student and aspiring data analyst. I build models that find the best answer and automations that save people time.</p>
-      <div class="btns">
-        <a class="btn primary" href="#projects">See my projects</a>
-        <a class="btn" href="resume.pdf" download>Download resume</a>
-      </div>
-    </div>
+  <section id="about">
+    <h2>About</h2>
+    <div class="about-grid">
+      <p class="about">I am a final-year BSc (Hons.) Mathematical Modelling and Analytics student at UiTM Kuala Terengganu with a CGPA of 3.57. I am currently a Data Analyst intern in Customer Experience at FedEx in Petaling Jaya, where I build workflow automations and dashboards with Microsoft 365 tools. Outside class, I lead student clubs, emcee university events and volunteer in community programmes. I enjoy turning slow manual work into simple systems people actually use.</p>
     <div class="plot" aria-label="Convergence curve from my final year project">
       <svg viewBox="0 0 400 240" role="img">
         <line x1="40" y1="20" x2="40" y2="200" stroke="var(--line)" stroke-width="2"/>
@@ -119,11 +141,7 @@ footer{text-align:center;color:var(--muted);font-size:15px;padding:32px 0 48px}
       </svg>
       <p class="cap">Objective value dropping as the optimizer converges, the idea behind my final year project.</p>
     </div>
-  </div>
-
-  <section id="about">
-    <h2>About</h2>
-    <p class="about">I am a final-year BSc (Hons.) Mathematical Modelling and Analytics student at UiTM Kuala Terengganu with a CGPA of 3.57. I am currently a Data Analyst intern in Customer Experience at FedEx in Petaling Jaya, where I build workflow automations and dashboards with Microsoft 365 tools. Outside class, I lead student clubs, emcee university events and volunteer in community programmes. I enjoy turning slow manual work into simple systems people actually use.</p>
+    </div>
   </section>
 
   <section id="experience"><h2>Experience</h2><div id="experience-list"></div></section>
@@ -207,7 +225,7 @@ const projects = [
       "TTLAMR gave the lowest objective value (5.5709) on the radiotherapy problem."
     ],
     tags: ["MATLAB", "Optimization", "Numerical methods"],
-    link: "",
+    link: "https://doi.org/10.47772/IJRISS.2026.100900333",
     images: []
   },
   {
@@ -271,14 +289,30 @@ const projects = [
 
 const research = [
   {
-    when: "2026",
-    title: "Your journal article title here",
-    org: "International Journal of Research and Innovation in Social Science (IJRISS)",
+    when: "2027 (upcoming)",
+    title: "Hybrid conjugate gradient method using exact line search with its application to vehicle-bridge moving force identification",
+    org: "Graduate Digital Invention, Innovation & Design (GDIID) 2027, UiTM Cawangan Terengganu",
     points: [
-      "Co-authored with Dr. Norhaslinda Zull Pakkal, Dr. Nurul Hajar Mohd Yussoff and Nur Syarafina Mohamed."
+      "Built and tested four hybrid conjugate gradient methods (RMILLS, RMILHS, RMILDY and RMILLAMR) in MATLAB on 15 benchmark functions with up to 10,000 variables.",
+      "RMILLAMR performed best, solving 98.81% of test problems with the fewest iterations and least CPU time.",
+      "Applied RMILLAMR to identify moving vehicle forces on a bridge, reaching a relative error of only 5.01% at 1% noise.",
+      "Co-authored with Muhammad Danial Hakimi Mohd Shukri, Muhammad Najhan Abdul Rahaman, Nur Aina Farihah Mohd Fauzi and Dr. Norhaslinda Zullpakkal."
     ],
-    tags: ["Optimization", "Publication"],
+    tags: ["MATLAB", "Optimization", "Structural health monitoring"],
     link: "",
+    images: []
+  },
+  {
+    when: "Oct 2026",
+    title: "Performance of three-term conjugate gradient methods under exact line search for fluence map optimization in intensity-modulated radiation therapy",
+    org: "International Journal of Research and Innovation in Social Science (IJRISS), Vol. 10, Issue 9, first author",
+    points: [
+      "Compared five three-term conjugate gradient methods in MATLAB on 308 test problems with up to 10,000 variables. TTLAMR and TTSMAR solved 100% of them.",
+      "Applied all five methods to a real prostate radiotherapy case (CORT dataset, 7 beams, 986 beamlets). TTLAMR reached the lowest objective value and the leading methods delivered about 79.2 Gy to the tumour.",
+      "Co-authored with Dr. Norhaslinda Zullpakkal, Nur Syarafina Mohamed and Dr. Nurul Hajar."
+    ],
+    tags: ["MATLAB", "Optimization", "Radiotherapy planning"],
+    link: "https://doi.org/10.47772/IJRISS.2026.100900333",
     images: []
   }
 ];
