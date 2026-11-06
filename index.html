@@ -3,290 +3,536 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>A’isyah Kamilah Md Hassan | Portfolio</title>
-<meta name="description" content="Portfolio of A’isyah Kamilah Md Hassan, aspiring data analyst and Mathematical Modelling and Analytics student">
+<title>A’isyah Kamilah Md Hassan | Process Improvement and Data Analytics</title>
+<meta name="description" content="Portfolio of A’isyah Kamilah Md Hassan. Continuous process improvement and data analytics, with automation case studies from FedEx and published optimization research.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700&family=Source+Sans+3:wght@400;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 <style>
 :root{
-  --bg:#F3F1F7; --band:#FFFFFF; --surface:#FFFFFF; --ink:#221B2E; --muted:#615A6E;
-  --purple:#6E3FC4; --purple-soft:#EEE7FB; --deep:#2A1B3D; --orange:#F2851F; --orange-soft:#FFF0E2;
-  --gray:#8C8697; --line:#E4E0EC; --shadow:0 10px 30px rgba(52,30,90,.10);
-  --accent:var(--purple); --gold:var(--orange);
+  --bg:#F6F5F9; --alt:#FFFFFF; --surface:#FFFFFF; --ink:#1B1724; --muted:#5E5869; --faint:#8A8494;
+  --line:#E6E2EE; --purple:#5B34B0; --purple-2:#7B55D3; --purple-soft:#EFEAFB;
+  --orange:#E8761B; --orange-soft:#FDF0E4; --green:#1F9D61;
+  --deep:#231537; --deep-2:#33204F;
+  --shadow:0 1px 2px rgba(30,20,50,.04),0 8px 24px rgba(30,20,50,.06);
+  --radius:16px;
   color-scheme:light;
 }
 @media (prefers-color-scheme:dark){
   :root{
-    --bg:#15111C; --band:#1B1624; --surface:#231C2F; --ink:#EEE8F5; --muted:#ADA5BA;
-    --purple:#B48CF5; --purple-soft:#2E2442; --deep:#0F0B15; --orange:#FFA552; --orange-soft:#3A2818;
-    --gray:#8F889C; --line:#342B44; --shadow:0 10px 30px rgba(0,0,0,.35);
+    --bg:#121017; --alt:#17141E; --surface:#1E1A27; --ink:#EEEAF4; --muted:#ABA4B8; --faint:#857E91;
+    --line:#2F2A3B; --purple:#A688F2; --purple-2:#BBA2F7; --purple-soft:#2A2340;
+    --orange:#FF9A45; --orange-soft:#33251A; --green:#4CC98C;
+    --deep:#0E0B14; --deep-2:#1A1426;
+    --shadow:0 1px 2px rgba(0,0,0,.3),0 8px 24px rgba(0,0,0,.3);
     color-scheme:dark;
   }
 }
 *{box-sizing:border-box;margin:0;padding:0}
-html{scroll-behavior:smooth;scroll-padding-top:70px}
-body{background:var(--bg);color:var(--ink);font-family:"Source Sans 3",system-ui,sans-serif;font-size:18px;line-height:1.6;
-  padding-bottom:env(safe-area-inset-bottom,0px)}
-h1,h2,h3{font-family:"Bricolage Grotesque",system-ui,sans-serif;line-height:1.15}
+html{scroll-behavior:smooth;scroll-padding-top:76px}
+body{background:var(--bg);color:var(--ink);font-family:"Plus Jakarta Sans",system-ui,-apple-system,"Segoe UI",sans-serif;
+  font-size:17px;line-height:1.65;-webkit-font-smoothing:antialiased;padding-bottom:env(safe-area-inset-bottom,0px)}
+h1,h2,h3,h4{line-height:1.2;letter-spacing:-.01em}
 a{color:var(--purple)}
-a:focus-visible,button:focus-visible{outline:3px solid var(--orange);outline-offset:3px}
+a:focus-visible,button:focus-visible{outline:3px solid var(--orange);outline-offset:3px;border-radius:6px}
 img{max-width:100%;display:block}
+.wrap{max-width:1140px;margin:auto;padding:0 24px}
+.num{font-variant-numeric:tabular-nums}
 
-/* Header */
-.top{position:relative;color:#fff;text-align:center;text-shadow:0 2px 10px rgba(0,0,0,.55);
-  background:linear-gradient(rgba(28,20,34,.50),rgba(52,26,60,.70)),url("header-bg.jpg") center/cover no-repeat,linear-gradient(160deg,#1C1B1F 30%,#4A2849);
-  padding:calc(56px + env(safe-area-inset-top,0px)) 24px 0}
-.avatar{width:184px;height:184px;margin:0 auto;border-radius:50%;padding:5px;
-  background:conic-gradient(from 200deg,var(--orange),#B48CF5,#6E3FC4,var(--orange));box-shadow:0 0 40px rgba(242,133,31,.35)}
-.avatar .in{width:100%;height:100%;border-radius:50%;overflow:hidden;background:#6E3FC4;display:grid;place-items:center}
+/* ---------- Hero ---------- */
+.hero{position:relative;color:#fff;text-align:center;
+  background:linear-gradient(180deg,rgba(24,14,38,.62),rgba(35,21,55,.86)),url("header-bg.jpg") center/cover no-repeat,var(--deep);
+  padding:calc(64px + env(safe-area-inset-top,0px)) 24px 120px}
+.avatar{width:156px;height:156px;margin:0 auto;border-radius:50%;padding:4px;background:linear-gradient(135deg,#F4A261,var(--orange) 40%,#7B55D3)}
+.avatar .in{width:100%;height:100%;border-radius:50%;overflow:hidden;background:#5B34B0;display:grid;place-items:center;border:3px solid #231537}
 .avatar .in>*{grid-area:1/1}
 .avatar img{width:100%;height:100%;object-fit:cover;position:relative;z-index:1}
-.avatar span{font-family:"Bricolage Grotesque",system-ui,sans-serif;font-size:56px;font-weight:700;color:#fff}
-.top h1{font-size:clamp(26px,4.4vw,46px);letter-spacing:.04em;text-transform:uppercase;margin-top:26px}
-.top .sub{font-size:clamp(17px,2vw,21px);margin-top:12px;opacity:.95}
-.top .links{margin-top:14px;font-size:clamp(16px,1.8vw,19px);display:flex;flex-wrap:wrap;justify-content:center;row-gap:6px}
-.top .links a{color:#FFB067;font-weight:600;text-decoration:none}
-.top .links a:hover{text-decoration:underline}
-.top .links .sep{opacity:.6;margin:0 10px}
-@media (max-width:600px){.top .links{flex-direction:column;align-items:center}.top .links .sep{display:none}}
-.top .rule{max-width:1180px;height:4px;border-radius:4px;background:linear-gradient(90deg,#6E3FC4,#B48CF5,var(--orange));margin:28px auto 0}
-.top .pad{height:44px}
+.avatar span{font-size:48px;font-weight:800;color:#fff}
+.status{display:inline-flex;align-items:center;gap:8px;margin-top:22px;padding:6px 14px;border-radius:999px;
+  background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.18);font-size:14px;font-weight:500;backdrop-filter:blur(6px)}
+.status i{width:8px;height:8px;border-radius:50%;background:#4CC98C;box-shadow:0 0 0 4px rgba(76,201,140,.25)}
+.hero h1{font-size:clamp(32px,5.4vw,58px);font-weight:800;margin-top:18px;letter-spacing:-.02em}
+.role{margin-top:10px;font-size:clamp(14px,1.6vw,16px);font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:#FFB074}
+.tagline{max-width:640px;margin:16px auto 0;font-size:clamp(17px,2vw,20px);color:rgba(255,255,255,.86)}
+.ctas{display:flex;flex-wrap:wrap;gap:12px;justify-content:center;margin-top:30px}
+.btn{display:inline-flex;align-items:center;gap:8px;padding:12px 22px;border-radius:10px;font-weight:700;font-size:15px;text-decoration:none;transition:transform .15s,background .15s}
+.btn:hover{transform:translateY(-1px)}
+.btn.primary{background:var(--orange);color:#fff}
+.btn.primary:hover{background:#D9690F}
+.btn.ghost{color:#fff;border:1px solid rgba(255,255,255,.35);background:rgba(255,255,255,.06)}
+.btn.ghost:hover{background:rgba(255,255,255,.14)}
+.btn svg{width:18px;height:18px}
 
-nav{position:sticky;top:0;z-index:10;background:var(--surface);border-bottom:1px solid var(--line);
-  box-shadow:0 4px 16px rgba(52,30,90,.08);padding-top:env(safe-area-inset-top,0px)}
-nav .in{max-width:1180px;margin:auto;padding:0 24px;display:flex;gap:34px;justify-content:center;overflow-x:auto}
-nav a{position:relative;color:var(--ink);text-decoration:none;white-space:nowrap;font-size:15px;font-weight:600;
-  letter-spacing:.08em;text-transform:uppercase;padding:18px 0}
-nav a::after{content:"";position:absolute;left:0;right:0;bottom:10px;height:3px;border-radius:3px;background:var(--orange);
-  transform:scaleX(0);transition:transform .2s}
-nav a:hover{color:var(--purple)}
-nav a:hover::after{transform:scaleX(1)}
-@media (max-width:1000px){nav .in{justify-content:flex-start;gap:24px}}
+/* ---------- Metrics ---------- */
+.metrics{position:relative;margin-top:-72px;margin-bottom:24px;z-index:2}
+.metrics .grid{display:grid;grid-template-columns:repeat(5,1fr);background:var(--surface);border:1px solid var(--line);
+  border-radius:18px;box-shadow:0 20px 50px rgba(35,21,55,.14);overflow:hidden}
+.metric{padding:24px 20px;border-right:1px solid var(--line)}
+.metric:last-child{border-right:none}
+.metric b{display:block;font-size:clamp(26px,3vw,34px);font-weight:800;color:var(--purple);line-height:1.1;font-variant-numeric:tabular-nums}
+.metric:nth-child(-n+2) b{color:var(--orange)}
+.metric span{display:block;margin-top:6px;font-size:14px;color:var(--muted);line-height:1.4}
 
-/* Bands */
-main{counter-reset:sec}
-.band{padding:80px 0;background:var(--bg)}
-.band:nth-of-type(even){background:var(--band)}
-.wrap{max-width:1120px;margin:auto;padding:0 24px}
-.head{display:flex;align-items:baseline;gap:14px;margin-bottom:36px;counter-increment:sec}
-.head::before{content:"0" counter(sec);font-family:"Bricolage Grotesque",system-ui,sans-serif;font-weight:700;
-  font-size:18px;color:var(--orange)}
-.head h2{font-size:clamp(30px,4vw,42px);color:var(--ink);position:relative;padding-bottom:10px}
-.head h2::after{content:"";position:absolute;left:0;bottom:0;width:64px;height:5px;border-radius:5px;
-  background:linear-gradient(90deg,var(--purple),var(--orange))}
+/* ---------- Nav ---------- */
+nav{position:sticky;top:0;z-index:20;background:color-mix(in srgb,var(--surface) 88%,transparent);backdrop-filter:blur(12px);
+  border-bottom:1px solid var(--line);padding-top:env(safe-area-inset-top,0px)}
+nav .in{max-width:1140px;margin:auto;padding:0 24px;display:flex;align-items:center;gap:28px;height:64px}
+.brand{font-weight:800;font-size:18px;color:var(--ink);text-decoration:none;white-space:nowrap;margin-right:auto}
+.brand em{font-style:normal;color:var(--orange)}
+.links{display:flex;gap:26px;overflow-x:auto;scrollbar-width:none}
+.links::-webkit-scrollbar{display:none}
+.links a{color:var(--muted);text-decoration:none;font-size:15px;font-weight:600;white-space:nowrap;padding:6px 0;border-bottom:2px solid transparent}
+.links a:hover{color:var(--ink)}
+.links a.on{color:var(--purple);border-bottom-color:var(--orange)}
+.navcta{padding:8px 16px;border-radius:9px;background:var(--purple);color:#fff;text-decoration:none;font-weight:700;font-size:14px;white-space:nowrap}
+@media (max-width:900px){.brand,.navcta{display:none}.links{gap:22px}}
+
+/* ---------- Sections ---------- */
+section{padding:96px 0}
+section.alt{background:var(--alt)}
+.eyebrow{font-size:13px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--orange)}
+.sh{margin-bottom:44px;max-width:720px}
+.sh h2{font-size:clamp(30px,3.8vw,42px);font-weight:800;margin-top:8px}
+.sh p{margin-top:12px;color:var(--muted);font-size:18px}
 
 /* About */
-.about-grid{display:grid;grid-template-columns:1.2fr 1fr;gap:40px;align-items:center}
-.about{font-size:20px}
-.stats{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:40px}
-.stat{background:var(--surface);border-radius:16px;padding:20px;box-shadow:var(--shadow);border-top:4px solid var(--purple)}
-.stat:nth-child(even){border-top-color:var(--orange)}
-.stat b{display:block;font-family:"Bricolage Grotesque",system-ui,sans-serif;font-size:34px;line-height:1;color:var(--purple)}
-.stat:nth-child(even) b{color:var(--orange)}
-.stat span{font-size:15px;color:var(--muted)}
-.plot{background:var(--surface);border-radius:18px;padding:22px;box-shadow:var(--shadow)}
-.plot svg{width:100%;height:auto}
-.plot .cap{font-size:15px;color:var(--muted);margin-top:8px}
-#curve{stroke-dasharray:1200;stroke-dashoffset:1200;animation:draw 2.4s ease-out .3s forwards}
-@keyframes draw{to{stroke-dashoffset:0}}
-@media (prefers-reduced-motion:reduce){#curve{animation:none;stroke-dashoffset:0}}
+.about{display:grid;grid-template-columns:1.25fr 1fr;gap:48px;align-items:start}
+.about p{font-size:18px;color:var(--muted)}
+.about p+p{margin-top:16px}
+.about strong{color:var(--ink);font-weight:700}
+.facts{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);padding:8px 24px;box-shadow:var(--shadow)}
+.fact{display:flex;justify-content:space-between;gap:16px;padding:14px 0;border-bottom:1px solid var(--line);font-size:15px}
+.fact:last-child{border-bottom:none}
+.fact span{color:var(--muted)}
+.fact b{text-align:right;font-weight:600}
+
+/* Case studies */
+.cases{display:grid;gap:28px}
+.case{background:var(--surface);border:1px solid var(--line);border-radius:20px;box-shadow:var(--shadow);overflow:hidden}
+.case-top{display:flex;flex-wrap:wrap;align-items:center;gap:12px;padding:28px 32px 0}
+.badge{font-size:12px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;padding:4px 10px;border-radius:6px}
+.badge.live{background:color-mix(in srgb,var(--green) 14%,transparent);color:var(--green)}
+.badge.ready{background:var(--purple-soft);color:var(--purple)}
+.badge.date{background:var(--orange-soft);color:var(--orange)}
+.case h3{font-size:clamp(22px,2.6vw,28px);font-weight:800;padding:12px 32px 0}
+.case .lede{padding:8px 32px 0;color:var(--muted);max-width:820px}
+.case-body{display:grid;grid-template-columns:1fr 1fr;gap:0;margin-top:24px;border-top:1px solid var(--line)}
+.col{padding:26px 32px}
+.col+.col{border-left:1px solid var(--line)}
+.col h4{font-size:13px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--faint);margin-bottom:10px}
+.col p,.col li{color:var(--muted);font-size:16px}
+.col ul{margin-left:18px}
+.col li{margin-top:6px}
+.col li::marker{color:var(--orange)}
+.impact{padding:26px 32px 30px;background:linear-gradient(180deg,var(--purple-soft),transparent 140%);border-top:1px solid var(--line)}
+.impact h4{font-size:13px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--purple);margin-bottom:16px}
+.kpis{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:14px}
+.kpi{background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:14px 16px}
+.kpi b{display:block;font-size:22px;font-weight:800;color:var(--ink);font-variant-numeric:tabular-nums}
+.kpi b .arrow{color:var(--orange);margin:0 4px}
+.kpi span{font-size:13px;color:var(--muted)}
+.bars{margin-bottom:20px;display:grid;gap:10px;max-width:640px}
+.bar{display:grid;grid-template-columns:120px 1fr 64px;align-items:center;gap:12px;font-size:14px}
+.bar .track{height:14px;border-radius:7px;background:color-mix(in srgb,var(--faint) 18%,transparent);overflow:hidden}
+.bar .fill{height:100%;border-radius:7px}
+.bar .lbl{color:var(--muted)}
+.bar .val{font-weight:700;font-variant-numeric:tabular-nums;text-align:right}
+.tools{display:flex;flex-wrap:wrap;gap:6px;padding:0 32px 26px}
+.tools span,.tags span{font-size:13px;font-weight:600;padding:4px 10px;border-radius:6px;background:var(--bg);border:1px solid var(--line);color:var(--muted)}
+.flow{display:flex;flex-wrap:wrap;align-items:stretch;gap:8px;margin-bottom:20px}
+.step{flex:1 1 150px;background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:12px 14px;font-size:14px;position:relative}
+.step b{display:block;font-size:12px;color:var(--orange);letter-spacing:.08em;text-transform:uppercase}
+.mini{display:flex;flex-wrap:wrap;gap:8px}
+.mini span{font-size:14px;padding:6px 12px;border-radius:8px;background:var(--surface);border:1px solid var(--line)}
+.mini span::before{content:"✓";color:var(--green);font-weight:800;margin-right:6px}
+
+/* Process */
+.process{display:grid;grid-template-columns:repeat(5,1fr);gap:16px;counter-reset:p}
+.pstep{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);padding:22px;box-shadow:var(--shadow);counter-increment:p}
+.pstep::before{content:counter(p,decimal-leading-zero);display:block;font-size:28px;font-weight:800;color:var(--purple);opacity:.9}
+.pstep h3{font-size:17px;font-weight:700;margin-top:8px}
+.pstep p{font-size:15px;color:var(--muted);margin-top:6px}
+
+/* Timeline */
+.timeline{position:relative;padding-left:28px}
+.timeline::before{content:"";position:absolute;left:7px;top:8px;bottom:8px;width:2px;background:var(--line)}
+.ti{position:relative;padding-bottom:30px}
+.ti:last-child{padding-bottom:0}
+.ti::before{content:"";position:absolute;left:-28px;top:8px;width:16px;height:16px;border-radius:50%;background:var(--surface);border:4px solid var(--purple)}
+.ti:first-child::before{border-color:var(--orange)}
+.ti .when{font-size:14px;font-weight:600;color:var(--orange)}
+.ti h3{font-size:20px;font-weight:700;margin-top:2px}
+.ti .org{color:var(--muted);font-weight:500}
+.ti ul{margin:10px 0 0 18px;color:var(--muted)}
+.ti li{margin-top:4px}
+.ti .tags{margin-top:12px}
 
 /* Cards */
-.cards{display:grid;gap:22px}
-.cards.two{grid-template-columns:repeat(auto-fill,minmax(min(100%,480px),1fr))}
-.card{position:relative;background:var(--surface);border-radius:18px;padding:26px 26px 24px 30px;box-shadow:var(--shadow);
-  overflow:hidden;transition:transform .2s,box-shadow .2s}
-.card::before{content:"";position:absolute;left:0;top:0;bottom:0;width:6px;background:linear-gradient(180deg,var(--purple),var(--orange))}
-.card:hover{transform:translateY(-4px);box-shadow:0 16px 40px rgba(110,63,196,.18)}
-.when{display:inline-block;font-size:14px;font-weight:600;color:var(--orange);background:var(--orange-soft);
-  padding:3px 12px;border-radius:20px;margin-bottom:12px}
-.card h3{font-size:21px;color:var(--ink)}
-.org{color:var(--purple);font-weight:600;margin-top:4px;font-size:16px}
-.card ul{margin:12px 0 0 20px}
+.cards{display:grid;gap:20px;grid-template-columns:repeat(auto-fill,minmax(min(100%,340px),1fr))}
+.cards.wide{grid-template-columns:1fr}
+.card{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);padding:24px;box-shadow:var(--shadow);
+  display:flex;flex-direction:column;transition:transform .2s,border-color .2s}
+.card:hover{transform:translateY(-3px);border-color:color-mix(in srgb,var(--purple) 40%,var(--line))}
+.card .when{font-size:13px;font-weight:700;color:var(--orange)}
+.card h3{font-size:18px;font-weight:700;margin-top:6px}
+.card .org{font-size:14px;color:var(--purple);font-weight:600;margin-top:4px}
+.card ul{margin:12px 0 0 18px;color:var(--muted);font-size:15px}
 .card li{margin-top:5px}
-.card li::marker{color:var(--orange)}
-.tags{display:flex;flex-wrap:wrap;gap:6px;margin-top:14px}
-.tags span{font-size:13px;font-weight:600;padding:3px 11px;border-radius:20px;background:var(--purple-soft);color:var(--purple)}
-.link{display:inline-block;margin-top:16px;font-weight:700;font-size:15px;text-decoration:none;color:#fff;
-  background:linear-gradient(90deg,var(--orange),#F5A04A);padding:8px 18px;border-radius:24px;text-shadow:none}
-.link:hover{filter:brightness(1.07)}
-.gallery{display:grid;grid-template-columns:repeat(auto-fill,minmax(130px,1fr));gap:8px;margin-top:16px}
-.gallery img{aspect-ratio:4/3;object-fit:cover;border-radius:10px}
+.card li::marker{color:var(--faint)}
+.tags{display:flex;flex-wrap:wrap;gap:6px;margin-top:16px}
+.card .tags{margin-top:auto;padding-top:16px}
+.more{display:inline-flex;align-items:center;gap:6px;margin-top:14px;font-weight:700;font-size:14px;color:var(--orange);text-decoration:none}
+.more:hover{text-decoration:underline}
+.gallery{display:grid;grid-template-columns:repeat(auto-fill,minmax(110px,1fr));gap:8px;margin-top:14px}
+.gallery img{aspect-ratio:4/3;object-fit:cover;border-radius:8px}
+
+/* Research */
+.paper{background:var(--surface);border:1px solid var(--line);border-left:4px solid var(--purple);border-radius:var(--radius);padding:26px 28px;box-shadow:var(--shadow)}
+.paper+.paper{margin-top:20px}
+.paper:first-child{border-left-color:var(--orange)}
+.paper ul{margin:12px 0 0 18px;color:var(--muted);font-size:15px}
+.paper li{margin-top:5px}
+
+/* Education */
+.edu{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,420px),1fr));gap:20px}
+.edu .card h3{font-size:20px}
+.gpa{display:inline-block;margin-top:12px;font-weight:800;font-size:15px;color:var(--purple);background:var(--purple-soft);padding:4px 12px;border-radius:8px}
 
 /* Skills */
 .skills{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,320px),1fr));gap:20px}
-.skill{background:var(--surface);border-radius:18px;padding:22px;box-shadow:var(--shadow)}
-.skill h3{font-size:18px;margin-bottom:12px;display:flex;align-items:center;gap:10px}
-.skill h3::before{content:"";width:12px;height:12px;border-radius:4px;background:var(--purple)}
-.skill:nth-child(even) h3::before{background:var(--orange)}
+.skill{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);padding:24px;box-shadow:var(--shadow)}
+.skill h3{font-size:16px;font-weight:700;margin-bottom:14px;display:flex;align-items:center;gap:10px}
+.skill h3 i{width:30px;height:30px;border-radius:8px;display:grid;place-items:center;background:var(--purple-soft);color:var(--purple);font-style:normal;font-size:15px}
+.skill:nth-child(even) h3 i{background:var(--orange-soft);color:var(--orange)}
 .chips{display:flex;flex-wrap:wrap;gap:8px}
-.chips span{font-size:14px;padding:4px 12px;border-radius:20px;border:1.5px solid var(--line);color:var(--ink);background:var(--bg)}
+.chips span{font-size:14px;padding:5px 12px;border-radius:8px;background:var(--bg);border:1px solid var(--line)}
 
 /* Contact */
-.contact-card{border-radius:24px;padding:48px 32px;text-align:center;color:#fff;
-  background:radial-gradient(circle at 85% 20%,rgba(242,133,31,.55),transparent 45%),linear-gradient(135deg,#3A2161,#6E3FC4)}
-.contact-card h2{font-size:clamp(28px,4vw,40px)}
-.contact-card p{opacity:.9;margin-top:10px;font-size:19px}
-.cbtns{display:flex;flex-wrap:wrap;gap:14px;justify-content:center;margin-top:26px}
-.cbtn{padding:12px 24px;border-radius:28px;font-weight:700;text-decoration:none;color:#2A1B3D;background:#fff}
-.cbtn.orange{background:var(--orange);color:#fff}
+.contact{background:linear-gradient(135deg,var(--deep),var(--deep-2) 60%,#4A2A7A);color:#fff;border-radius:24px;padding:56px 40px;
+  display:grid;grid-template-columns:1.3fr 1fr;gap:40px;align-items:center;position:relative;overflow:hidden}
+.contact::after{content:"";position:absolute;right:-80px;top:-80px;width:300px;height:300px;border-radius:50%;
+  background:radial-gradient(circle,rgba(232,118,27,.45),transparent 70%)}
+.contact h2{font-size:clamp(28px,3.6vw,40px);font-weight:800}
+.contact p{color:rgba(255,255,255,.8);margin-top:12px;font-size:18px}
+.clist{display:grid;gap:12px;position:relative;z-index:1}
+.clist a{display:flex;align-items:center;gap:12px;padding:14px 18px;border-radius:12px;background:rgba(255,255,255,.08);
+  border:1px solid rgba(255,255,255,.14);color:#fff;text-decoration:none;font-weight:600;overflow-wrap:anywhere}
+.clist a:hover{background:rgba(255,255,255,.15)}
+.clist a.hl{background:var(--orange);border-color:var(--orange)}
+.clist svg{width:20px;height:20px;flex:none}
 
-footer{text-align:center;color:#CFC6DD;font-size:15px;padding:28px 0 36px;background:#1E1529}
+footer{padding:32px 24px 40px;text-align:center;color:var(--faint);font-size:14px}
 
-@media (max-width:760px){
-  .about-grid{grid-template-columns:1fr}
-  .stats{grid-template-columns:repeat(3,1fr);gap:10px}
-  .stat{padding:16px 12px}
-  .stat b{font-size:28px}
-  .band{padding:56px 0}
-  .card{padding:22px 20px 20px 24px}
+@media (max-width:980px){
+  .metrics .grid{grid-template-columns:repeat(3,1fr)}
+  .metric:nth-child(3){border-right:none}
+  .metric:nth-child(-n+3){border-bottom:1px solid var(--line)}
+  .process{grid-template-columns:repeat(2,1fr)}
+  .about,.contact{grid-template-columns:1fr}
 }
+@media (max-width:700px){
+  section{padding:68px 0}
+  .metrics .grid{grid-template-columns:1fr 1fr}
+  .metric{border-right:none;border-bottom:1px solid var(--line)}
+  .metric:nth-child(odd){border-right:1px solid var(--line)}
+  .metric:last-child{grid-column:1/-1;border-right:none;border-bottom:none}
+  .case-body{grid-template-columns:1fr}
+  .col+.col{border-left:none;border-top:1px solid var(--line)}
+  .case-top,.case h3,.case .lede,.col,.impact,.tools{padding-left:22px;padding-right:22px}
+  .bar{grid-template-columns:92px 1fr 52px}
+  .process{grid-template-columns:1fr}
+  .contact{padding:40px 24px}
+}
+@media (prefers-reduced-motion:reduce){*{transition:none!important;scroll-behavior:auto!important}}
 </style>
 </head>
 <body>
 
-<header class="top">
+<header class="hero" id="top">
   <div class="avatar"><div class="in">
     <img src="profile.jpg" alt="A’isyah Kamilah Md Hassan" onerror="this.remove()">
     <span aria-hidden="true">AK</span>
   </div></div>
+  <div class="status"><i></i>Open to full-time roles from February 2027</div>
   <h1>A’isyah Kamilah Md Hassan</h1>
-  <p class="sub">Aspiring Data Analyst | Mathematical Modelling and Analytics, UiTM Kuala Terengganu</p>
-  <p class="links">
-    <a href="mailto:mdhassankamilah@gmail.com">mdhassankamilah@gmail.com</a><span class="sep">|</span><a href="https://www.linkedin.com/in/aisyahkamilahmdhassan" target="_blank" rel="noopener">LinkedIn Profile</a><span class="sep">|</span><a href="resume.pdf" download>Download PDF Resume</a>
-  </p>
-  <div class="rule"></div>
-  <div class="pad"></div>
+  <div class="role">Continuous Process Improvement &nbsp;·&nbsp; Data Analytics</div>
+  <p class="tagline">I map how work really gets done, find where time is lost, and rebuild it with automation and data.</p>
+  <div class="ctas">
+    <a class="btn primary" href="#work">View case studies
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+    <a class="btn ghost" href="resume.pdf" download>
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v12M7 10l5 5 5-5M5 21h14"/></svg>Download resume</a>
+    <a class="btn ghost" href="https://www.linkedin.com/in/aisyahkamilahmdhassan" target="_blank" rel="noopener">LinkedIn</a>
+  </div>
 </header>
 
+<div class="metrics"><div class="wrap"><div class="grid">
+  <div class="metric"><b>78%</b><span>faster pre-alert handling at FedEx</span></div>
+  <div class="metric"><b>~70 min</b><span>of manual work saved every day</span></div>
+  <div class="metric"><b>3</b><span>workflow systems built for one team</span></div>
+  <div class="metric"><b>2</b><span>research papers, one as first author</span></div>
+  <div class="metric"><b>3.57</b><span>CGPA, Mathematical Modelling and Analytics</span></div>
+</div></div></div>
+
 <nav><div class="in">
-  <a href="#about">About</a>
-  <a href="#experience">Experience</a>
-  <a href="#projects">Projects</a>
-  <a href="#research">Research</a>
-  <a href="#activities">Leadership</a>
-  <a href="#achievements">Achievements</a>
-  <a href="#skills">Skills</a>
-  <a href="#contact">Contact</a>
+  <a class="brand" href="#top">A’isyah<em>.</em></a>
+  <div class="links">
+    <a href="#about">About</a>
+    <a href="#work">Case studies</a>
+    <a href="#approach">Approach</a>
+    <a href="#experience">Experience</a>
+    <a href="#projects">Projects</a>
+    <a href="#research">Research</a>
+    <a href="#leadership">Leadership</a>
+    <a href="#skills">Skills</a>
+    <a href="#contact">Contact</a>
+  </div>
+  <a class="navcta" href="#contact">Get in touch</a>
 </div></nav>
 
 <main>
-  <section id="about" class="band"><div class="wrap">
-    <div class="head"><h2>About</h2></div>
-    <div class="about-grid">
-      <p class="about">I am a final-year BSc (Hons.) Mathematical Modelling and Analytics student at UiTM Kuala Terengganu with a CGPA of 3.57. I am currently a Data Analyst intern in Customer Experience at FedEx in Petaling Jaya, where I build workflow automations and dashboards with Microsoft 365 tools. Outside class, I lead student clubs, emcee university events and volunteer in community programmes. I enjoy turning slow manual work into simple systems people actually use.</p>
-      <div class="plot" aria-label="Convergence curve from my final year project">
-        <svg viewBox="0 0 400 240" role="img">
-          <defs><linearGradient id="g" x1="0" x2="1"><stop offset="0" stop-color="#6E3FC4"/><stop offset="1" stop-color="#F2851F"/></linearGradient></defs>
-          <line x1="40" y1="20" x2="40" y2="200" stroke="var(--line)" stroke-width="2"/>
-          <line x1="40" y1="200" x2="385" y2="200" stroke="var(--line)" stroke-width="2"/>
-          <path id="curve" d="M45 30 C 70 120, 95 160, 140 178 S 260 192, 380 194" fill="none" stroke="url(#g)" stroke-width="5" stroke-linecap="round"/>
-          <circle cx="380" cy="194" r="7" fill="#F2851F"/>
-          <text x="44" y="226" font-size="13" fill="var(--muted)">iterations</text>
-          <text x="14" y="120" font-size="13" fill="var(--muted)" transform="rotate(-90 14 120)">objective value</text>
-        </svg>
-        <p class="cap">Objective value dropping as the optimizer converges, the idea behind my final year project.</p>
+
+<section id="about"><div class="wrap">
+  <div class="sh"><div class="eyebrow">About</div><h2>Analytical thinking, applied to real operations</h2></div>
+  <div class="about">
+    <div>
+      <p>I am a final-year <strong>BSc (Hons.) Mathematical Modelling and Analytics</strong> student at UiTM, graduating in February 2027. My background is in statistics, optimization and modelling, and I enjoy using it on everyday business problems.</p>
+      <p>During my internship with <strong>Premier Customer Care at FedEx</strong>, I led three process improvement projects for the Malaysia team. I sat with the people doing the work, mapped each step, measured where time was lost and rebuilt the process with Power Automate, SharePoint, Power Apps and Power BI. The biggest result was cutting pre-alert handling time by <strong>78%</strong>.</p>
+      <p>Outside work, I have led a 150-member student club, directed university programmes and served as emcee for official events, so I am comfortable presenting ideas and working with people at every level.</p>
+    </div>
+    <div class="facts">
+      <div class="fact"><span>Focus</span><b>Process improvement, data analytics</b></div>
+      <div class="fact"><span>Currently</span><b>Intern, FedEx Premier Customer Care</b></div>
+      <div class="fact"><span>Education</span><b>UiTM, CGPA 3.57</b></div>
+      <div class="fact"><span>Available</span><b>February 2027</b></div>
+      <div class="fact"><span>Languages</span><b>Malay, English, basic Arabic</b></div>
+    </div>
+  </div>
+</div></section>
+
+<section id="work" class="alt"><div class="wrap">
+  <div class="sh"><div class="eyebrow">Case studies</div><h2>Process improvement at FedEx</h2>
+    <p>Three systems I designed and built for the Premier Customer Care team in Malaysia, from mapping the manual process to handing over a working solution.</p></div>
+  <div class="cases">
+
+    <article class="case">
+      <div class="case-top"><span class="badge live">Live</span><span class="badge date">Oct 2026</span></div>
+      <h3>AMD Pre-Alert Automation</h3>
+      <p class="lede">Turned a seven-step manual email task into a four-step form, cutting handling time by 78% and making it easy for a backup to take over at any point.</p>
+      <div class="case-body">
+        <div class="col"><h4>The problem</h4>
+          <p>Every AMD shipment needs a pre-alert email with its shipping documents before customs clearance. The agent sends around 40 a day, and up to 170 in peak season.</p>
+          <ul><li>Over 10 email lists to remember across 5 different situations</li><li>Recipients, subject and attachment all done by hand</li><li>No record of what was sent, so a backup could not tell where to continue</li></ul>
+        </div>
+        <div class="col"><h4>What I built</h4>
+          <ul><li>A master receiver list, so each email address is updated in one place</li><li>A flow that saves incoming shipping documents automatically</li><li>A short form where the agent picks the document, the receiver and the AWB number</li><li>A flow that sends the pre-alert with the right recipients, CC and subject, then marks the file as sent</li><li>Checks for missing fields and duplicate sending, plus error alerts</li></ul>
+        </div>
       </div>
-    </div>
-    <div class="stats">
-      <div class="stat"><b>3.57</b><span>CGPA</span></div>
-      <div class="stat"><b>150+</b><span>Club members led</span></div>
-      <div class="stat"><b>30+</b><span>Programmes and events</span></div>
-    </div>
-  </div></section>
-
-  <section id="experience" class="band"><div class="wrap"><div class="head"><h2>Experience</h2></div><div id="experience-list" class="cards"></div></div></section>
-  <section id="projects" class="band"><div class="wrap"><div class="head"><h2>Projects</h2></div><div id="projects-list" class="cards two"></div></div></section>
-  <section id="research" class="band"><div class="wrap"><div class="head"><h2>Research</h2></div><div id="research-list" class="cards"></div></div></section>
-  <section id="activities" class="band"><div class="wrap"><div class="head"><h2>Leadership and activities</h2></div><div id="activities-list" class="cards two"></div></div></section>
-  <section id="achievements" class="band"><div class="wrap"><div class="head"><h2>Achievements</h2></div><div id="achievements-list" class="cards two"></div></div></section>
-
-  <section id="skills" class="band"><div class="wrap">
-    <div class="head"><h2>Skills</h2></div>
-    <div class="skills">
-      <div class="skill"><h3>Programming</h3><div class="chips"><span>Python</span><span>SQL</span><span>R</span><span>MATLAB</span><span>Java</span><span>C++</span><span>C</span><span>PHP</span><span>HTML</span></div></div>
-      <div class="skill"><h3>Analytics methods</h3><div class="chips"><span>Data cleaning</span><span>Statistical analysis</span><span>Classification</span><span>Clustering</span><span>Regression</span><span>Predictive modelling</span><span>Optimization</span></div></div>
-      <div class="skill"><h3>Tools</h3><div class="chips"><span>Power BI</span><span>Excel</span><span>SPSS</span><span>WEKA</span><span>Microsoft Access</span><span>SigmaPlot</span><span>Maple</span><span>QM for Windows</span></div></div>
-      <div class="skill"><h3>Microsoft 365</h3><div class="chips"><span>Power Automate</span><span>Power Apps</span><span>SharePoint</span></div></div>
-      <div class="skill"><h3>Languages</h3><div class="chips"><span>Malay (native)</span><span>English (proficient)</span><span>Arabic (basic)</span></div></div>
-    </div>
-  </div></section>
-
-  <section id="contact" class="band"><div class="wrap">
-    <div class="contact-card">
-      <h2>Let’s work together</h2>
-      <p>Open to data analyst roles and graduate opportunities from February 2027.</p>
-      <div class="cbtns">
-        <a class="cbtn orange" href="mailto:mdhassankamilah@gmail.com">Email me</a>
-        <a class="cbtn" href="https://www.linkedin.com/in/aisyahkamilahmdhassan" target="_blank" rel="noopener">LinkedIn</a>
-        <a class="cbtn" href="resume.pdf" download>Download resume</a>
+      <div class="impact"><h4>Impact, measured over 5 timed runs on the live system</h4>
+        <div class="bars">
+          <div class="bar"><span class="lbl">Before</span><div class="track"><div class="fill" style="width:100%;background:var(--faint)"></div></div><span class="val">2m 15s</span></div>
+          <div class="bar"><span class="lbl">After</span><div class="track"><div class="fill" style="width:22%;background:var(--orange)"></div></div><span class="val">30s</span></div>
+        </div>
+        <div class="kpis">
+          <div class="kpi"><b>78%</b><span>faster per pre-alert</span></div>
+          <div class="kpi"><b>~70 min</b><span>saved per day</span></div>
+          <div class="kpi"><b>0.19<span class="arrow">→</span>0.04</b><span>VFTE workload</span></div>
+          <div class="kpi"><b>7<span class="arrow">→</span>4</b><span>process steps</span></div>
+          <div class="kpi"><b>6<span class="arrow">→</span>3</b><span>manual error points</span></div>
+          <div class="kpi"><b>15 min<span class="arrow">→</span>0</b><span>backup handover</span></div>
+          <div class="kpi"><b>1 day<span class="arrow">→</span>15 min</b><span>learning time with job aid</span></div>
+        </div>
       </div>
+      <div class="tools" style="padding-top:20px"><span>Power Automate</span><span>Power Apps</span><span>SharePoint</span><span>Process mapping</span><span>Time study</span><span>VFTE analysis</span></div>
+    </article>
+
+    <article class="case">
+      <div class="case-top"><span class="badge ready">Tested, ready for rollout</span><span class="badge date">Nov 2026</span></div>
+      <h3>Claim Review Automation</h3>
+      <p class="lede">Connected the full claim journey, from the agent’s submission to the customer’s settlement letter, into one tracked process.</p>
+      <div class="case-body">
+        <div class="col"><h4>The problem</h4>
+          <p>When a shipment is lost or damaged, the claim passes from agent to manager to team leader. Every step was handled by hand through emails and documents.</p>
+          <ul><li>No single place to see which claims were pending, approved or settled</li><li>Settlement letters written manually for every claim</li><li>Team leaders fixing details at the end before the letter went out</li></ul>
+        </div>
+        <div class="col"><h4>What I built</h4>
+          <ul><li>A claim submission list and an approval tracker in SharePoint</li><li>Approval requests sent to managers in Outlook and Teams, with comments</li><li>A reject and resubmit path that keeps the manager’s feedback with the agent</li><li>A one-click flow that fills a letter template, converts it to PDF and emails the customer</li></ul>
+        </div>
+      </div>
+      <div class="impact"><h4>How the new process flows</h4>
+        <div class="flow">
+          <div class="step"><b>Step 1</b>Agent submits the claim and gets a summary email</div>
+          <div class="step"><b>Step 2</b>Manager approves in Outlook or Teams</div>
+          <div class="step"><b>Step 3</b>Approved claim is logged automatically</div>
+          <div class="step"><b>Step 4</b>Team leader sends the settlement letter in one click</div>
+        </div>
+        <div class="mini"><span>No duplicate letters</span><span>Wording set by payment method</span><span>Names and country codes auto-formatted</span><span>Live status for every claim</span></div>
+      </div>
+      <div class="tools" style="padding-top:20px"><span>Power Automate</span><span>SharePoint</span><span>Outlook</span><span>Teams</span><span>Requirements gathering</span></div>
+    </article>
+
+    <article class="case">
+      <div class="case-top"><span class="badge live">Live</span><span class="badge date">Sep 2026</span></div>
+      <h3>Leave Planner PCC-MY</h3>
+      <p class="lede">A leave request system that applies the team’s rules automatically and gives managers one view of leave across all teams. Built and launched in under three weeks.</p>
+      <div class="case-body">
+        <div class="col"><h4>The problem</h4>
+          <p>Leave was planned manually, so managers struggled to see who was away and to keep enough staff on each team every day.</p>
+        </div>
+        <div class="col"><h4>What I built</h4>
+          <ul><li>A simple leave form backed by a SharePoint list</li><li>Automatic quota checks on a first come, first served basis, with same-day clashes rejected and the reason shown</li><li>Approval straight from the list view or from Teams</li><li>A Power BI dashboard with a consolidated view of leave and staff profiles</li></ul>
+        </div>
+      </div>
+      <div class="impact"><h4>Outcome</h4>
+        <div class="kpis">
+          <div class="kpi"><b>&lt; 3 weeks</b><span>from brief to launch</span></div>
+          <div class="kpi"><b>Every request</b><span>checked against team rules</span></div>
+          <div class="kpi"><b>1 dashboard</b><span>for leave across all teams</span></div>
+        </div>
+      </div>
+      <div class="tools" style="padding-top:20px"><span>SharePoint</span><span>Power Apps</span><span>Power Automate</span><span>Power BI</span></div>
+    </article>
+
+  </div>
+</div></section>
+
+<section id="approach"><div class="wrap">
+  <div class="sh"><div class="eyebrow">Approach</div><h2>How I improve a process</h2>
+    <p>The same five steps I followed for every project at FedEx.</p></div>
+  <div class="process">
+    <div class="pstep"><h3>Observe</h3><p>Sit with the person doing the work and map every step as it really happens.</p></div>
+    <div class="pstep"><h3>Ask</h3><p>Gather requirements from users and managers with prepared questions.</p></div>
+    <div class="pstep"><h3>Propose</h3><p>Present options, agree on the design and get approval before building.</p></div>
+    <div class="pstep"><h3>Build and test</h3><p>Build in versions, test with real users and measure before and after.</p></div>
+    <div class="pstep"><h3>Hand over</h3><p>Write job aids and guides, and transfer ownership so it keeps running.</p></div>
+  </div>
+</div></section>
+
+<section id="experience" class="alt"><div class="wrap">
+  <div class="sh"><div class="eyebrow">Experience</div><h2>Where I have worked</h2></div>
+  <div class="timeline" id="experience-list"></div>
+</div></section>
+
+<section id="education"><div class="wrap">
+  <div class="sh"><div class="eyebrow">Education</div><h2>Academic background</h2></div>
+  <div class="edu">
+    <div class="card"><span class="when">Oct 2023 to Feb 2027</span><h3>BSc (Hons.) Mathematical Modelling and Analytics</h3>
+      <div class="org">Universiti Teknologi MARA, Kuala Terengganu</div>
+      <ul><li>Business Data Analytics, Programming for Data Science, Database Design and Development</li><li>Statistical Modelling, Intelligent Decision-Making Support Systems, Numerical Methods and Analysis</li></ul>
+      <div><span class="gpa">CGPA 3.57</span></div></div>
+    <div class="card"><span class="when">Aug 2022 to Jun 2023</span><h3>Foundation in Engineering</h3>
+      <div class="org">Universiti Teknologi MARA, Dengkil</div>
+      <ul><li>Engineering Mathematics, Engineering Computing (C++), Physics, Chemistry</li></ul>
+      <div><span class="gpa">CGPA 3.33</span></div></div>
+  </div>
+</div></section>
+
+<section id="projects" class="alt"><div class="wrap">
+  <div class="sh"><div class="eyebrow">Academic projects</div><h2>Modelling and analytics work</h2></div>
+  <div class="cards" id="projects-list"></div>
+</div></section>
+
+<section id="research"><div class="wrap">
+  <div class="sh"><div class="eyebrow">Research</div><h2>Publications</h2>
+    <p>Optimization research using conjugate gradient methods, applied to radiotherapy planning and bridge monitoring.</p></div>
+  <div id="research-list"></div>
+</div></section>
+
+<section id="leadership" class="alt"><div class="wrap">
+  <div class="sh"><div class="eyebrow">Leadership</div><h2>Leadership and activities</h2></div>
+  <div class="cards" id="activities-list"></div>
+</div></section>
+
+<section id="achievements"><div class="wrap">
+  <div class="sh"><div class="eyebrow">Recognition</div><h2>Achievements and certifications</h2></div>
+  <div class="cards" id="achievements-list"></div>
+</div></section>
+
+<section id="skills" class="alt"><div class="wrap">
+  <div class="sh"><div class="eyebrow">Skills</div><h2>Tools and methods</h2></div>
+  <div class="skills">
+    <div class="skill"><h3><i>⟳</i>Process improvement</h3><div class="chips"><span>Process mapping</span><span>Process optimization</span><span>Standardization</span><span>Time study</span><span>VFTE analysis</span><span>Before and after measurement</span><span>Requirements gathering</span><span>Job aids and documentation</span></div></div>
+    <div class="skill"><h3><i>⚙</i>Automation and business tools</h3><div class="chips"><span>Power Automate</span><span>Power Apps</span><span>SharePoint</span><span>Power BI</span><span>Excel</span><span>Outlook and Teams flows</span></div></div>
+    <div class="skill"><h3><i>∑</i>Analytics and modelling</h3><div class="chips"><span>Data cleaning</span><span>Statistical analysis</span><span>Regression</span><span>Classification</span><span>Clustering</span><span>Predictive modelling</span><span>Optimization</span></div></div>
+    <div class="skill"><h3><i>&lt;/&gt;</i>Programming</h3><div class="chips"><span>Python</span><span>SQL</span><span>R</span><span>MATLAB</span><span>Java</span><span>C++</span><span>HTML</span></div></div>
+    <div class="skill"><h3><i>▦</i>Other tools</h3><div class="chips"><span>SPSS</span><span>WEKA</span><span>Microsoft Access</span><span>SigmaPlot</span><span>Maple</span><span>QM for Windows</span></div></div>
+    <div class="skill"><h3><i>◎</i>Languages</h3><div class="chips"><span>Malay (native)</span><span>English (proficient)</span><span>Arabic (basic)</span></div></div>
+  </div>
+</div></section>
+
+<section id="contact"><div class="wrap">
+  <div class="contact">
+    <div style="position:relative;z-index:1">
+      <div class="eyebrow" style="color:#FFB074">Contact</div>
+      <h2 style="margin-top:8px">Let’s talk about your next process</h2>
+      <p>I am looking for full-time roles in continuous process improvement or data analytics from February 2027.</p>
     </div>
-  </div></section>
+    <div class="clist">
+      <a class="hl" href="mailto:mdhassankamilah@gmail.com"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg>mdhassankamilah@gmail.com</a>
+      <a href="https://www.linkedin.com/in/aisyahkamilahmdhassan" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M4.98 3.5a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5zM3 9.5h4V21H3zM9.5 9.5h3.8v1.6h.06c.53-1 1.83-2.06 3.77-2.06 4.03 0 4.77 2.65 4.77 6.1V21h-4v-5.1c0-1.22-.02-2.79-1.7-2.79-1.7 0-1.96 1.33-1.96 2.7V21h-4z"/></svg>linkedin.com/in/aisyahkamilahmdhassan</a>
+      <a href="resume.pdf" download><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v12M7 10l5 5 5-5M5 21h14"/></svg>Download resume (PDF)</a>
+    </div>
+  </div>
+</div></section>
+
 </main>
 
-<footer>© 2026 A’isyah Kamilah Md Hassan</footer>
+<footer>© 2026 A’isyah Kamilah Md Hassan · Built with HTML and CSS, hosted on Vercel</footer>
 
 <script>
 /* ============================================================
    EDIT YOUR CONTENT HERE
    To add a new item, copy one { ... } block and change the text.
    To add photos, put the image files in the same folder as this
-   page and list their file names in images, e.g. ["leave1.jpg"].
+   page and list their file names in images, e.g. ["club1.jpg"].
+   The FedEx case studies are written directly in the HTML above.
    ============================================================ */
 
 const experience = [
   {
     when: "Sep 2026 to Jan 2027",
-    title: "Data Analyst Intern, Customer Experience",
+    title: "Customer Experience Intern, Premier Customer Care",
     org: "FedEx, Petaling Jaya",
     points: [
-      "Built Leave Planner, a leave request system on SharePoint and Power Apps with automatic quota checks and a Power BI dashboard. Built in under three weeks and now used daily by the team.",
-      "Automated the AMD pre-alert process with Power Automate and a SharePoint form. Staff now pick a receiver and a file, and the email goes out with the correct recipients automatically.",
-      "Wrote job aids and handover guides so the systems keep running after my internship."
+      "Led three process improvement projects for the Malaysia team, covering process mapping, requirements gathering, solution building, testing, handover and job aids.",
+      "Presented each solution to supervisors and the wider team, and supported staff during rollout.",
+      "Now building team tracking logs and dashboards for the next phase of the internship."
     ],
-    tags: ["Power Automate", "Power Apps", "SharePoint", "Power BI"],
-    images: []
+    tags: ["Power Automate", "Power Apps", "SharePoint", "Power BI"]
   },
   {
     when: "2025 to present",
     title: "Part-time Mathematics Tutor (SPM)",
     org: "Weekends",
     points: [
-      "Teach SPM Additional Mathematics by breaking problems into clear steps.",
-      "Adapt explanations to each student's pace, which built my skill in explaining technical ideas simply."
+      "Teach SPM Additional Mathematics by breaking complex problems into clear steps and adapting to each student’s pace."
     ],
-    tags: ["Teaching", "Communication"],
-    images: []
+    tags: ["Teaching", "Communication"]
   },
   {
     when: "Occasional",
     title: "Event Helper",
     org: "Maghis Picnic",
     points: [
-      "Helped set up picnic events before guests arrived, including arranging the seating, decorations and food area so everything matched the client's chosen theme.",
-      "Coordinated with the event team on timing and tasks so each setup was ready on schedule, often with a short window to prepare."
+      "Help with picnic event set-up, coordination and on-site service for guests."
     ],
-    tags: ["Event coordination", "Teamwork", "Customer service"],
-    images: []
+    tags: ["Events", "Customer service"]
   },
   {
     when: "May to Aug 2022",
     title: "Service Crew",
     org: "Food and beverage, two restaurants",
     points: [
-      "Worked day and evening shifts in a fast-paced service environment while studying full-time."
+      "Worked day and evening shifts across two restaurants while studying full-time."
     ],
-    tags: ["Time management", "Customer service"],
-    images: []
+    tags: ["Time management", "Customer service"]
   }
 ];
 
 const projects = [
   {
     when: "2025 to 2026",
-    title: "The Implementation of Three-Term Conjugate Gradient in Intensity-Modulated Radiation Therapy",
+    title: "Three-term conjugate gradient methods for radiotherapy planning",
     org: "Final year project",
     points: [
       "Built a MATLAB optimization model to improve radiotherapy treatment planning using the CORT prostate dataset.",
@@ -359,8 +605,8 @@ const projects = [
 const research = [
   {
     when: "2027 (upcoming)",
-    title: "Hybrid Conjugate Gradient Method using Exact Line search with its application to Vehicle-Bridge Moving Force Identification",
-    org: "Graduate Digital Invention, Innovation & Design (GDIID) 2027, UiTM Cawangan Terengganu",
+    title: "Hybrid conjugate gradient method using exact line search with its application to vehicle-bridge moving force identification",
+    org: "Graduate Digital Invention, Innovation & Design (GDIID) 2025, UiTM Cawangan Terengganu",
     points: [
       "Built and tested four hybrid conjugate gradient methods (RMILLS, RMILHS, RMILDY and RMILLAMR) in MATLAB on 15 benchmark functions with up to 10,000 variables.",
       "RMILLAMR performed best, solving 98.81% of test problems with the fewest iterations and least CPU time.",
@@ -373,7 +619,7 @@ const research = [
   },
   {
     when: "Oct 2026",
-    title: "Performance of Three-Term Conjugate Gradient Methods under Exact Line search for Fluence Map Optimization in Intensity-Modulated Radiation Therapy",
+    title: "Performance of three-term conjugate gradient methods under exact line search for fluence map optimization in intensity-modulated radiation therapy",
     org: "International Journal of Research and Innovation in Social Science (IJRISS), Vol. 10, Issue 9, first author",
     points: [
       "Compared five three-term conjugate gradient methods in MATLAB on 308 test problems with up to 10,000 variables. TTLAMR and TTSMAR solved 100% of them.",
@@ -539,25 +785,34 @@ const achievements = [
   }
 ];
 
+
 /* ============ No need to edit below this line ============ */
 function esc(s){return String(s).replace(/[&<>"]/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]))}
-function render(id, items){
-  document.getElementById(id).innerHTML = items.map(it => `
-    <article class="card">
-      <span class="when">${esc(it.when)}</span>
-      <h3>${esc(it.title)}</h3>
-      <div class="org">${esc(it.org)}</div>
-      <ul>${it.points.map(p=>`<li>${esc(p)}</li>`).join("")}</ul>
-      ${it.tags && it.tags.length ? `<div class="tags">${it.tags.map(t=>`<span>${esc(t)}</span>`).join("")}</div>` : ""}
-      ${it.link ? `<a class="link" href="${esc(it.link)}" target="_blank" rel="noopener">View project →</a>` : ""}
-      ${it.images && it.images.length ? `<div class="gallery">${it.images.map(src=>`<img src="${esc(src)}" alt="${esc(it.title)}" loading="lazy">`).join("")}</div>` : ""}
-    </article>`).join("");
+function body(it){
+  return `${it.points && it.points.length ? `<ul>${it.points.map(p=>`<li>${esc(p)}</li>`).join("")}</ul>` : ""}
+    ${it.images && it.images.length ? `<div class="gallery">${it.images.map(src=>`<img src="${esc(src)}" alt="${esc(it.title)}" loading="lazy">`).join("")}</div>` : ""}
+    ${it.link ? `<a class="more" href="${esc(it.link)}" target="_blank" rel="noopener">View publication →</a>` : ""}
+    ${it.tags && it.tags.length ? `<div class="tags">${it.tags.map(t=>`<span>${esc(t)}</span>`).join("")}</div>` : ""}`;
 }
-render("experience-list", experience);
-render("projects-list", projects);
-render("research-list", research);
-render("activities-list", activities);
-render("achievements-list", achievements);
+function cards(id, items){
+  document.getElementById(id).innerHTML = items.map(it => `
+    <article class="card"><span class="when">${esc(it.when)}</span><h3>${esc(it.title)}</h3><div class="org">${esc(it.org)}</div>${body(it)}</article>`).join("");
+}
+document.getElementById("experience-list").innerHTML = experience.map(it => `
+  <div class="ti"><div class="when">${esc(it.when)}</div><h3>${esc(it.title)}</h3><div class="org">${esc(it.org)}</div>${body(it)}</div>`).join("");
+document.getElementById("research-list").innerHTML = research.slice().reverse().map(it => `
+  <article class="paper"><span class="when" style="font-size:13px;font-weight:700;color:var(--orange)">${esc(it.when)}</span>
+  <h3 style="font-size:20px;font-weight:700;margin-top:6px">${esc(it.title)}</h3><div style="color:var(--purple);font-weight:600;font-size:15px;margin-top:4px">${esc(it.org)}</div>
+  ${body(it)}</article>`).join("");
+cards("projects-list", projects);
+cards("activities-list", activities);
+cards("achievements-list", achievements);
+
+/* Highlight the menu item for the section on screen */
+const navLinks=[...document.querySelectorAll(".links a")];
+const map=new Map(navLinks.map(a=>[a.getAttribute("href").slice(1),a]));
+const obs=new IntersectionObserver(es=>{es.forEach(e=>{if(e.isIntersecting){navLinks.forEach(a=>a.classList.remove("on"));const a=map.get(e.target.id);if(a){a.classList.add("on");a.scrollIntoView({block:"nearest",inline:"nearest"});}}})},{rootMargin:"-45% 0px -50% 0px"});
+document.querySelectorAll("main section[id]").forEach(s=>obs.observe(s));
 </script>
 </body>
 </html>
