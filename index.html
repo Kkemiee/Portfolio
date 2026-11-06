@@ -186,6 +186,20 @@ details[open] summary::after{content:"−"}
 .tools{display:flex;flex-wrap:wrap;gap:6px;margin-top:20px}
 .tools span,.tags span{font-size:13px;font-weight:600;padding:4px 10px;border-radius:6px;background:var(--bg);border:1px solid var(--line);color:var(--muted)}
 
+.shots{gap:14px;padding:26px}
+.zoom{all:unset;cursor:zoom-in;display:block;border-radius:12px;overflow:hidden;background:#fff;box-shadow:0 14px 30px rgba(0,0,0,.35);position:relative}
+.zoom:focus-visible{outline:3px solid var(--orange);outline-offset:3px}
+.zoom img{width:100%;height:auto;display:block;transition:transform .3s}
+.zoom:hover img{transform:scale(1.02)}
+.thumbs{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.thumbs .zoom{box-shadow:0 8px 18px rgba(0,0,0,.3)}
+.thumbs span{position:absolute;left:8px;bottom:8px;font-size:11.5px;font-weight:700;color:#fff;background:rgba(28,17,41,.8);padding:3px 8px;border-radius:6px}
+dialog.lb{border:none;padding:0;background:transparent;max-width:min(1200px,94vw);margin:auto}
+dialog.lb::backdrop{background:rgba(12,8,18,.85);backdrop-filter:blur(4px)}
+dialog.lb img{width:100%;height:auto;border-radius:12px;display:block}
+dialog.lb p{color:#fff;text-align:center;margin-top:12px;font-size:15px}
+dialog.lb button{position:absolute;top:-14px;right:-14px;width:40px;height:40px;border-radius:50%;border:none;background:var(--orange);color:#fff;font-size:22px;font-weight:700;cursor:pointer}
+dialog.lb .box{position:relative}
 /* ---------- Approach ---------- */
 .steps{display:grid;grid-template-columns:repeat(5,1fr);gap:20px;position:relative}
 .steps::before{content:"";position:absolute;top:27px;left:10%;right:10%;height:2px;background:linear-gradient(90deg,var(--purple),var(--orange))}
@@ -231,6 +245,15 @@ details[open] summary::after{content:"−"}
 .ti .tags{margin-top:0;padding-top:14px}
 .cards.feature .card:first-child{grid-column:span 2;grid-row:span 2;background:linear-gradient(150deg,var(--surface),var(--purple-soft))}
 .cards.feature .card:first-child h3{font-size:22px}
+.fchart{margin-top:18px;border:1px solid var(--line);border-radius:14px;padding:14px 16px 10px;background:var(--surface)}
+.fchart svg{width:100%;height:auto;display:block}
+.fchart span{display:block;font-size:13px;color:var(--faint);margin-top:6px}
+.fstats{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin-top:14px}
+.fstats div{border:1px solid var(--line);border-radius:12px;padding:12px;background:var(--surface)}
+.fstats b{display:block;font-size:20px;font-weight:800;color:var(--purple);white-space:nowrap}
+.fstats div:nth-child(2) b{color:var(--orange)}
+.fstats span{display:block;font-size:12.5px;color:var(--muted);line-height:1.35;margin-top:2px}
+@media (max-width:700px){.fstats{grid-template-columns:1fr 1fr}}
 .more{display:inline-flex;align-items:center;gap:6px;margin-top:14px;font-weight:700;font-size:14px;color:var(--orange);text-decoration:none}
 .more:hover{text-decoration:underline}
 .gallery{display:grid;grid-template-columns:repeat(auto-fill,minmax(100px,1fr));gap:8px;margin-top:14px}
@@ -465,18 +488,14 @@ footer{padding:36px 24px 44px;text-align:center;color:var(--faint);font-size:14p
   </article>
 
   <article class="case">
-    <div class="visual rv" aria-hidden="true">
-      <div class="mock">
-        <div class="t">Leave Planner <em>● Live</em></div>
-        <div class="cal">
-          <span>1</span><span>2</span><span class="a">3</span><span>4</span><span>5</span><span>6</span><span>7</span>
-          <span>8</span><span class="a">9</span><span>10</span><span class="a">11</span><span class="x">12</span><span>13</span><span>14</span>
-          <span>15</span><span>16</span><span>17</span><span class="a">18</span><span>19</span><span>20</span><span>21</span>
-        </div>
-        <div class="legend"><span><i style="background:#EEE9FA"></i>Approved</span><span><i style="background:#FDE7E7"></i>Quota full, auto rejected</span></div>
+    <div class="visual shots rv">
+      <button class="zoom main" data-src="leave-dashboard-overview.png" data-cap="Leave Planner dashboard, overview page">
+        <img src="leave-dashboard-overview.png" alt="Power BI overview dashboard showing leave requests, approval rate, leave days by month and team, and reject reasons" loading="lazy"></button>
+      <div class="thumbs">
+        <button class="zoom" data-src="leave-dashboard-overview.png" data-cap="Leave Planner dashboard, overview page"><img src="leave-dashboard-overview.png" alt="Overview page" loading="lazy"><span>Overview</span></button>
+        <button class="zoom" data-src="leave-dashboard-staff.png" data-cap="Leave Planner dashboard, staff profile page"><img src="leave-dashboard-staff.png" alt="Staff profile page" loading="lazy"><span>Staff profile</span></button>
       </div>
-      <div class="spark"><span style="height:45%"></span><span style="height:70%"></span><span style="height:55%"></span><span style="height:90%"></span><span style="height:62%"></span><span style="height:80%"></span><span style="height:50%"></span></div>
-      <div class="vcap">Power BI view of leave across teams</div>
+      <div class="vcap">The Power BI dashboard I built. Click any screen to enlarge.</div>
     </div>
     <div class="content rv">
       <div class="badges"><span class="badge live">Live</span><span class="badge date">Sep 2026</span></div>
@@ -490,7 +509,8 @@ footer{padding:36px 24px 44px;text-align:center;color:var(--faint);font-size:14p
       <div class="did">
         <div>Built a leave form with automatic quota checks, first come first served</div>
         <div>Rejected same-day clashes automatically and showed staff the reason</div>
-        <div>Let managers approve from the list view or Teams, with a Power BI dashboard</div>
+        <div>Let managers approve from the list view or Teams</div>
+        <div>Built a two-page Power BI dashboard with approval rate, reject reasons, leave by team and a staff profile view</div>
       </div>
       <div class="tools"><span>SharePoint</span><span>Power Apps</span><span>Power Automate</span><span>Power BI</span></div>
     </div>
@@ -577,6 +597,8 @@ footer{padding:36px 24px 44px;text-align:center;color:var(--faint);font-size:14p
 
 </main>
 
+<dialog class="lb" id="lb"><div class="box"><button aria-label="Close" onclick="this.closest('dialog').close()">×</button><img id="lbimg" alt=""><p id="lbcap"></p></div></dialog>
+
 <footer>© 2026 A’isyah Kamilah Md Hassan</footer>
 
 <script>
@@ -640,6 +662,13 @@ const projects = [
       "TTLAMR gave the lowest objective value (5.5709) on the radiotherapy problem."
     ],
     tags: ["MATLAB", "Optimization", "Numerical methods"],
+    stats: [
+      { v: "308", l: "test problems run" },
+      { v: "100%", l: "success rate for TTLAMR" },
+      { v: "986", l: "beamlets optimized" },
+      { v: "79.2 Gy", l: "tumour dose reached" }
+    ],
+    chart: true,
     link: "https://doi.org/10.47772/IJRISS.2026.100900333",
     images: []
   },
@@ -891,6 +920,14 @@ const achievements = [
 function esc(s){return String(s).replace(/[&<>"]/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]))}
 function body(it){
   return `${it.points && it.points.length ? `<ul>${it.points.map(p=>`<li>${esc(p)}</li>`).join("")}</ul>` : ""}
+    ${it.chart ? `<div class="fchart"><svg viewBox="0 0 400 150" role="img" aria-label="Convergence curve">
+      <defs><linearGradient id="fg" x1="0" x2="1"><stop offset="0" stop-color="#7C57D6"/><stop offset="1" stop-color="#E8761B"/></linearGradient>
+      <linearGradient id="fa" x1="0" x2="0" y1="0" y2="1"><stop offset="0" stop-color="#7C57D6" stop-opacity=".25"/><stop offset="1" stop-color="#7C57D6" stop-opacity="0"/></linearGradient></defs>
+      <path d="M10 14 C 40 80, 70 112, 120 124 S 260 136, 390 138 L390 145 L10 145 Z" fill="url(#fa)"/>
+      <path d="M10 14 C 40 80, 70 112, 120 124 S 260 136, 390 138" fill="none" stroke="url(#fg)" stroke-width="4" stroke-linecap="round"/>
+      <circle cx="390" cy="138" r="6" fill="#E8761B"/></svg>
+      <span>Objective value falling as the method converges</span></div>` : ""}
+    ${it.stats ? `<div class="fstats">${it.stats.map(x=>`<div><b>${esc(x.v)}</b><span>${esc(x.l)}</span></div>`).join("")}</div>` : ""}
     ${it.images && it.images.length ? `<div class="gallery">${it.images.map(src=>`<img src="${esc(src)}" alt="${esc(it.title)}" loading="lazy">`).join("")}</div>` : ""}
     ${it.link ? `<a class="more" href="${esc(it.link)}" target="_blank" rel="noopener">View publication →</a>` : ""}
     ${it.tags && it.tags.length ? `<div class="tags">${it.tags.map(t=>`<span>${esc(t)}</span>`).join("")}</div>` : ""}`;
@@ -924,6 +961,13 @@ const navLinks=[...document.querySelectorAll(".links a")];
 const map=new Map(navLinks.map(a=>[a.getAttribute("href").slice(1),a]));
 const so=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){navLinks.forEach(a=>a.classList.remove("on"));const a=map.get(e.target.id);if(a)a.classList.add("on");}}),{rootMargin:"-45% 0px -50% 0px"});
 document.querySelectorAll("main section[id]").forEach(s=>so.observe(s));
+
+/* Enlarge screenshots */
+const lb=document.getElementById("lb");
+document.querySelectorAll(".zoom").forEach(z=>z.addEventListener("click",()=>{
+  document.getElementById("lbimg").src=z.dataset.src;document.getElementById("lbimg").alt=z.dataset.cap;
+  document.getElementById("lbcap").textContent=z.dataset.cap;lb.showModal();}));
+lb.addEventListener("click",e=>{if(e.target===lb)lb.close();});
 </script>
 </body>
 </html>
