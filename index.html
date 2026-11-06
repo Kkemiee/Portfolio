@@ -334,7 +334,12 @@ footer{padding:36px 24px 44px;text-align:center;color:var(--faint);font-size:14p
   section{padding:72px 0}
   .hero{padding-top:calc(104px + env(safe-area-inset-top,0px));padding-bottom:64px}
   .photo{justify-self:center}
-  .f1{right:-8px}.f2{right:-8px}
+  .photo{width:min(100%,320px);display:grid;grid-template-columns:1fr 1fr;gap:10px}
+  .photo::before{display:none}
+  .photo .frame{grid-column:1/-1}
+  .float{position:static;padding:10px 12px;gap:10px;font-size:12px}
+  .float b{font-size:16px}
+  .float .ic{width:32px;height:32px}
   .bento{grid-template-columns:1fr 1fr}
   .tile.story,.tile.wide{grid-column:1/-1}
   .tile .big{font-size:34px}
@@ -376,7 +381,7 @@ footer{padding:36px 24px 44px;text-align:center;color:var(--faint);font-size:14p
       <div class="ctas">
         <a class="btn primary" href="#work">See my work
           <svg class="i" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
-        <a class="btn ghost" href="resume.pdf" download>
+        <a class="btn ghost" href="resume.pdf" download target="_blank" rel="noopener">
           <svg class="i" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v12M7 10l5 5 5-5M5 21h14"/></svg>Resume</a>
         <a class="btn ghost" href="https://www.linkedin.com/in/aisyahkamilahmdhassan" target="_blank" rel="noopener">
           <svg class="i" viewBox="0 0 24 24" fill="currentColor"><path d="M4.98 3.5a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5zM3 9.5h4V21H3zM9.5 9.5h3.8v1.6h.06c.53-1 1.83-2.06 3.77-2.06 4.03 0 4.77 2.65 4.77 6.1V21h-4v-5.1c0-1.22-.02-2.79-1.7-2.79-1.7 0-1.96 1.33-1.96 2.7V21h-4z"/></svg>LinkedIn</a>
@@ -541,7 +546,7 @@ footer{padding:36px 24px 44px;text-align:center;color:var(--faint);font-size:14p
     <div class="eyebrow">Experience</div>
     <h2 style="font-size:clamp(30px,4vw,46px);font-weight:800;margin-top:10px">Work and education</h2>
     <p style="color:var(--muted);margin-top:14px;font-size:18px">Hands-on experience in operations, teaching and service, built on a strong analytics degree.</p>
-    <a class="btn outline" href="resume.pdf" download><svg class="i" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v12M7 10l5 5 5-5M5 21h14"/></svg>Download full resume</a>
+    <a class="btn outline" href="resume.pdf" download target="_blank" rel="noopener"><svg class="i" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v12M7 10l5 5 5-5M5 21h14"/></svg>Download full resume</a>
   </div>
   <div>
     <div class="timeline" id="experience-list"></div>
@@ -598,7 +603,7 @@ footer{padding:36px 24px 44px;text-align:center;color:var(--faint);font-size:14p
     <div class="clist">
       <a class="hl" href="mailto:mdhassankamilah@gmail.com"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg>mdhassankamilah@gmail.com</a>
       <a href="https://www.linkedin.com/in/aisyahkamilahmdhassan" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M4.98 3.5a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5zM3 9.5h4V21H3zM9.5 9.5h3.8v1.6h.06c.53-1 1.83-2.06 3.77-2.06 4.03 0 4.77 2.65 4.77 6.1V21h-4v-5.1c0-1.22-.02-2.79-1.7-2.79-1.7 0-1.96 1.33-1.96 2.7V21h-4z"/></svg>linkedin.com/in/aisyahkamilahmdhassan</a>
-      <a href="resume.pdf" download><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v12M7 10l5 5 5-5M5 21h14"/></svg>Download resume (PDF)</a>
+      <a href="resume.pdf" download target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v12M7 10l5 5 5-5M5 21h14"/></svg>Download resume (PDF)</a>
     </div>
   </div>
 </div></section>
@@ -818,7 +823,7 @@ const activities = [
     images: []
   },
   {
-    when: "2023 to present",
+    when: "2023 to 2026",
     title: "KOR SUKSIS (Police Volunteer Reserve Student Corps)",
     org: "UiTM Cawangan Terengganu",
     points: [
@@ -880,6 +885,18 @@ const activities = [
 ];
 
 const achievements = [
+  {
+    when: "2026",
+    title: "Commissioned as Inspector, Kor SUKSIS (Insp/KS)",
+    org: "Sukarelawan Polis Siswa Siswi, UiTM Cawangan Terengganu",
+    points: [
+      "Received the official rank of Inspector after completing three years (six semesters) of SUKSIS training.",
+      "Training covered foot drill, discipline, basic law, policing, shooting, swimming and self-defence.",
+      "Built confidence, responsibility, teamwork and mental resilience through demanding training."
+    ],
+    tags: ["Leadership", "Discipline", "Commission"],
+    images: []
+  },
   {
     when: "Oct 2025",
     title: "Champion, Mini Karnival BSN SSP 2025",
