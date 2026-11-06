@@ -194,6 +194,13 @@ details[open] summary::after{content:"−"}
 .thumbs{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}
 .thumbs .zoom{box-shadow:0 8px 18px rgba(0,0,0,.3)}
 .thumbs span{position:absolute;left:8px;bottom:8px;font-size:11.5px;font-weight:700;color:#fff;background:rgba(28,17,41,.8);padding:3px 8px;border-radius:6px}
+.pick{all:unset;cursor:pointer;display:block;border-radius:10px;overflow:hidden;background:#fff;position:relative;
+  opacity:.6;outline:2px solid transparent;outline-offset:2px;transition:opacity .2s,outline-color .2s}
+.pick img{width:100%;height:auto;display:block}
+.pick:hover{opacity:.85}
+.pick.on{opacity:1;outline-color:var(--orange)}
+.pick:focus-visible{outline:3px solid var(--orange)}
+.pick span{position:absolute;left:8px;bottom:8px;font-size:11.5px;font-weight:700;color:#fff;background:rgba(28,17,41,.8);padding:3px 8px;border-radius:6px}
 dialog.lb{border:none;padding:0;background:transparent;max-width:min(1200px,94vw);margin:auto}
 dialog.lb::backdrop{background:rgba(12,8,18,.85);backdrop-filter:blur(4px)}
 dialog.lb img{width:100%;height:auto;border-radius:12px;display:block}
@@ -491,12 +498,12 @@ footer{padding:36px 24px 44px;text-align:center;color:var(--faint);font-size:14p
     <div class="visual shots rv">
       <button class="zoom main" data-src="leave-dashboard-overview.png" data-cap="Leave Planner dashboard, overview page">
         <img src="leave-dashboard-overview.png" alt="Power BI overview dashboard showing leave requests, approval rate, leave days by month and team, and reject reasons" loading="lazy"></button>
-      <div class="thumbs">
-        <button class="zoom" data-src="leave-dashboard-overview.png" data-cap="Leave Planner dashboard, overview page"><img src="leave-dashboard-overview.png" alt="Overview page" loading="lazy"><span>Overview</span></button>
-        <button class="zoom" data-src="leave-dashboard-staff.png" data-cap="Leave Planner dashboard, staff profile page"><img src="leave-dashboard-staff.png" alt="Staff profile page" loading="lazy"><span>Staff profile</span></button>
-        <button class="zoom" data-src="leave-dashboard-rejections.png" data-cap="Leave Planner dashboard, rejections page"><img src="leave-dashboard-rejections.png" alt="Rejections page" loading="lazy"><span>Rejections</span></button>
+      <div class="thumbs" role="tablist" aria-label="Dashboard pages">
+        <button class="pick on" role="tab" aria-selected="true" data-src="leave-dashboard-overview.png" data-cap="Leave Planner dashboard, overview page"><img src="leave-dashboard-overview.png" alt="" loading="lazy"><span>Overview</span></button>
+        <button class="pick" role="tab" aria-selected="false" data-src="leave-dashboard-staff.png" data-cap="Leave Planner dashboard, staff profile page"><img src="leave-dashboard-staff.png" alt="" loading="lazy"><span>Staff profile</span></button>
+        <button class="pick" role="tab" aria-selected="false" data-src="leave-dashboard-rejections.png" data-cap="Leave Planner dashboard, rejections page"><img src="leave-dashboard-rejections.png" alt="" loading="lazy"><span>Rejections</span></button>
       </div>
-      <div class="vcap">The Power BI dashboard I built. Click any screen to enlarge.</div>
+      <div class="vcap">The Power BI dashboard I built. Pick a page below, then click the screen to enlarge.</div>
     </div>
     <div class="content rv">
       <div class="badges"><span class="badge live">Live</span><span class="badge date">Sep 2026</span></div>
@@ -969,6 +976,13 @@ document.querySelectorAll(".zoom").forEach(z=>z.addEventListener("click",()=>{
   document.getElementById("lbimg").src=z.dataset.src;document.getElementById("lbimg").alt=z.dataset.cap;
   document.getElementById("lbcap").textContent=z.dataset.cap;lb.showModal();}));
 lb.addEventListener("click",e=>{if(e.target===lb)lb.close();});
+
+/* Switch dashboard page */
+const mainShot=document.querySelector(".zoom.main");
+document.querySelectorAll(".pick").forEach(b=>b.addEventListener("click",()=>{
+  document.querySelectorAll(".pick").forEach(x=>{x.classList.toggle("on",x===b);x.setAttribute("aria-selected",x===b);});
+  mainShot.dataset.src=b.dataset.src;mainShot.dataset.cap=b.dataset.cap;
+  const im=mainShot.querySelector("img");im.src=b.dataset.src;im.alt=b.dataset.cap;}));
 </script>
 </body>
 </html>
