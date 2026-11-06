@@ -954,7 +954,7 @@ cards("activities-list", activities);
 cards("achievements-list", achievements);
 
 /* Tabs */
-const tabs=[...document.querySelectorAll('[role="tab"]')];
+const tabs=[...document.querySelectorAll('.tabs [role="tab"]')];
 tabs.forEach(t=>t.addEventListener("click",()=>{
   tabs.forEach(x=>{const on=x===t;x.setAttribute("aria-selected",on);document.getElementById(x.getAttribute("aria-controls")).hidden=!on;});
   document.querySelectorAll("#"+t.getAttribute("aria-controls")+" .rv").forEach(el=>el.classList.add("in"));
