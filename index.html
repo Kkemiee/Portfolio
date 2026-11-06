@@ -191,7 +191,7 @@ details[open] summary::after{content:"−"}
 .zoom:focus-visible{outline:3px solid var(--orange);outline-offset:3px}
 .zoom img{width:100%;height:auto;display:block;transition:transform .3s}
 .zoom:hover img{transform:scale(1.02)}
-.thumbs{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.thumbs{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}
 .thumbs .zoom{box-shadow:0 8px 18px rgba(0,0,0,.3)}
 .thumbs span{position:absolute;left:8px;bottom:8px;font-size:11.5px;font-weight:700;color:#fff;background:rgba(28,17,41,.8);padding:3px 8px;border-radius:6px}
 dialog.lb{border:none;padding:0;background:transparent;max-width:min(1200px,94vw);margin:auto}
@@ -494,6 +494,7 @@ footer{padding:36px 24px 44px;text-align:center;color:var(--faint);font-size:14p
       <div class="thumbs">
         <button class="zoom" data-src="leave-dashboard-overview.png" data-cap="Leave Planner dashboard, overview page"><img src="leave-dashboard-overview.png" alt="Overview page" loading="lazy"><span>Overview</span></button>
         <button class="zoom" data-src="leave-dashboard-staff.png" data-cap="Leave Planner dashboard, staff profile page"><img src="leave-dashboard-staff.png" alt="Staff profile page" loading="lazy"><span>Staff profile</span></button>
+        <button class="zoom" data-src="leave-dashboard-rejections.png" data-cap="Leave Planner dashboard, rejections page"><img src="leave-dashboard-rejections.png" alt="Rejections page" loading="lazy"><span>Rejections</span></button>
       </div>
       <div class="vcap">The Power BI dashboard I built. Click any screen to enlarge.</div>
     </div>
@@ -510,7 +511,7 @@ footer{padding:36px 24px 44px;text-align:center;color:var(--faint);font-size:14p
         <div>Built a leave form with automatic quota checks, first come first served</div>
         <div>Rejected same-day clashes automatically and showed staff the reason</div>
         <div>Let managers approve from the list view or Teams</div>
-        <div>Built a two-page Power BI dashboard with approval rate, reject reasons, leave by team and a staff profile view</div>
+        <div>Built a three-page Power BI dashboard covering leave overview, rejections and approval rate by team, and a staff profile view</div>
       </div>
       <div class="tools"><span>SharePoint</span><span>Power Apps</span><span>Power Automate</span><span>Power BI</span></div>
     </div>
