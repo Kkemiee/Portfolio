@@ -250,7 +250,8 @@ dialog.lb .box{position:relative}
 .card li{margin-top:5px}
 .card .tags,.ti .tags{display:flex;flex-wrap:wrap;gap:6px;margin-top:auto;padding-top:16px}
 .ti .tags{margin-top:0;padding-top:14px}
-.cards.feature .card:first-child{grid-column:span 2;grid-row:span 2;background:linear-gradient(150deg,var(--surface),var(--purple-soft))}
+.cards.feature .card:last-child{grid-column:1/-1}
+.cards.feature .card:first-child{grid-column:span 2;background:linear-gradient(150deg,var(--surface),var(--purple-soft))}
 .cards.feature .card:first-child h3{font-size:22px}
 .fchart{margin-top:18px;border:1px solid var(--line);border-radius:14px;padding:14px 16px 10px;background:var(--surface)}
 .fchart svg{width:100%;height:auto;display:block}
@@ -260,11 +261,13 @@ dialog.lb .box{position:relative}
 .fstats b{display:block;font-size:20px;font-weight:800;color:var(--purple);white-space:nowrap}
 .fstats div:nth-child(2) b{color:var(--orange)}
 .fstats span{display:block;font-size:12.5px;color:var(--muted);line-height:1.35;margin-top:2px}
+.cards .card:not(:first-child) .fstats,.cards:not(.feature) .fstats{grid-template-columns:1fr 1fr}
 @media (max-width:700px){.fstats{grid-template-columns:1fr 1fr}}
 .more{display:inline-flex;align-items:center;gap:6px;margin-top:14px;font-weight:700;font-size:14px;color:var(--orange);text-decoration:none}
 .more:hover{text-decoration:underline}
-.gallery{display:grid;grid-template-columns:repeat(auto-fill,minmax(100px,1fr));gap:8px;margin-top:14px}
-.gallery img{aspect-ratio:4/3;object-fit:cover;border-radius:8px}
+.gallery{display:grid;grid-template-columns:repeat(auto-fill,minmax(140px,1fr));gap:8px;margin-top:14px}
+.gallery img{cursor:zoom-in}
+.gallery img{aspect-ratio:4/3;object-fit:cover;border-radius:8px;border:1px solid var(--line)}
 
 /* Research */
 .papers{display:grid;grid-template-columns:1fr 1fr;gap:22px}
@@ -346,7 +349,7 @@ footer{padding:36px 24px 44px;text-align:center;color:var(--faint);font-size:14p
   .kpis{grid-template-columns:1fr 1fr}
   .more-grid,.edu,.papers{grid-template-columns:1fr}
   .cards,.skills{grid-template-columns:1fr}
-  .cards.feature .card:first-child{grid-column:auto;grid-row:auto}
+  .cards.feature .card:first-child,.cards.feature .card:last-child{grid-column:auto;grid-row:auto}
   .visual{padding:22px;min-height:0}
   .contact{padding:44px 24px}
 }
@@ -688,13 +691,21 @@ const projects = [
   {
     when: "2026",
     title: "Dynamic pricing model for agricultural machinery rental",
-    org: "MIMMC 2026, team project",
+    org: "MIMMC 2026, team of 3 (Team MIMMC_23), UTM",
     points: [
-      "Built a mathematical model that adjusts rental prices by demand to support data-driven pricing decisions.",
-      "Presented the model with a full written report and slides."
+      "Built an integrated model linking three parts of a chili farming rental system: farmer demand, farmer profit and the service provider’s costs.",
+      "Found a fair price range of RM566 to RM5,600 per hectare and recommended RM5,200, where farmers, provider and demand all benefit.",
+      "Ran sensitivity analysis on chili prices, demand sensitivity, operating costs and machine capacity. The main risk is chili prices falling below RM5/kg."
     ],
-    tags: ["Mathematical modelling", "Pricing"],
-    link: "",
+    stats: [
+      { v: "RM5,200", l: "recommended price per hectare" },
+      { v: "+RM400", l: "farmer gain per hectare" },
+      { v: "63.6%", l: "lower labour cost" },
+      { v: "4", l: "sensitivity scenarios" }
+    ],
+    tags: ["Mathematical modelling", "Pricing", "Sensitivity analysis"],
+    link: "mimmc-report.pdf",
+    linkText: "Read the solution report",
     images: []
   },
   {
@@ -907,11 +918,13 @@ const achievements = [
   },
   {
     when: "2026",
-    title: "Participant, Malaysia Industrial Mathematical Modelling Challenge (MIMMC)",
-    org: "MIMMC 2026",
-    points: ["Built a dynamic pricing model as part of a team."],
-    tags: ["Competition"],
-    images: []
+    title: "Participant, Malaysia Industrial Mathematical Modelling Challenge 2026 (MIMMC2026)",
+    org: "Universiti Teknologi Malaysia, Team MIMMC_23",
+    points: ["Solved an industry problem on dynamic pricing for agricultural machinery rental with two teammates, Nur Shamilah Shah Kirit and Nur Salmi Jamil."],
+    tags: ["Competition", "Certificate"],
+    link: "mimmc-report.pdf",
+    linkText: "Read our report",
+    images: ["mimmc-certificate.png"]
   },
   {
     when: "Jan 2026",
@@ -954,7 +967,7 @@ function body(it){
       <span>Objective value falling as the method converges</span></div>` : ""}
     ${it.stats ? `<div class="fstats">${it.stats.map(x=>`<div><b>${esc(x.v)}</b><span>${esc(x.l)}</span></div>`).join("")}</div>` : ""}
     ${it.images && it.images.length ? `<div class="gallery">${it.images.map(src=>`<img src="${esc(src)}" alt="${esc(it.title)}" loading="lazy">`).join("")}</div>` : ""}
-    ${it.link ? `<a class="more" href="${esc(it.link)}" target="_blank" rel="noopener">View publication →</a>` : ""}
+    ${it.link ? `<a class="more" href="${esc(it.link)}" target="_blank" rel="noopener">${esc(it.linkText || "View publication")} →</a>` : ""}
     ${it.tags && it.tags.length ? `<div class="tags">${it.tags.map(t=>`<span>${esc(t)}</span>`).join("")}</div>` : ""}`;
 }
 function cards(id, items){
@@ -1000,6 +1013,11 @@ document.querySelectorAll(".pick").forEach(b=>b.addEventListener("click",()=>{
   document.querySelectorAll(".pick").forEach(x=>{x.classList.toggle("on",x===b);x.setAttribute("aria-selected",x===b);});
   mainShot.dataset.src=b.dataset.src;mainShot.dataset.cap=b.dataset.cap;
   const im=mainShot.querySelector("img");im.src=b.dataset.src;im.alt=b.dataset.cap;}));
+
+/* Enlarge photos and certificates */
+document.querySelectorAll(".gallery img").forEach(im=>im.addEventListener("click",()=>{
+  document.getElementById("lbimg").src=im.src;document.getElementById("lbimg").alt=im.alt;
+  document.getElementById("lbcap").textContent=im.alt;lb.showModal();}));
 </script>
 </body>
 </html>
