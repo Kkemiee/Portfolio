@@ -5,17 +5,41 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>A’isyah Kamilah Md Hassan | Data, Modelling and Process Automation</title>
 <meta name="description" content="Portfolio of A’isyah Kamilah Md Hassan. Mathematical modelling, data analytics and process automation, with published optimization research.">
-<meta name="theme-color" content="#0B0714">
+<meta name="theme-color" content="#0B0714" media="(prefers-color-scheme: dark)">
+<meta name="theme-color" content="#F6F3EC" media="(prefers-color-scheme: light)">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Unbounded:wght@500;700;800&family=Manrope:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
 <style>
 :root{
+  --midnight:#F6F3EC; --midnight-2:#EEE8F8; --panel:rgba(255,255,255,.78); --panel-solid:#FFFFFF;
+  --royal:#6E3FE6; --royal-2:#5A2FD0; --silver:#5F6372; --silver-2:#7C8090;
+  --orange:#FF7A1A; --orange-2:#D45F06; --off:#1A1029; --muted:#544C69; --faint:#857E99;
+  --line:rgba(46,24,96,.12); --line-2:rgba(46,24,96,.22); --tint:rgba(46,24,96,.04); --tint-2:rgba(46,24,96,.07);
+  --navbg:rgba(255,255,255,.72); --strip:rgba(238,232,248,.85); --imgop:.10; --gridc:rgba(110,63,230,.22);
+  --glow1:rgba(110,63,230,.16); --glow2:rgba(255,122,26,.10); --shadow:0 10px 30px rgba(46,24,96,.08);
+  --shine:linear-gradient(100deg,#6E3FE6 0%,#FF7A1A 35%,#9B7BFF 65%,#6E3FE6 100%);
+  color-scheme:light;
+  --display:"Unbounded",system-ui,sans-serif; --mono:"JetBrains Mono",ui-monospace,Menlo,monospace;
+}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){
   --midnight:#0B0714; --midnight-2:#130B24; --panel:rgba(26,16,46,.55); --panel-solid:#1A102E;
   --royal:#6E3FE6; --royal-2:#9B7BFF; --silver:#C3C6D1; --silver-2:#8E91A0;
   --orange:#FF7A1A; --orange-2:#FFA65C; --off:#F6F3EC; --muted:#B7B1C6; --faint:#7E7792;
-  --line:rgba(195,198,209,.14); --line-2:rgba(195,198,209,.26);
-  --display:"Unbounded",system-ui,sans-serif; --mono:"JetBrains Mono",ui-monospace,Menlo,monospace;
+  --line:rgba(195,198,209,.14); --line-2:rgba(195,198,209,.26); --tint:rgba(255,255,255,.04); --tint-2:rgba(255,255,255,.08);
+  --navbg:rgba(14,9,26,.66); --strip:rgba(19,11,36,.7); --imgop:.22; --gridc:rgba(155,123,255,.35);
+  --glow1:rgba(110,63,230,.22); --glow2:rgba(255,122,26,.08); --shadow:0 10px 30px rgba(0,0,0,.25);
+  --shine:linear-gradient(100deg,#C3C6D1 0%,#fff 20%,#FFA65C 45%,#9B7BFF 75%,#C3C6D1 100%);
+  color-scheme:dark;
+}}
+:root[data-theme="dark"]{
+  --midnight:#0B0714; --midnight-2:#130B24; --panel:rgba(26,16,46,.55); --panel-solid:#1A102E;
+  --royal:#6E3FE6; --royal-2:#9B7BFF; --silver:#C3C6D1; --silver-2:#8E91A0;
+  --orange:#FF7A1A; --orange-2:#FFA65C; --off:#F6F3EC; --muted:#B7B1C6; --faint:#7E7792;
+  --line:rgba(195,198,209,.14); --line-2:rgba(195,198,209,.26); --tint:rgba(255,255,255,.04); --tint-2:rgba(255,255,255,.08);
+  --navbg:rgba(14,9,26,.66); --strip:rgba(19,11,36,.7); --imgop:.22; --gridc:rgba(155,123,255,.35);
+  --glow1:rgba(110,63,230,.22); --glow2:rgba(255,122,26,.08); --shadow:0 10px 30px rgba(0,0,0,.25);
+  --shine:linear-gradient(100deg,#C3C6D1 0%,#fff 20%,#FFA65C 45%,#9B7BFF 75%,#C3C6D1 100%);
   color-scheme:dark;
 }
 *{box-sizing:border-box;margin:0;padding:0}
@@ -23,7 +47,7 @@ html{scroll-behavior:smooth;scroll-padding-top:90px;background:var(--midnight)}
 body{background:var(--midnight);color:var(--off);font-family:"Manrope",system-ui,-apple-system,"Segoe UI",sans-serif;
   font-size:17px;line-height:1.65;-webkit-font-smoothing:antialiased;overflow-x:hidden;padding-bottom:env(safe-area-inset-bottom,0px)}
 body::before{content:"";position:fixed;inset:0;pointer-events:none;z-index:0;
-  background:radial-gradient(1000px 600px at 85% -10%,rgba(110,63,230,.22),transparent 60%),radial-gradient(800px 500px at -10% 40%,rgba(255,122,26,.08),transparent 60%)}
+  background:radial-gradient(1000px 600px at 85% -10%,var(--glow1),transparent 60%),radial-gradient(800px 500px at -10% 40%,var(--glow2),transparent 60%)}
 main,header,footer,.marquee{position:relative;z-index:1}
 h1,h2,h3{line-height:1.12;letter-spacing:-.01em}
 a{color:var(--royal-2)}
@@ -39,7 +63,7 @@ svg.i{width:18px;height:18px;flex:none}
 /* ---------- Nav ---------- */
 nav{position:fixed;top:calc(14px + env(safe-area-inset-top,0px));left:50%;transform:translateX(-50%);z-index:50;width:min(1160px,calc(100% - 24px))}
 nav .in{display:flex;align-items:center;gap:22px;padding:10px 12px 10px 14px;border-radius:16px;
-  background:rgba(14,9,26,.66);backdrop-filter:blur(18px) saturate(140%);-webkit-backdrop-filter:blur(18px) saturate(140%);
+  background:var(--navbg);backdrop-filter:blur(18px) saturate(140%);-webkit-backdrop-filter:blur(18px) saturate(140%);
   border:1px solid var(--line);box-shadow:0 10px 40px rgba(0,0,0,.35)}
 .brand{display:flex;align-items:center;gap:10px;color:var(--off);text-decoration:none;font-family:var(--display);font-weight:700;font-size:14px;margin-right:auto;white-space:nowrap}
 .brand i{width:34px;height:34px;border-radius:10px;display:grid;place-items:center;font-style:normal;font-size:12px;
@@ -47,8 +71,14 @@ nav .in{display:flex;align-items:center;gap:22px;padding:10px 12px 10px 14px;bor
 .links{display:flex;gap:4px;overflow-x:auto;scrollbar-width:none}
 .links::-webkit-scrollbar{display:none}
 .links a{color:var(--muted);text-decoration:none;font-size:14px;font-weight:600;white-space:nowrap;padding:8px 12px;border-radius:10px;transition:color .2s,background .2s}
-.links a:hover{color:var(--off);background:rgba(255,255,255,.05)}
-.links a.on{color:var(--off);background:rgba(110,63,230,.28)}
+.links a:hover{color:var(--off);background:var(--tint-2)}
+.links a.on{color:var(--off);background:color-mix(in srgb,var(--royal) 22%,transparent)}
+.theme{all:unset;cursor:pointer;width:40px;height:40px;border-radius:11px;display:grid;place-items:center;color:var(--off);border:1px solid var(--line-2);background:var(--tint);flex:none}
+.theme:hover{background:var(--tint-2)}
+.theme svg{width:18px;height:18px}
+.theme .sun{display:none}
+:root[data-theme="dark"] .theme .sun{display:block}:root[data-theme="dark"] .theme .moon{display:none}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]) .theme .sun{display:block}:root:not([data-theme="light"]) .theme .moon{display:none}}
 .navcta{padding:10px 16px;border-radius:11px;background:var(--orange);color:#160a00;text-decoration:none;font-weight:800;font-size:14px;white-space:nowrap;box-shadow:0 0 24px rgba(255,122,26,.35)}
 @media (max-width:980px){.navcta{display:none}}
 @media (max-width:640px){.brand span{display:none}}
@@ -56,10 +86,10 @@ nav .in{display:flex;align-items:center;gap:22px;padding:10px 12px 10px 14px;bor
 /* ---------- Hero ---------- */
 .hero{min-height:100vh;min-height:100svh;display:flex;align-items:center;position:relative;overflow:hidden;
   padding:calc(130px + env(safe-area-inset-top,0px)) 0 90px}
-.hero .bgimg{position:absolute;inset:0;background:url("header-bg.jpg") center/cover no-repeat;opacity:.22;mix-blend-mode:screen;
+.hero .bgimg{position:absolute;inset:0;background:url("header-bg.jpg") center/cover no-repeat;opacity:var(--imgop);
   -webkit-mask-image:linear-gradient(180deg,#000 30%,transparent 95%);mask-image:linear-gradient(180deg,#000 30%,transparent 95%)}
 .grid-floor{position:absolute;left:-50%;right:-50%;bottom:-10%;height:60%;transform:perspective(600px) rotateX(62deg);transform-origin:bottom;
-  background-image:linear-gradient(rgba(155,123,255,.35) 1px,transparent 1px),linear-gradient(90deg,rgba(155,123,255,.35) 1px,transparent 1px);
+  background-image:linear-gradient(var(--gridc) 1px,transparent 1px),linear-gradient(90deg,var(--gridc) 1px,transparent 1px);
   background-size:56px 56px;animation:floor 6s linear infinite;
   -webkit-mask-image:linear-gradient(0deg,#000 10%,transparent 85%);mask-image:linear-gradient(0deg,#000 10%,transparent 85%)}
 @keyframes floor{to{background-position:0 56px}}
@@ -69,11 +99,11 @@ nav .in{display:flex;align-items:center;gap:22px;padding:10px 12px 10px 14px;bor
 @keyframes drift{to{transform:translate(-40px,40px) scale(1.1)}}
 .hero .wrap{position:relative;display:grid;grid-template-columns:1.2fr .8fr;gap:48px;align-items:center;width:100%}
 .tag{display:inline-flex;align-items:center;gap:10px;font-family:var(--mono);font-size:12.5px;letter-spacing:.06em;color:var(--silver);
-  padding:7px 12px;border-radius:999px;border:1px solid var(--line-2);background:rgba(255,255,255,.03)}
+  padding:7px 12px;border-radius:999px;border:1px solid var(--line-2);background:var(--tint)}
 .tag i{width:7px;height:7px;border-radius:50%;background:#46E39A;box-shadow:0 0 0 4px rgba(70,227,154,.18),0 0 12px #46E39A;animation:pulse 2s infinite}
 @keyframes pulse{50%{box-shadow:0 0 0 7px rgba(70,227,154,.05),0 0 12px #46E39A}}
 .hero h1{font-family:var(--display);font-weight:800;font-size:clamp(34px,5.6vw,72px);letter-spacing:-.03em;margin-top:24px;line-height:1.02}
-.hero h1 .s{display:block;background:linear-gradient(100deg,var(--silver) 0%,#fff 20%,var(--orange-2) 45%,var(--royal-2) 75%,var(--silver) 100%);
+.hero h1 .s{display:block;background:var(--shine);
   background-size:220% 100%;-webkit-background-clip:text;background-clip:text;color:transparent;animation:shine 7s linear infinite}
 @keyframes shine{to{background-position:-220% 0}}
 .rot{margin-top:22px;font-size:clamp(18px,2.2vw,24px);font-weight:600;color:var(--muted);min-height:1.5em}
@@ -86,10 +116,10 @@ nav .in{display:flex;align-items:center;gap:22px;padding:10px 12px 10px 14px;bor
 .btn:hover{transform:translateY(-2px)}
 .btn.primary{background:linear-gradient(135deg,var(--orange),#FF9440);color:#160a00;box-shadow:0 10px 30px rgba(255,122,26,.35),inset 0 1px 0 rgba(255,255,255,.4)}
 .btn.primary:hover{box-shadow:0 14px 40px rgba(255,122,26,.5)}
-.btn.ghost{color:var(--off);border:1px solid var(--line-2);background:rgba(255,255,255,.04)}
-.btn.ghost:hover{background:rgba(255,255,255,.09);border-color:var(--silver-2)}
+.btn.ghost{color:var(--off);border:1px solid var(--line-2);background:var(--tint)}
+.btn.ghost:hover{background:var(--tint-2);border-color:var(--silver-2)}
 .hud{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin-top:40px;max-width:640px}
-.hud div{padding:14px 14px 12px;border-radius:14px;border:1px solid var(--line);background:linear-gradient(180deg,rgba(255,255,255,.05),rgba(255,255,255,.01))}
+.hud div{padding:14px 14px 12px;border-radius:14px;border:1px solid var(--line);background:var(--panel);backdrop-filter:blur(8px)}
 .hud b{display:block;font-family:var(--display);font-weight:700;font-size:clamp(18px,2vw,24px);color:var(--off);font-variant-numeric:tabular-nums}
 .hud div:first-child b{color:var(--orange-2)}
 .hud span{display:block;font-family:var(--mono);font-size:11px;color:var(--faint);letter-spacing:.04em;margin-top:4px;line-height:1.35;text-transform:uppercase}
@@ -108,14 +138,14 @@ nav .in{display:flex;align-items:center;gap:22px;padding:10px 12px 10px 14px;bor
   box-shadow:0 30px 80px rgba(110,63,230,.35),inset 0 0 0 1px var(--line-2)}
 .face img{width:100%;height:100%;object-fit:cover;object-position:50% 20%}
 .badge-av{position:absolute;left:50%;bottom:-6px;transform:translateX(-50%);white-space:nowrap;font-family:var(--mono);font-size:12px;color:var(--off);
-  padding:8px 14px;border-radius:999px;background:rgba(14,9,26,.85);border:1px solid var(--line-2);backdrop-filter:blur(10px)}
+  padding:8px 14px;border-radius:999px;background:var(--navbg);border:1px solid var(--line-2);backdrop-filter:blur(10px)}
 .badge-av b{color:var(--orange-2);font-weight:600}
 .scroll{position:absolute;left:50%;bottom:24px;transform:translateX(-50%);font-family:var(--mono);font-size:11px;letter-spacing:.2em;color:var(--faint);display:flex;flex-direction:column;align-items:center;gap:8px}
 .scroll::after{content:"";width:1px;height:36px;background:linear-gradient(var(--silver),transparent);animation:sd 2s ease-in-out infinite}
 @keyframes sd{0%{transform:scaleY(0);transform-origin:top}50%{transform:scaleY(1);transform-origin:top}51%{transform-origin:bottom}100%{transform:scaleY(0);transform-origin:bottom}}
 
 /* ---------- Marquee ---------- */
-.marquee{border-block:1px solid var(--line);background:rgba(19,11,36,.7);overflow:hidden;padding:18px 0}
+.marquee{border-block:1px solid var(--line);background:var(--strip);overflow:hidden;padding:18px 0}
 .track{display:flex;gap:48px;width:max-content;animation:mq 34s linear infinite}
 .track span{font-family:var(--display);font-weight:500;font-size:18px;color:var(--silver-2);white-space:nowrap;display:flex;align-items:center;gap:48px}
 .track span::after{content:"✦";color:var(--orange);font-size:12px}
@@ -131,7 +161,7 @@ section{padding:120px 0;position:relative}
 .sh p{margin-top:16px;color:var(--muted);font-size:18px}
 
 /* glass card with spotlight */
-.glass{position:relative;border-radius:22px;background:var(--panel);border:1px solid var(--line);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);overflow:hidden;isolation:isolate}
+.glass{position:relative;border-radius:22px;background:var(--panel);border:1px solid var(--line);box-shadow:var(--shadow);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);overflow:hidden;isolation:isolate}
 .glass::before{content:"";position:absolute;inset:0;z-index:-1;pointer-events:none;opacity:0;transition:opacity .3s;
   background:radial-gradient(420px circle at var(--mx,50%) var(--my,50%),rgba(155,123,255,.18),transparent 45%)}
 .glass:hover::before{opacity:1}
@@ -150,28 +180,28 @@ section{padding:120px 0;position:relative}
 .k{font-family:var(--mono);font-size:11.5px;letter-spacing:.1em;text-transform:uppercase;color:var(--faint)}
 .big{font-family:var(--display);font-weight:800;font-size:40px;line-height:1;margin-top:14px;font-variant-numeric:tabular-nums}
 .sm{color:var(--muted);font-size:15px;margin-top:8px}
-.b-or{background:linear-gradient(150deg,rgba(255,122,26,.9),rgba(196,74,0,.85));border-color:rgba(255,166,92,.6)}
+.b-or{background:linear-gradient(150deg,#FF7A1A,#C44A00);border-color:rgba(255,166,92,.6);color:#fff}
 .b-or .k,.b-or .sm{color:rgba(255,255,255,.85)}
-.b-pu{background:linear-gradient(150deg,rgba(110,63,230,.85),rgba(43,22,90,.9));border-color:rgba(155,123,255,.6)}
+.b-pu{background:linear-gradient(150deg,#6E3FE6,#2B165A);border-color:rgba(155,123,255,.6);color:#fff}
 .b-pu .k,.b-pu .sm{color:rgba(255,255,255,.8)}
 .b-wide{grid-column:span 2}
 .chips{display:flex;flex-wrap:wrap;gap:8px;margin-top:14px}
-.chips span{font-size:13.5px;font-weight:600;padding:6px 12px;border-radius:9px;border:1px solid var(--line-2);background:rgba(255,255,255,.04);color:var(--silver)}
+.chips span{font-size:13.5px;font-weight:600;padding:6px 12px;border-radius:9px;border:1px solid var(--line-2);background:var(--tint);color:var(--silver)}
 
 /* Work */
 .filters{display:flex;flex-wrap:wrap;gap:8px;margin:-20px 0 34px}
-.filters button{font:inherit;font-family:var(--mono);font-size:13px;color:var(--muted);background:rgba(255,255,255,.03);border:1px solid var(--line-2);
+.filters button{font:inherit;font-family:var(--mono);font-size:13px;color:var(--muted);background:var(--tint);border:1px solid var(--line-2);
   padding:9px 14px;border-radius:999px;cursor:pointer;transition:all .2s}
 .filters button:hover{color:var(--off);border-color:var(--silver-2)}
 .filters button[aria-pressed="true"]{background:var(--off);color:var(--midnight);border-color:var(--off)}
-.work{display:grid;grid-template-columns:repeat(6,1fr);gap:18px}
+.work{display:grid;grid-template-columns:repeat(2,1fr);gap:20px}
 .w{display:flex;flex-direction:column;transition:opacity .35s,transform .35s}
 .w.hide{display:none}
-.w.lg{grid-column:span 4}.w.md{grid-column:span 3}.w.sm2{grid-column:span 2}
-.w .vis{position:relative;padding:24px;min-height:230px;border-bottom:1px solid var(--line);display:flex;flex-direction:column;justify-content:center;gap:14px;
-  background:linear-gradient(160deg,rgba(110,63,230,.18),rgba(11,7,20,.2))}
+.w .tools{margin-top:auto;padding-top:18px}
+.w .vis{position:relative;padding:24px;height:250px;overflow:hidden;border-bottom:1px solid var(--line);display:flex;flex-direction:column;justify-content:center;gap:14px;
+  background:linear-gradient(160deg,color-mix(in srgb,var(--royal) 16%,transparent),transparent)}
 .w .vis::after{content:"";position:absolute;inset:0;pointer-events:none;opacity:.5;
-  background-image:linear-gradient(rgba(195,198,209,.06) 1px,transparent 1px),linear-gradient(90deg,rgba(195,198,209,.06) 1px,transparent 1px);background-size:24px 24px}
+  background-image:linear-gradient(var(--tint-2) 1px,transparent 1px),linear-gradient(90deg,var(--tint-2) 1px,transparent 1px);background-size:24px 24px}
 .w .vis>*{position:relative;z-index:1}
 .w .body{padding:24px 26px 26px;display:flex;flex-direction:column;flex:1}
 .cat{display:flex;flex-wrap:wrap;gap:8px;font-family:var(--mono);font-size:11.5px;letter-spacing:.06em;text-transform:uppercase}
@@ -193,13 +223,13 @@ details ul{margin:14px 0 0 18px;color:var(--muted);font-size:15px}
 details li{margin-top:6px}
 details li::marker{color:var(--orange)}
 .tools{display:flex;flex-wrap:wrap;gap:6px;margin-top:16px}
-.tools span,.tags span{font-family:var(--mono);font-size:11.5px;padding:4px 9px;border-radius:7px;border:1px solid var(--line);color:var(--silver-2);background:rgba(255,255,255,.02)}
+.tools span,.tags span{font-family:var(--mono);font-size:11.5px;padding:4px 9px;border-radius:7px;border:1px solid var(--line);color:var(--silver-2);background:var(--tint)}
 .more{display:inline-flex;align-items:center;gap:6px;margin-top:14px;font-family:var(--mono);font-size:13px;color:var(--orange-2);text-decoration:none}
 .more:hover{text-decoration:underline}
 
 /* visuals */
 .vbar{display:grid;grid-template-columns:64px 1fr 62px;gap:12px;align-items:center;font-family:var(--mono);font-size:12.5px;color:var(--silver)}
-.vbar .tr{height:12px;border-radius:6px;background:rgba(255,255,255,.08);overflow:hidden}
+.vbar .tr{height:12px;border-radius:6px;background:var(--tint-2);overflow:hidden}
 .vbar .fl{height:100%;border-radius:6px;width:0;transition:width 1.4s cubic-bezier(.2,.8,.2,1)}
 .in .vbar .fl{width:var(--w)}
 .vbar b{text-align:right;color:var(--off)}
@@ -209,11 +239,11 @@ details li::marker{color:var(--orange)}
 .fld{border:1px solid #E1DCEA;border-radius:7px;padding:6px 9px;font-size:12px;color:#5C5668;margin-top:6px;display:flex;justify-content:space-between}
 .fld b{color:#18121F;font-weight:600}
 .fbtn{margin-top:9px;background:var(--orange);color:#fff;font-weight:800;font-size:12px;text-align:center;padding:7px;border-radius:7px}
-.amd{display:grid;grid-template-columns:1fr 1.1fr;gap:20px;align-items:center}
+.amd{display:grid;grid-template-columns:1fr 1fr;gap:18px;align-items:center}
 .curve path.ln{stroke-dasharray:700;stroke-dashoffset:700;transition:stroke-dashoffset 2.2s ease-out}
 .in .curve path.ln{stroke-dashoffset:0}
 .range{position:relative;height:56px;margin-top:6px}
-.range .bar{position:absolute;top:22px;left:0;right:0;height:10px;border-radius:5px;background:rgba(255,255,255,.08)}
+.range .bar{position:absolute;top:22px;left:0;right:0;height:10px;border-radius:5px;background:var(--tint-2)}
 .range .ok{position:absolute;top:22px;height:10px;border-radius:5px;left:9.6%;width:85.8%;background:linear-gradient(90deg,var(--royal),var(--royal-2))}
 .range .pin{position:absolute;top:8px;left:88.6%;transform:translateX(-50%);display:flex;flex-direction:column;align-items:center}
 .range .pin i{width:16px;height:16px;border-radius:50%;background:var(--orange);box-shadow:0 0 18px var(--orange);margin-top:6px}
@@ -221,19 +251,31 @@ details li::marker{color:var(--orange)}
 .rlab{font-family:var(--mono);font-size:12px;color:var(--silver)}
 .rlab b{color:var(--orange-2)}
 .nodes{display:grid;gap:8px}
-.node{display:flex;align-items:center;gap:10px;padding:10px 12px;border-radius:10px;background:rgba(255,255,255,.05);border:1px solid var(--line);font-size:13.5px}
-.node .n{width:26px;height:26px;border-radius:50%;display:grid;place-items:center;font-family:var(--mono);font-size:12px;background:var(--royal);flex:none}
-.node .ok{margin-left:auto;font-family:var(--mono);font-size:10.5px;padding:3px 7px;border-radius:6px;background:rgba(70,227,154,.14);color:#7FE9B5}
+.node{display:flex;align-items:center;gap:10px;padding:10px 12px;border-radius:10px;background:var(--tint);border:1px solid var(--line);font-size:13.5px}
+.node .n{width:26px;height:26px;border-radius:50%;display:grid;place-items:center;font-family:var(--mono);font-size:12px;background:var(--royal);color:#fff;flex:none}
+.node .ok{margin-left:auto;font-family:var(--mono);font-size:10.5px;padding:3px 7px;border-radius:6px;background:rgba(31,157,97,.16);color:#1F9D61}
 .vcap{font-family:var(--mono);font-size:11.5px;color:var(--faint)}
 .zoom{all:unset;cursor:zoom-in;display:block;border-radius:10px;overflow:hidden;background:#fff;box-shadow:0 14px 30px rgba(0,0,0,.45)}
 .zoom img{width:100%;height:auto;transition:transform .3s}
 .zoom:hover img{transform:scale(1.02)}
-.picks{display:grid;grid-template-columns:repeat(3,1fr);gap:8px}
-.pick{all:unset;cursor:pointer;position:relative;border-radius:8px;overflow:hidden;background:#fff;opacity:.5;outline:2px solid transparent;outline-offset:2px;transition:opacity .2s}
-.pick img{width:100%;height:auto}
-.pick:hover{opacity:.8}
-.pick.on{opacity:1;outline-color:var(--orange)}
-.pick span{position:absolute;left:6px;bottom:6px;font-family:var(--mono);font-size:10px;color:#fff;background:rgba(11,7,20,.85);padding:2px 6px;border-radius:5px}
+.links2{display:flex;flex-wrap:wrap;gap:18px}
+.shotvis{padding:18px 18px 14px;gap:10px}
+.shotvis .zoom{flex:1;min-height:0}
+.shotvis .zoom img{width:100%;height:100%;object-fit:cover;object-position:top}
+.picks{display:flex;gap:6px}
+.pick{all:unset;cursor:pointer;font-family:var(--mono);font-size:11.5px;padding:5px 11px;border-radius:8px;border:1px solid var(--line-2);color:var(--muted);background:var(--tint)}
+.pick.on{background:var(--orange);border-color:var(--orange);color:#160a00}
+.pick:focus-visible{outline:2px solid var(--orange);outline-offset:2px}
+.mini3{display:grid;grid-template-columns:repeat(3,1fr);gap:8px}
+.mini3 span{font-size:12px;color:var(--muted);padding:8px 10px;border-radius:10px;border:1px solid var(--line);background:var(--tint);line-height:1.35}
+.mini3 b{display:block;font-family:var(--mono);font-size:11px;letter-spacing:.06em;text-transform:uppercase;color:var(--orange-2)}
+.clf{display:grid;grid-template-columns:repeat(3,1fr);gap:8px}
+.clf div{padding:10px;border-radius:10px;border:1px solid var(--line);background:var(--tint)}
+.clf b{display:block;font-family:var(--display);font-size:13px;margin-top:2px}
+.dots{position:relative;height:70px}
+.dots i{position:absolute;width:12px;height:12px;border-radius:50%;background:var(--royal-2);box-shadow:0 0 10px var(--royal-2)}
+.dots i.o{background:var(--orange);box-shadow:0 0 10px var(--orange)}
+.dots i.s{background:var(--silver-2);box-shadow:none}
 
 /* Approach */
 .steps{display:grid;grid-template-columns:repeat(5,1fr);gap:14px;counter-reset:s}
@@ -284,7 +326,7 @@ details li::marker{color:var(--orange)}
 .papers{display:grid;grid-template-columns:1fr 1fr;gap:18px}
 .paper{padding:30px}
 .paper .st{display:inline-flex;align-items:center;gap:8px;font-family:var(--mono);font-size:11.5px;letter-spacing:.08em;text-transform:uppercase;padding:5px 10px;border-radius:7px}
-.paper .st.pub{background:rgba(70,227,154,.12);color:#7FE9B5}
+.paper .st.pub{background:rgba(31,157,97,.14);color:#1F9D61}
 .paper .st.up{background:rgba(255,122,26,.12);color:var(--orange-2)}
 .paper h3{font-family:var(--display);font-weight:700;font-size:18px;line-height:1.35;margin-top:16px}
 .paper ul{margin:14px 0 0 18px;color:var(--muted);font-size:15px}
@@ -293,7 +335,7 @@ details li::marker{color:var(--orange)}
 /* Tabs */
 .head-row{display:flex;justify-content:space-between;align-items:end;gap:20px;flex-wrap:wrap;margin-bottom:44px}
 .head-row .sh{margin-bottom:0}
-.tabs{display:inline-flex;gap:4px;padding:5px;border-radius:14px;border:1px solid var(--line-2);background:rgba(255,255,255,.03)}
+.tabs{display:inline-flex;gap:4px;padding:5px;border-radius:14px;border:1px solid var(--line-2);background:var(--tint)}
 .tabs button{font:inherit;font-family:var(--mono);font-size:13px;color:var(--muted);background:none;border:none;padding:10px 16px;border-radius:10px;cursor:pointer}
 .tabs button[aria-selected="true"]{background:var(--royal);color:#fff;box-shadow:0 0 20px rgba(110,63,230,.5)}
 .panel[hidden]{display:none}
@@ -307,7 +349,7 @@ details li::marker{color:var(--orange)}
 
 /* Contact */
 .cta{position:relative;border-radius:30px;padding:80px 40px;text-align:center;overflow:hidden;isolation:isolate;border:1px solid var(--line-2);
-  background:radial-gradient(600px 300px at 50% 0%,rgba(110,63,230,.55),transparent 70%),radial-gradient(400px 260px at 90% 100%,rgba(255,122,26,.35),transparent 70%),var(--midnight-2)}
+  background:radial-gradient(600px 300px at 50% 0%,color-mix(in srgb,var(--royal) 45%,transparent),transparent 70%),radial-gradient(400px 260px at 90% 100%,rgba(255,122,26,.3),transparent 70%),var(--midnight-2)}
 .cta::before{content:"";position:absolute;inset:-2px;z-index:-1;border-radius:inherit;
   background:conic-gradient(from var(--a,0deg),transparent 0 70%,var(--orange) 80%,var(--royal-2) 90%,transparent 100%);animation:rot 6s linear infinite;
   -webkit-mask:linear-gradient(#000 0 0) content-box,linear-gradient(#000 0 0);-webkit-mask-composite:xor;mask-composite:exclude;padding:2px}
@@ -335,8 +377,6 @@ dialog.lb button{position:absolute;top:-14px;right:-14px;width:40px;height:40px;
   .hero .wrap{grid-template-columns:1fr;gap:56px}
   .portrait{width:min(78vw,340px)}
   .bento{grid-template-columns:repeat(2,1fr)}
-  .work{grid-template-columns:1fr 1fr}
-  .w.lg,.w.md{grid-column:1/-1}.w.sm2{grid-column:span 1}
   .steps{grid-template-columns:repeat(2,1fr)}
   .two{grid-template-columns:1fr;gap:28px}
   .sticky{position:static}
@@ -349,7 +389,7 @@ dialog.lb button{position:absolute;top:-14px;right:-14px;width:40px;height:40px;
   .bento{grid-template-columns:1fr}
   .b-story,.b-wide{grid-column:auto;grid-row:auto}
   .work{grid-template-columns:1fr}
-  .w.sm2{grid-column:auto}
+  .w .vis{height:auto;min-height:210px}
   .amd{grid-template-columns:1fr}
   .steps,.cards,.skills,.papers,.edu{grid-template-columns:1fr}
   .cta{padding:56px 22px}
@@ -362,7 +402,7 @@ dialog.lb button{position:absolute;top:-14px;right:-14px;width:40px;height:40px;
   .vbar .fl{width:var(--w)}.curve path.ln{stroke-dashoffset:0}.step .bar{transform:none}
 }
 </style>
-<script>document.documentElement.classList.add("js")</script>
+<script>document.documentElement.classList.add("js");try{var t=localStorage.getItem("theme");if(t)document.documentElement.dataset.theme=t;}catch(e){}</script>
 </head>
 <body>
 <div class="progress" id="progress"></div>
@@ -372,6 +412,7 @@ dialog.lb button{position:absolute;top:-14px;right:-14px;width:40px;height:40px;
   <div class="links">
     <a href="#about">About</a><a href="#work">Work</a><a href="#experience">Experience</a><a href="#research">Research</a><a href="#beyond">Beyond</a><a href="#skills">Skills</a>
   </div>
+  <button class="theme" id="theme" aria-label="Switch light or dark mode" title="Light or dark mode"><svg class="moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"/></svg><svg class="sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg></button>
   <a class="navcta" href="#contact">Let’s talk</a>
 </div></nav>
 
@@ -447,7 +488,7 @@ dialog.lb button{position:absolute;top:-14px;right:-14px;width:40px;height:40px;
   </div>
   <div class="work">
 
-    <article class="glass w lg rv" data-cat="auto">
+    <article class="glass w rv" data-cat="auto">
       <div class="vis">
         <div class="amd">
           <div class="form" aria-hidden="true">
@@ -458,82 +499,75 @@ dialog.lb button{position:absolute;top:-14px;right:-14px;width:40px;height:40px;
           </div>
           <div style="display:grid;gap:12px">
             <div class="vbar"><span>BEFORE</span><div class="tr"><div class="fl" style="--w:100%;background:var(--silver-2)"></div></div><b>2m 15s</b></div>
-            <div class="vbar"><span>AFTER</span><div class="tr"><div class="fl" style="--w:22%;background:linear-gradient(90deg,var(--orange),var(--orange-2));box-shadow:0 0 12px var(--orange)"></div></div><b>30s</b></div>
-            <div class="vcap">AVG TIME PER EMAIL · 5 TIMED RUNS</div>
+            <div class="vbar"><span>AFTER</span><div class="tr"><div class="fl" style="--w:22%;background:linear-gradient(90deg,var(--orange),#FFA65C);box-shadow:0 0 12px var(--orange)"></div></div><b>30s</b></div>
+            <div class="vcap">AVG TIME PER EMAIL</div>
           </div>
         </div>
       </div>
       <div class="body">
         <div class="cat"><span class="hot">Automation</span><span>Industry internship</span><span>2026</span></div>
         <h3>Pre-Alert Email Automation</h3>
-        <p class="lede">Rebuilt a seven-step manual email task into a four-step form, so the right documents reach the right people with no copy and paste.</p>
-        <div class="kp"><div><b>78%</b><span>faster</span></div><div><b>~70 min</b><span>saved daily</span></div><div><b>7 → 4</b><span>steps</span></div><div><b>1 day → 15 min</b><span>to learn</span></div></div>
-        <details><summary>How I did it</summary><ul>
-          <li>Mapped the manual process and timed it before changing anything</li>
-          <li>Built one master list of receivers so addresses are updated in one place</li>
-          <li>Automated document saving and email sending with the right recipients and subject</li>
-          <li>Added checks for missing fields and duplicates, plus a job aid for new staff</li></ul></details>
+        <p class="lede">Rebuilt a seven-step manual email task into a short form that sends the right documents to the right people automatically.</p>
+        <div class="kp"><div><b>78%</b><span>faster</span></div><div><b>~70 min</b><span>saved daily</span></div><div><b>7 → 4</b><span>steps</span></div></div>
         <div class="tools"><span>Power Automate</span><span>Power Apps</span><span>SharePoint</span><span>Time study</span></div>
       </div>
     </article>
 
-    <article class="glass w sm2 rv" data-cat="model">
+    <article class="glass w rv" data-cat="model">
       <div class="vis">
-        <svg class="curve" viewBox="0 0 300 150" aria-hidden="true" style="width:100%;height:auto">
+        <svg class="curve" viewBox="0 0 300 120" aria-hidden="true" style="width:100%;height:auto">
           <defs><linearGradient id="cg" x1="0" x2="1"><stop offset="0" stop-color="#9B7BFF"/><stop offset="1" stop-color="#FF7A1A"/></linearGradient></defs>
-          <path class="ln" d="M8 12 C 30 80, 55 110, 95 124 S 200 136, 292 138" fill="none" stroke="url(#cg)" stroke-width="4" stroke-linecap="round"/>
-          <circle cx="292" cy="138" r="5" fill="#FF7A1A"/></svg>
-        <div class="vcap">OBJECTIVE VALUE · CONVERGENCE</div>
+          <path class="ln" d="M8 10 C 30 64, 55 88, 95 100 S 200 110, 292 112" fill="none" stroke="url(#cg)" stroke-width="4" stroke-linecap="round"/>
+          <circle cx="292" cy="112" r="5" fill="#FF7A1A"/></svg>
+        <div class="vcap">OBJECTIVE VALUE FALLING AS THE METHOD CONVERGES</div>
       </div>
       <div class="body">
-        <div class="cat"><span class="hot">Research</span><span>Published</span></div>
+        <div class="cat"><span class="hot">Research</span><span>Final year project</span><span>Published</span></div>
         <h3>Radiotherapy plan optimization</h3>
-        <p class="lede">Compared five three-term conjugate gradient methods in MATLAB and applied them to a real prostate cancer treatment plan.</p>
-        <div class="kp"><div><b>100%</b><span>success, TTLAMR</span></div><div><b>986</b><span>beamlets</span></div></div>
-        <a class="more" href="https://doi.org/10.47772/IJRISS.2026.100900333" target="_blank" rel="noopener">Read the paper →</a>
+        <p class="lede">Compared five three-term conjugate gradient methods in MATLAB, then applied them to a real prostate cancer treatment plan.</p>
+        <div class="kp"><div><b>100%</b><span>success, TTLAMR</span></div><div><b>308</b><span>test problems</span></div><div><b>986</b><span>beamlets</span></div></div>
+        <div class="links2"><a class="more" href="https://doi.org/10.47772/IJRISS.2026.100900333" target="_blank" rel="noopener">Read the paper →</a><a class="more" href="fyp-thesis.pdf" target="_blank" rel="noopener">Read the full thesis →</a></div>
+        <div class="tools"><span>MATLAB</span><span>Optimization</span><span>Numerical methods</span></div>
       </div>
     </article>
 
-    <article class="glass w md rv" data-cat="data">
-      <div class="vis">
+    <article class="glass w rv" data-cat="data">
+      <div class="vis shotvis">
         <button class="zoom main" data-src="leave-dashboard-overview.png" data-cap="Leave Planner dashboard, overview page">
           <img src="leave-dashboard-overview.png" alt="Power BI leave dashboard overview" loading="lazy"></button>
         <div class="picks" role="tablist" aria-label="Dashboard pages">
-          <button class="pick on" role="tab" aria-selected="true" data-src="leave-dashboard-overview.png" data-cap="Leave Planner dashboard, overview page"><img src="leave-dashboard-overview.png" alt="" loading="lazy"><span>Overview</span></button>
-          <button class="pick" role="tab" aria-selected="false" data-src="leave-dashboard-staff.png" data-cap="Leave Planner dashboard, staff profile page"><img src="leave-dashboard-staff.png" alt="" loading="lazy"><span>Staff</span></button>
-          <button class="pick" role="tab" aria-selected="false" data-src="leave-dashboard-rejections.png" data-cap="Leave Planner dashboard, rejections page"><img src="leave-dashboard-rejections.png" alt="" loading="lazy"><span>Rejections</span></button>
+          <button class="pick on" role="tab" aria-selected="true" data-src="leave-dashboard-overview.png" data-cap="Leave Planner dashboard, overview page">Overview</button>
+          <button class="pick" role="tab" aria-selected="false" data-src="leave-dashboard-staff.png" data-cap="Leave Planner dashboard, staff profile page">Staff</button>
+          <button class="pick" role="tab" aria-selected="false" data-src="leave-dashboard-rejections.png" data-cap="Leave Planner dashboard, rejections page">Rejections</button>
         </div>
       </div>
       <div class="body">
-        <div class="cat"><span class="hot">Dashboard</span><span>Automation</span><span>2026</span></div>
+        <div class="cat"><span class="hot">Dashboard</span><span>Industry internship</span><span>2026</span></div>
         <h3>Leave Planner and Power BI dashboard</h3>
-        <p class="lede">A leave system that checks team quotas on its own, with a three-page dashboard for managers.</p>
-        <div class="kp"><div><b>&lt; 3 wks</b><span>brief to launch</span></div><div><b>100%</b><span>requests auto-checked</span></div></div>
-        <details><summary>What’s inside</summary><ul>
-          <li>Automatic quota check, first come first served, with same-day clashes rejected and explained</li>
-          <li>Approval from the list view or Teams</li>
-          <li>Dashboard pages for overview, rejections and individual staff profiles</li></ul></details>
+        <p class="lede">A leave system that checks team quotas on its own, with a three-page dashboard so managers see leave across all teams.</p>
+        <div class="kp"><div><b>&lt; 3 wks</b><span>brief to launch</span></div><div><b>100%</b><span>requests auto-checked</span></div><div><b>3</b><span>dashboard pages</span></div></div>
         <div class="tools"><span>Power BI</span><span>SharePoint</span><span>Power Apps</span><span>Power Automate</span></div>
       </div>
     </article>
 
-    <article class="glass w md rv" data-cat="model">
+    <article class="glass w rv" data-cat="model">
       <div class="vis">
         <div class="rlab">FAIR RENTAL PRICE · RM PER HECTARE</div>
         <div class="range" aria-hidden="true"><div class="bar"></div><div class="ok"></div><div class="pin"><span class="rlab"><b>RM5,200</b></span><i></i></div></div>
         <div aria-hidden="true" style="position:relative;height:16px"><span class="vcap" style="position:absolute;left:9.6%;transform:translateX(-50%)">RM566</span><span class="vcap" style="position:absolute;left:95.4%;transform:translateX(-80%)">RM5,600</span></div>
-        <div class="vcap">PURPLE BAND · FAIR RANGE WHERE FARMERS AND PROVIDER BOTH WIN</div>
+        <div class="mini3" aria-hidden="true"><span><b>Farmer</b>still profits</span><span><b>Provider</b>covers costs + 25%</span><span><b>Demand</b>stays at capacity</span></div>
       </div>
       <div class="body">
         <div class="cat"><span class="hot">Modelling</span><span>National challenge</span><span>MIMMC 2026</span></div>
         <h3>Dynamic pricing for farm machinery rental</h3>
-        <p class="lede">Modelled farmer demand, farmer profit and provider costs together to find a rental price that is fair for everyone.</p>
+        <p class="lede">Modelled farmer demand, farmer profit and provider costs together to find a rental price that is fair for everyone, then tested it under four risk scenarios.</p>
         <div class="kp"><div><b>RM5,200</b><span>optimal price</span></div><div><b>+RM400</b><span>farmer gain / ha</span></div><div><b>63.6%</b><span>less labour cost</span></div></div>
-        <a class="more" href="mimmc-report.pdf" target="_blank" rel="noopener">Read the report →</a>
+        <div class="links2"><a class="more" href="mimmc-report.pdf" target="_blank" rel="noopener">Read the report →</a></div>
+        <div class="tools"><span>Mathematical modelling</span><span>Pricing</span><span>Sensitivity analysis</span></div>
       </div>
     </article>
 
-    <article class="glass w md rv" data-cat="auto">
+    <article class="glass w rv" data-cat="auto">
       <div class="vis">
         <div class="nodes" aria-hidden="true">
           <div class="node"><span class="n">1</span>Agent submits claim<span class="ok">LOGGED</span></div>
@@ -545,25 +579,27 @@ dialog.lb button{position:absolute;top:-14px;right:-14px;width:40px;height:40px;
       <div class="body">
         <div class="cat"><span class="hot">Automation</span><span>Industry internship</span><span>2026</span></div>
         <h3>Claim approval workflow</h3>
-        <p class="lede">Joined every step of a shipment claim into one tracked flow, from submission to the customer’s settlement letter.</p>
-        <div class="kp"><div><b>1 click</b><span>to send a letter</span></div><div><b>0</b><span>duplicate letters</span></div></div>
+        <p class="lede">Joined every step of a shipment claim into one tracked flow, from the agent’s submission to the customer’s settlement letter.</p>
+        <div class="kp"><div><b>1 click</b><span>to send a letter</span></div><div><b>3</b><span>payment types handled</span></div><div><b>0</b><span>duplicate letters</span></div></div>
         <div class="tools"><span>Power Automate</span><span>SharePoint</span><span>Outlook</span><span>Teams</span></div>
       </div>
     </article>
 
-    <article class="glass w md rv" data-cat="data model">
+    <article class="glass w rv" data-cat="data">
       <div class="vis">
-        <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:10px" aria-hidden="true">
-          <div class="node" style="flex-direction:column;align-items:flex-start;gap:2px"><span class="vcap">J48</span><b style="font-family:var(--display)">Tree</b></div>
-          <div class="node" style="flex-direction:column;align-items:flex-start;gap:2px"><span class="vcap">RANDOM</span><b style="font-family:var(--display)">Forest</b></div>
-          <div class="node" style="flex-direction:column;align-items:flex-start;gap:2px"><span class="vcap">NAIVE</span><b style="font-family:var(--display)">Bayes</b></div>
+        <div class="clf" aria-hidden="true">
+          <div><span class="vcap">J48</span><b>Decision tree</b></div>
+          <div><span class="vcap">ENSEMBLE</span><b>Random forest</b></div>
+          <div><span class="vcap">PROBABILISTIC</span><b>Naive Bayes</b></div>
         </div>
-        <div class="vcap">7,000 SURVEY RECORDS · CLASSIFICATION + K-MEANS</div>
+        <div class="dots" aria-hidden="true"><i style="left:12%;top:30%"></i><i style="left:18%;top:55%"></i><i style="left:24%;top:38%"></i><i class="o" style="left:52%;top:60%"></i><i class="o" style="left:58%;top:40%"></i><i class="o" style="left:63%;top:66%"></i><i class="s" style="left:82%;top:28%"></i><i class="s" style="left:88%;top:50%"></i><i class="s" style="left:78%;top:46%"></i></div>
+        <div class="vcap">K-MEANS CLUSTERS ON 7,000 SURVEY RECORDS</div>
       </div>
       <div class="body">
-        <div class="cat"><span class="hot">Data mining</span><span>Academic</span></div>
+        <div class="cat"><span class="hot">Data mining</span><span>Academic</span><span>2025</span></div>
         <h3>Survey classification and clustering</h3>
-        <p class="lede">Cleaned a 7,000-record dataset, selected features and compared three classifiers with K-means clustering in WEKA.</p>
+        <p class="lede">Cleaned a large survey dataset, selected the best features and compared three classifiers alongside K-means clustering.</p>
+        <div class="kp"><div><b>7,000</b><span>records</span></div><div><b>3</b><span>classifiers compared</span></div><div><b>K-means</b><span>clustering</span></div></div>
         <div class="tools"><span>WEKA</span><span>Classification</span><span>Clustering</span></div>
       </div>
     </article>
@@ -819,7 +855,7 @@ const research = [
     ],
     tags: ["MATLAB", "Optimization", "Radiotherapy planning"],
     link: "https://doi.org/10.47772/IJRISS.2026.100900333",
-    images: []
+    images: ["ijriss-certificate.png"]
   }
 ];
 
@@ -965,12 +1001,14 @@ const achievements = [
     images: ["mimmc-certificate.png"]
   },
   {
-    when: "Jan 2026",
-    title: "Power BI Data Visualization Workshop",
-    org: "Microsoft Power BI",
-    points: ["Hands-on training in building interactive dashboards and reports."],
-    tags: ["Certification"],
-    images: []
+    when: "Dec 2025",
+    title: "Visualizing the Future: A Beginner’s Guide to Power BI",
+    org: "MODELITIC Club with UiTM Kuala Terengganu",
+    points: [
+      "Two-day hands-on programme on cleaning data and building interactive dashboards and reports in Power BI."
+    ],
+    tags: ["Power BI", "Certificate"],
+    images: ["powerbi-certificate.png"]
   },
   {
     when: "2025",
@@ -1013,6 +1051,14 @@ document.getElementById("research-list").innerHTML = research.slice().reverse().
 cards("projects-list", projects.filter(p=>!p.featured));
 cards("activities-list", activities);
 cards("achievements-list", achievements);
+
+/* Day and night toggle */
+document.getElementById("theme").addEventListener("click",()=>{
+  const root=document.documentElement;
+  const dark=root.dataset.theme?root.dataset.theme==="dark":matchMedia("(prefers-color-scheme: dark)").matches;
+  root.dataset.theme=dark?"light":"dark";
+  try{localStorage.setItem("theme",root.dataset.theme);}catch(e){}
+});
 
 /* Rotating words */
 const words=["optimization models","automation flows","Power BI dashboards","pricing models","better processes"];
