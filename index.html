@@ -258,6 +258,26 @@ details li::marker{color:var(--orange)}
 .zoom{all:unset;cursor:zoom-in;display:block;border-radius:10px;overflow:hidden;background:#fff;box-shadow:0 14px 30px rgba(0,0,0,.45)}
 .zoom img{width:100%;height:auto;transition:transform .3s}
 .zoom:hover img{transform:scale(1.02)}
+.w.wide{grid-column:1/-1;flex-direction:row}
+.w.wide .vis{width:56%;height:auto;min-height:340px;border-bottom:none;border-right:1px solid var(--line);flex:none}
+.browser{border-radius:12px;overflow:hidden;background:#fff;box-shadow:0 18px 40px rgba(0,0,0,.35);border:1px solid rgba(0,0,0,.08)}
+.browser .bar{display:flex;align-items:center;gap:6px;padding:8px 10px;background:#F1ECEF;border-bottom:1px solid #E6DDE2}
+.browser .bar i{width:9px;height:9px;border-radius:50%;background:#E3B3C6}
+.browser .bar span{margin-left:8px;font-family:var(--mono);font-size:10.5px;color:#7A6470;background:#fff;padding:2px 10px;border-radius:6px;flex:1}
+.browser .page{padding:14px 16px 16px;background:linear-gradient(180deg,#FFF2F7,#FFFFFF);color:#3B2430}
+.nav2{display:flex;align-items:center;gap:10px;font-size:10.5px}
+.nav2 b{font-family:var(--display);font-size:12px;color:#B0386B}
+.nav2 span{color:#8A6F7C;margin-right:auto}
+.nav2 em{font-style:normal;font-weight:700;background:#25D366;color:#fff;padding:3px 8px;border-radius:6px}
+.page .h{font-family:var(--display);font-weight:700;font-size:clamp(15px,1.7vw,20px);line-height:1.2;margin-top:14px;max-width:85%}
+.prices{display:flex;flex-wrap:wrap;gap:6px;margin-top:12px}
+.prices span{font-size:11px;padding:4px 9px;border-radius:999px;background:#FCE3EE;color:#7A3553}
+.prices b{color:#B0386B}
+.swatch{display:flex;gap:7px;margin-top:12px}
+.swatch i{width:18px;height:18px;border-radius:50%;border:2px solid #fff;box-shadow:0 0 0 1px #E6DDE2}
+.book{display:flex;align-items:center;justify-content:space-between;gap:10px;margin-top:14px;padding:10px 12px;border-radius:10px;background:#fff;border:1px solid #F0D9E3;font-size:11.5px}
+.book b{color:#B0386B;font-size:13px}
+.book em{font-style:normal;font-weight:700;background:#25D366;color:#fff;padding:6px 10px;border-radius:7px;white-space:nowrap}
 .links2{display:flex;flex-wrap:wrap;gap:18px}
 .shotvis{padding:18px 18px 14px;gap:10px}
 .shotvis .zoom{flex:1;min-height:0}
@@ -389,6 +409,8 @@ dialog.lb button{position:absolute;top:-14px;right:-14px;width:40px;height:40px;
   .bento{grid-template-columns:1fr}
   .b-story,.b-wide{grid-column:auto;grid-row:auto}
   .work{grid-template-columns:1fr}
+  .w.wide{flex-direction:column}
+  .w.wide .vis{width:auto;min-height:0;border-right:none;border-bottom:1px solid var(--line)}
   .w .vis{height:auto;min-height:210px}
   .amd{grid-template-columns:1fr}
   .steps,.cards,.skills,.papers,.edu{grid-template-columns:1fr}
@@ -479,12 +501,13 @@ dialog.lb button{position:absolute;top:-14px;right:-14px;width:40px;height:40px;
 
 <section id="work"><div class="wrap">
   <div class="sh rv"><div class="idx">02 <b>/ Selected work</b></div><h2>Things I have <em>built and solved.</em></h2>
-    <p>Industry automation, published research and competition modelling. Filter to see each side of my work.</p></div>
+    <p>Automation, published research, competition modelling and web design. Filter to see each side of my work.</p></div>
   <div class="filters rv" role="group" aria-label="Filter work">
     <button aria-pressed="true" data-f="all">All</button>
     <button aria-pressed="false" data-f="auto">Automation</button>
     <button aria-pressed="false" data-f="model">Research and modelling</button>
     <button aria-pressed="false" data-f="data">Data and dashboards</button>
+    <button aria-pressed="false" data-f="web">Web</button>
   </div>
   <div class="work">
 
@@ -604,6 +627,26 @@ dialog.lb button{position:absolute;top:-14px;right:-14px;width:40px;height:40px;
       </div>
     </article>
 
+    <article class="glass w wide rv" data-cat="web">
+      <div class="vis shotvis site">
+        <button class="zoom main" data-src="maghi-home.jpg" data-cap="Maghi’s Picnic website, home page">
+          <img src="maghi-home.jpg" alt="Maghi’s Picnic website home page" loading="lazy"></button>
+        <div class="picks" role="tablist" aria-label="Website pages">
+          <button class="pick on" role="tab" aria-selected="true" data-src="maghi-home.jpg" data-cap="Maghi’s Picnic website, home page">Home</button>
+          <button class="pick" role="tab" aria-selected="false" data-src="maghi-rental.jpg" data-cap="Maghi’s Picnic website, rental section">Rental</button>
+          <button class="pick" role="tab" aria-selected="false" data-src="maghi-booking.jpg" data-cap="Maghi’s Picnic website, booking form with live price">Booking</button>
+        </div>
+      </div>
+      <div class="body">
+        <div class="cat"><span class="hot">Web design</span><span>Small business</span><span>2026</span></div>
+        <h3>Maghi’s Picnic business website</h3>
+        <p class="lede">Designed and built a mobile-friendly website for a picnic and event set-up business, with photo galleries for every package, a colour theme picker that restyles the page, and a booking form that works out the price and sends the details to WhatsApp.</p>
+        <div class="kp"><div><b>10</b><span>packages with live pricing</span></div><div><b>7</b><span>colour themes</span></div><div><b>1 tap</b><span>WhatsApp booking</span></div></div>
+        <div class="links2"><a class="more" href="https://maghispicnic.vercel.app/" target="_blank" rel="noopener">Visit the live site →</a></div>
+        <div class="tools"><span>HTML</span><span>CSS</span><span>JavaScript</span><span>Vercel</span><span>UX design</span></div>
+      </div>
+    </article>
+
   </div>
 </div></section>
 
@@ -660,7 +703,7 @@ dialog.lb button{position:absolute;top:-14px;right:-14px;width:40px;height:40px;
   <div class="skills">
     <div class="glass skill rv"><h3><i>∑</i>Modelling and analytics</h3><div class="chips"><span>Optimization</span><span>Statistical analysis</span><span>Regression</span><span>Classification</span><span>Clustering</span><span>Data cleaning</span></div></div>
     <div class="glass skill rv"><h3><i>⚡</i>Automation and BI</h3><div class="chips"><span>Power Automate</span><span>Power Apps</span><span>SharePoint</span><span>Power BI</span><span>Excel</span></div></div>
-    <div class="glass skill rv"><h3><i>&lt;/&gt;</i>Programming</h3><div class="chips"><span>Python</span><span>SQL</span><span>R</span><span>MATLAB</span><span>Java</span><span>C++</span><span>HTML</span></div></div>
+    <div class="glass skill rv"><h3><i>&lt;/&gt;</i>Programming</h3><div class="chips"><span>Python</span><span>SQL</span><span>R</span><span>MATLAB</span><span>HTML</span><span>CSS</span><span>JavaScript</span><span>Java</span><span>C++</span></div></div>
     <div class="glass skill rv"><h3><i>⟳</i>Process improvement</h3><div class="chips"><span>Process mapping</span><span>Time study</span><span>VFTE analysis</span><span>Requirements gathering</span><span>Job aids</span></div></div>
     <div class="glass skill rv"><h3><i>▦</i>Other tools</h3><div class="chips"><span>SPSS</span><span>WEKA</span><span>Microsoft Access</span><span>SigmaPlot</span><span>Maple</span></div></div>
     <div class="glass skill rv"><h3><i>◎</i>Languages</h3><div class="chips"><span>Malay (native)</span><span>English (proficient)</span><span>Arabic (basic)</span></div></div>
@@ -723,7 +766,8 @@ const experience = [
     title: "Event Helper",
     org: "Maghis Picnic",
     points: [
-      "Help with picnic event set-up, coordination and on-site service for guests."
+      "Help with picnic event set-up, coordination and on-site service for guests.",
+      "Designed and built the business website, maghispicnic.vercel.app, with package galleries and WhatsApp booking."
     ],
     tags: ["Events", "Customer service"]
   },
@@ -1061,7 +1105,7 @@ document.getElementById("theme").addEventListener("click",()=>{
 });
 
 /* Rotating words */
-const words=["optimization models","automation flows","Power BI dashboards","pricing models","better processes"];
+const words=["optimization models","automation flows","Power BI dashboards","business websites","better processes"];
 const wEl=document.getElementById("word");
 const still=matchMedia("(prefers-reduced-motion: reduce)").matches;
 if(!still){let wi=0,ci=words[0].length,del=true;
@@ -1096,11 +1140,13 @@ tabs.forEach(t=>t.addEventListener("click",()=>{
 /* Dashboard switcher and lightbox */
 const lb=document.getElementById("lb");
 function openLb(src,cap){document.getElementById("lbimg").src=src;document.getElementById("lbimg").alt=cap;document.getElementById("lbcap").textContent=cap;lb.showModal();}
-const mainShot=document.querySelector(".zoom.main");
-mainShot.addEventListener("click",()=>openLb(mainShot.dataset.src,mainShot.dataset.cap));
-document.querySelectorAll(".pick").forEach(b=>b.addEventListener("click",()=>{
-  document.querySelectorAll(".pick").forEach(x=>{x.classList.toggle("on",x===b);x.setAttribute("aria-selected",x===b);});
-  mainShot.dataset.src=b.dataset.src;mainShot.dataset.cap=b.dataset.cap;const im=mainShot.querySelector("img");im.src=b.dataset.src;im.alt=b.dataset.cap;}));
+document.querySelectorAll(".shotvis").forEach(box=>{
+  const main=box.querySelector(".zoom.main"),picks=box.querySelectorAll(".pick");
+  main.addEventListener("click",()=>openLb(main.dataset.src,main.dataset.cap));
+  picks.forEach(b=>b.addEventListener("click",()=>{
+    picks.forEach(x=>{x.classList.toggle("on",x===b);x.setAttribute("aria-selected",x===b);});
+    main.dataset.src=b.dataset.src;main.dataset.cap=b.dataset.cap;const im=main.querySelector("img");im.src=b.dataset.src;im.alt=b.dataset.cap;}));
+});
 document.querySelectorAll(".gallery img").forEach(im=>im.addEventListener("click",()=>openLb(im.src,im.alt)));
 lb.addEventListener("click",e=>{if(e.target===lb)lb.close();});
 
